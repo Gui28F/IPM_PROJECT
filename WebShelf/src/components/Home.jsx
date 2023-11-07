@@ -3,7 +3,7 @@ import "../components/Home.css"
 
 const Home = () => {
   return (
-    <header className='w-screen h-screen relative'>
+    <header className='w-screen h-screen relative header-background'>
       <div className='absolute top-0 left-0 w-full h-full bg-gray-900/30'></div>
       <div className='absolute top-0 left-0 w-full h-full flex flex-col justify-center text-center'>
         <form

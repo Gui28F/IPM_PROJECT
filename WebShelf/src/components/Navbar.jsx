@@ -21,7 +21,7 @@ const Navbar = () => {
 
     return (
         <nav
-            className='flex justify-between items-center h-20 px-4 absolute top-0 left-0 z-10 w-full text-white bg-transparent'>
+            className='flex justify-between items-center px-4 absolute top-0 left-0 z-10 w-full text-white home-nav-bar'>
             <h1><Link to="/">WebShelf</Link></h1>
             <ul className='hidden md:flex'>
 

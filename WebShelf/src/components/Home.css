@@ -1,0 +1,19 @@
+.rounded-search {
+    border-radius: 50px;
+}
+
+.custom-dropdown{
+    padding: 1rem;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+}
+
+#dropdown-autoclose-true{
+    font-size: 1.25rem;
+    padding: 0 0 0 0;
+    border: none;
+    background-color: transparent;
+}
+#dropdown-autoclose-true:hover{
+    background-color: transparent;
+}

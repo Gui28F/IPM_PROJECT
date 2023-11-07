@@ -2,7 +2,7 @@
   "name": "hoobank",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://rmac-silva.github.io/IPM_PROJECT",
+  "homepage": "https://gui28f.github.io/IPM_PROJECT",
   "type": "module",
   "scripts": {
     "predeploy": "vite build",

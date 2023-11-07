@@ -4,18 +4,18 @@ import "../components/Home.css"
 const Home = () => {
   return (
     <header className='w-screen h-screen relative'>
-      <div className='absolute top-0 left-0 w-full h-full bg-gray-900/30'></div>
+      <div className='absolute top-0 left-0 w-full h-full bg-main'></div>
       <div className='absolute top-0 left-0 w-full h-full flex flex-col justify-center text-center'>
         <form
           action=''
-          className='flex border p-1 rounded-search text-black bg-gray-100/90 max-w-[700px] w-[80%] mx-auto'
+          className='flex  rounded-search-bar p-1 text-black bg-gray-100/90 max-w-[700px] w-[80%] mx-auto'
         >
           <input
             type='text'
             placeholder='Search for a book...'
-            className='grow bg-transparent outline-none'
+            className='placeholder-text'
           />
-          <button className='w-11 btn--form'>
+          <button className='w-11 rounded-search-btn'>
             <svg
               xmlns='http://www.w3.org/2000/svg'
               fill='none'

@@ -11,21 +11,33 @@ const Navbar = () => {
         setnavIsShown((navIsShown) => !navIsShown);
     };
 
+    const [show, setShow] = useState(false);
+    const showDropdown = (e)=>{
+        setShow(!show);
+    }
+    const hideDropdown = e => {
+        setShow(false);
+    }
+
     return (
         <nav
-            className='flex justify-between items-center h-20 px-4 absolute top-0 left-0 z-10 w-full text-white bg-transparent'>
+            className='flex home-nav-bar justify-between items-center px-4 absolute top-0 left-0 z-10 w-full text-white'>
             <h1>WebShelf</h1>
             <ul className='hidden md:flex'>
 
                 <li>
                     <Link to="/">Home</Link>
                 </li>
-                <Dropdown className="custom-dropdown">
+                <Dropdown className="custom-dropdown"
+                show={show}
+                onMouseEnter={showDropdown} 
+                onMouseLeave={hideDropdown}
+                >
                     <Dropdown.Toggle id="dropdown-autoclose-true">
                         Discovery
                     </Dropdown.Toggle>
 
-                    <Dropdown.Menu>
+                    <Dropdown.Menu className='dropdown-menu'>
                         <Dropdown.Item as={Link} to="/monthly_suggestions" >
                             Monthly Suggestions
                         </Dropdown.Item>

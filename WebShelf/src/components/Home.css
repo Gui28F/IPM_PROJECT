@@ -35,6 +35,14 @@
 .dropdown-menu{
     background-color: #5651e5;
 }
+/* Home.css */
+.header-background {
+    background-image: url('../assets/no_background.png'); /* Replace 'path-to-your-image.jpg' with the actual path to your image file. */
+    background-size: cover; /* Adjust the background size to cover the entire header. */
+    background-position: center; /* Center the background image. */
+    background-repeat: no-repeat; /* Prevent background image from repeating. */
+  }
+  
 
 #dropdown-autoclose-true{
     font-size: 1.25rem;

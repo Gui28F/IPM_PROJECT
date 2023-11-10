@@ -5,6 +5,10 @@ const Home = () => {
   return (
     <header className='w-screen h-screen relative'>
       <div className='absolute top-0 left-0 w-full h-full bg-main'></div>
+      <div>
+        This is a text example
+        <button>Click me</button>
+      </div>
       <div className='absolute top-0 left-0 w-full h-full flex flex-col justify-center text-center'>
         <form
           action=''

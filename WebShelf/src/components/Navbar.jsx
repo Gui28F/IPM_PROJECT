@@ -25,31 +25,32 @@ const Navbar = () => {
             <h1><Link to="/">WebShelf</Link></h1>
             <ul className='hidden md:flex'>
 
-                <li>
+                <li className='nav-bar-item'>
                     <Link to="/">Home</Link>
                 </li>
-                <Dropdown className="custom-dropdown"
-                show={show}
+                <Dropdown className="custom-dropdown nav-bar-item"
                 onMouseEnter={showDropdown} 
                 onMouseLeave={hideDropdown}
+                show={truex5}
                 >
                     <Dropdown.Toggle id="dropdown-autoclose-true">
                         Discovery
                     </Dropdown.Toggle>
 
-                    <Dropdown.Menu className='dropdown-menu'>
+                    <Dropdown.Menu>
+                    <Dropdown.Item as={Link} to="/all" >
+                            Browse All
+                        </Dropdown.Item>
+                        <Dropdown.Divider></Dropdown.Divider>
                         <Dropdown.Item as={Link} to="/monthly_suggestions" >
                             Monthly Suggestions
-                        </Dropdown.Item>
-                        <Dropdown.Item as={Link} to="/all" >
-                            Browse All
                         </Dropdown.Item>
                         <Dropdown.Item as={Link} to="/new_releases" >
                             New Releases
                         </Dropdown.Item>
                     </Dropdown.Menu>
                 </Dropdown>
-                <li>
+                <li className='nav-bar-item'>
                     <Link to="/my_shelves">My Shelves</Link>
                 </li>
             </ul>

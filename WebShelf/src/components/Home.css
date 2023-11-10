@@ -33,7 +33,11 @@
 }
 
 .dropdown-menu{
-    background-color: #5651e5;
+    
+}
+
+.nav-bar-item {
+    margin-right:15px;
 }
 /* Home.css */
 .header-background {

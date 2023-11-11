@@ -46,6 +46,7 @@
 
 .nav-bar-item {
     margin-right:15px;
+
 }
 .nav-bar-item:hover{
     color: white !important;
@@ -66,6 +67,7 @@
     padding: 0 0 0 0;
     border: none;
     background-color: transparent;
+    box-shadow: none;
 }
 #dropdown-autoclose-true:hover{
     background-color: transparent;

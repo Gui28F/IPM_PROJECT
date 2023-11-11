@@ -10,12 +10,14 @@
     padding: 0.5rem;
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity));
+    
 }
 
 .rounded-search-bar {
     border-radius: 50px;
     border:solid 2px #888888;
 }
+
 
 .placeholder-text {
     margin-left: 10px;
@@ -35,6 +37,13 @@
 .dropdown-menu{
     
 }
+
+
+.placeholder-text:focus {
+    outline: none;
+}
+
+
 
 .nav-bar-item {
     margin-right:15px;
@@ -59,10 +68,10 @@
 }
 
 .bg-main {
-    background-color: #FEEAFA;
+    background-color: #FDFDFF;
 }
 
 .home-nav-bar {
-    background-color: #DE6E4B;
+    background-color: #393D3F;
     height: 4rem;
 }

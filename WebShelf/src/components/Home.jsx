@@ -1,14 +1,28 @@
-import React from 'react';
-import "../components/Home.css"
 
+import React, { useEffect } from 'react';
+import "../components/Home.css"
+import bgVideo from '../assets/library.mp4';
 const Home = () => {
+
+  useEffect(() => {
+    // Disable scrolling when the component mounts
+    document.body.style.overflow = 'hidden';
+
+    // Re-enable scrolling when the component unmounts
+    return () => {
+      document.body.style.overflow = 'visible';
+    };
+  }, []); // Empty dependency array ensures this effect runs only once on mount
   return (
     <header className='w-screen h-screen relative'>
-      <div className='absolute top-0 left-0 w-full h-full bg-main'></div>
-      <div>
-        This is a text example
-        <button>Click me</button>
-      </div>
+       <video
+        src={bgVideo}
+        className='w-full h-full object-cover'
+        autoPlay
+        loop
+        muted
+      />
+      
       <div className='absolute top-0 left-0 w-full h-full flex flex-col justify-center text-center'>
         <form
           action=''

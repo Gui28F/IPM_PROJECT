@@ -49,6 +49,7 @@
 }
 .nav-bar-item:hover{
     color: white !important;
+    text-decoration: none !important;
 }
 
 /* Home.css */

@@ -20,6 +20,7 @@ const App = () => {
                 <Route path="/my_shelves" element={<MyShelves/>}/>
                 <Route path="/monthly_suggestions" element={<MonthlySuggestions/>}/>
                 <Route path="/new_releases" element={<NewReleases/>}/>
+
             </Routes>
         </BrowserRouter>
     </>

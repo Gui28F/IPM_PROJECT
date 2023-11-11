@@ -47,6 +47,10 @@
 .nav-bar-item {
     margin-right:15px;
 }
+.nav-bar-item:hover{
+    color: white !important;
+}
+
 /* Home.css */
 .header-background {
     background-image: url('../assets/no_background.png'); /* Replace 'path-to-your-image.jpg' with the actual path to your image file. */

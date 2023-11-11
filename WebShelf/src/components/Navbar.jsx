@@ -31,7 +31,7 @@ const Navbar = () => {
                 <Dropdown className="custom-dropdown nav-bar-item"
                 onMouseEnter={showDropdown} 
                 onMouseLeave={hideDropdown}
-                show={truex5}
+                show={show}
                 >
                     <Dropdown.Toggle id="dropdown-autoclose-true">
                         Discovery

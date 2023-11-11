@@ -24,6 +24,10 @@
     justify-content: right;
 }
 
+.book_redirect:hover{
+    color: black !important;
+    text-decoration: none !important;
+}
 .search-bar-input{
     margin-left: 1rem;
     outline: none;

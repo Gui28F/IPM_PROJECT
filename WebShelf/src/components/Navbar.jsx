@@ -21,11 +21,11 @@ const Navbar = () => {
     return (
         <nav
             className='flex justify-between items-center px-4 absolute top-0 left-0 z-10 w-full text-white home-nav-bar'>
-            <h1><Link to="/">WebShelf</Link></h1>
+            <h1><Link className='nav-bar-item' to="/">WebShelf</Link></h1>
             <ul className='hidden md:flex'>
 
-                <li className='nav-bar-item'>
-                    <Link to="/">Home</Link>
+                <li >
+                    <Link className='nav-bar-item' to="/">Home</Link>
                 </li>
                 <Dropdown className="custom-dropdown"
                 onMouseEnter={showDropdown} 
@@ -49,8 +49,8 @@ const Navbar = () => {
                         </Dropdown.Item>
                     </Dropdown.Menu>
                 </Dropdown>
-                <li className='nav-bar-item'>
-                    <Link to="/my_shelves">My Shelves</Link>
+                <li>
+                    <Link className='nav-bar-item' to="/my_shelves">My Shelves</Link>
                 </li>
             </ul>
             <div className='hidden md:flex'>

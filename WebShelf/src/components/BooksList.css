@@ -1,23 +1,30 @@
 .books_container {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     grid-column-gap: 50px;
     grid-row-gap: 10px;
     margin-right: 3rem;
     margin-left: 2rem;
+    max-width: 90vw;
+}
+
+.book-item {
+    display: grid;
+    grid-template-rows: auto 1fr;
 }
 
 .image-container {
     width: 100%;
-    height: 300px; /* Set a fixed height for the book container */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden; /* Ensure the image doesn't overflow the container */
+    min-width: 200px;
 }
 
 .image-container img {
     width: 100%;
-    height: 100%;
+    height: auto;
+}
 
+.book-title {
+    font-weight: bold;
+    word-wrap: break-word;
+    padding: 10px;
 }

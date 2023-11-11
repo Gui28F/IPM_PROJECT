@@ -5,6 +5,11 @@
 
 }
 
-.result-container {
-    /* Add any styling needed for the result container */
+.browseall_title{
+    margin-bottom: 2rem;
+    margin-left: 2rem;
+    margin-top: 2rem;
+}
+.book_container{
+    max-width: 100vw;
 }

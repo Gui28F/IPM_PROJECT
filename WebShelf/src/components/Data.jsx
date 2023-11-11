@@ -1,7 +1,7 @@
 const books = [
     {
         id: 1,
-        title: "Book 1",
+        title: "Book 1 bigger bigger bigger bigger ",
         genres: ["Horror", "Action"],
         rating: 4,
         imageUrl: "https://www.presenca.pt/cdn/shop/products/image-1_85c1dfac-79f9-431e-b96b-7ab26d9de938_1024x1024.jpg?v=1636630533"

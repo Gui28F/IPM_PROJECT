@@ -31,8 +31,8 @@ const BrowseAll = (props) => {
         <div className="main-container">
             <Filter data={books} onFilterChange={handleFilterChange}></Filter>
             {/* Use filterValues and filteredBooks in your application as needed */}
-            <div>
-                <h2>Filtered Books</h2>
+            <div className="book_container">
+                <h3 className="browseall_title">Search Results:</h3>
                 <BooksList data ={filteredBooks}></BooksList>
             </div>
         </div>

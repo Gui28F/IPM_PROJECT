@@ -4,8 +4,11 @@ const BooksList = (props) => {
     return (
         <div className="books_container">
             {props.data.map((book, index) => (
-                <div key={index} className='image-container d-flex justify-content-start m-3'>
+                <div key={index} className="book-container">
+                <div  className='image-container'>
                     <img src={book.imageUrl} alt='book'></img>
+                </div>
+                <div className="book-title">{book.title}</div>
                 </div>
             ))}
         </div>

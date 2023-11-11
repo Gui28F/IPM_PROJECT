@@ -1,7 +1,7 @@
 /* BrowseAll.css */
 .main-container {
     display: flex;
-
+    overflow-x: hidden;
 
 }
 
@@ -14,12 +14,22 @@
     min-width: 87vw;
     overflow-x: hidden;
 }
-
-.form-inline{
-    justify-content: flex-end;
+.search-bar-container{
+    margin-top: 2rem;
+    margin-right: 10rem;
 }
 .search-bar{
-    margin-top:1rem !important;
-    margin-right: 5rem !important;
-    width: 20rem !important;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+.search-bar-input{
+    margin-left: 1rem;
+    outline: none;
+    border-bottom: 2px solid #000000;
+}
+.search-bar-input:focus {
+    outline: none;
+    border-bottom: 2px solid #000000;
 }

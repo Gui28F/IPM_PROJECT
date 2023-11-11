@@ -44,13 +44,15 @@ const BrowseAll = (props) => {
             <Filter data={books} onFilterChange={handleFilterChange}></Filter>
             {/* Use filterValues and filteredBooks in your application as needed */}
             <div className="book_container">
-                <form onSubmit={handleFormSubmit} className="form-inline md-form form-sm mt-0 ">
-                    <i className="fas fa-search" aria-hidden="true"></i>
-                    <input className="form-control form-control-sm ml-3 search-bar" type="text" placeholder="Search"
-                           aria-label="Search"
-                           value={searchQuery}
-                           onChange={handleSearchChange}/>
-                </form>
+                <div className="search-bar-container">
+                    <div className="search-bar">
+                        <i className="fas fa-search" aria-hidden="true"></i>
+                        <input className="search-bar-input" type="text" placeholder="Search"
+                               aria-label="Search"
+                               value={searchQuery}
+                               onChange={handleSearchChange}/>
+                    </div>
+                </div>
                 <h3 className="browseall_title">Search Results:</h3>
                 <BooksList data ={filteredBooks}></BooksList>
             </div>

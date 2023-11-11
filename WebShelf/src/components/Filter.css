@@ -1,4 +1,16 @@
-body{
-    padding-top: 64px;
-    padding-left: 3px;
+.container{
+
+    padding-left: 0px;
+    margin: 0 !important;
+    display: flex;
+    align-items: initial;
+    flex-direction:unset;
+    justify-content: initial;
+    width: 16vw !important;
+    padding-right: 0;
+}
+
+.card{
+    border-radius: 0;
+    min-width: 100%;
 }

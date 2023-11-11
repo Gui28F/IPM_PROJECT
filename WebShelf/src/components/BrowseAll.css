@@ -1,0 +1,10 @@
+/* BrowseAll.css */
+.main-container {
+    display: flex;
+    padding-top: 64px;
+
+}
+
+.result-container {
+    /* Add any styling needed for the result container */
+}

@@ -1,0 +1,38 @@
+import React, {useState} from 'react';
+import Filter from "./Filter.jsx";
+import books from "./Data.jsx";
+import "./BrowseAll.css";
+import BooksList from "./BooksList.jsx";
+const BrowseAll = (props) => {
+    const [filterValues, setFilterValues] = useState({ genres: [], rating: null });
+    const [filteredBooks, setFilteredBooks] = useState([]);
+
+    const handleFilterChange = (values) => {
+        setFilterValues(values);
+        filterBooks(values);
+    };
+    const filterBooks = (values) => {
+        const { genres, rating } = values;
+        // Filter books based on selected genres and rating
+        const filtered = books.filter(book => {
+            const matchGenres = genres.length === 0 || genres.some(genre => book.genres.includes(genre));
+            const matchRating = rating.length === 0 || rating.includes(book.rating);
+            return matchGenres && matchRating;
+        });
+
+        setFilteredBooks(filtered);
+    };
+
+    return (
+        <div className="main-container">
+            <Filter data={books} onFilterChange={handleFilterChange}></Filter>
+            {/* Use filterValues and filteredBooks in your application as needed */}
+            <div>
+                <h2>Filtered Books</h2>
+                <BooksList data ={filteredBooks}></BooksList>
+            </div>
+        </div>
+    );
+}
+
+export default BrowseAll;

@@ -27,7 +27,7 @@ const Navbar = () => {
                 <li className='nav-bar-item'>
                     <Link to="/">Home</Link>
                 </li>
-                <Dropdown className="custom-dropdown nav-bar-item"
+                <Dropdown className="custom-dropdown"
                 onMouseEnter={showDropdown} 
                 onMouseLeave={hideDropdown}
                 show={show}

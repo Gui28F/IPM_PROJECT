@@ -11,6 +11,15 @@
     margin-top: 2rem;
 }
 .book_container{
-
+    min-width: 87vw;
     overflow-x: hidden;
+}
+
+.form-inline{
+    justify-content: flex-end;
+}
+.search-bar{
+    margin-top:1rem !important;
+    margin-right: 5rem !important;
+    width: 20rem !important;
 }

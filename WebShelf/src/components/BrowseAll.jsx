@@ -1,11 +1,15 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import Filter from "./Filter.jsx";
 import books from "./Data.jsx";
 import "./BrowseAll.css";
 import BooksList from "./BooksList.jsx";
 const BrowseAll = (props) => {
-    const [filterValues, setFilterValues] = useState({ genres: [], rating: null });
+    const [filterValues, setFilterValues] = useState({ genres: [], rating: [] });
     const [filteredBooks, setFilteredBooks] = useState([]);
+    useEffect(() => {
+        // Show all books initially
+        setFilteredBooks(books);
+    }, []); // Empty dependency array ensures this effect runs only once on mount
 
     const handleFilterChange = (values) => {
         setFilterValues(values);

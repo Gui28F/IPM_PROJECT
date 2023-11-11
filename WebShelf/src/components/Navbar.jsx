@@ -3,7 +3,6 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import "./Home.css";
 import {Link, Route, Routes} from "react-router-dom";
 import Home from "./Home.jsx";
-import Test from "./Test.jsx";
 
 const Navbar = () => {
     const [navIsShown, setnavIsShown] = useState(false);

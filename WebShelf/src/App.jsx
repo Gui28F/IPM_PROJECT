@@ -3,7 +3,6 @@ import React from 'react';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import Test from "./components/Test.jsx";
 import BrowseAll from "./components/BrowseAll.jsx";
 import Filter from "./components/Filter.jsx";
 import NewReleases from "./components/NewReleases.jsx";

@@ -5,6 +5,11 @@ import Home from './components/Home';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Test from "./components/Test.jsx";
 import BrowseAll from "./components/BrowseAll.jsx";
+import Filter from "./components/Filter.jsx";
+import NewReleases from "./components/NewReleases.jsx";
+import MonthlySuggestions from "./components/MonthlySuggestions.jsx";
+import MyShelves from "./components/MyShelves.jsx";
+
 const App = () => {
   return (
     <>
@@ -12,11 +17,10 @@ const App = () => {
             <Navbar/>
             <Routes>
                 <Route exact path="/" element={<Home />}/>
-                <Route path="/discovery" element={<Test/>}/>
-                <Route path="/my_shelves" element={<Test/>}/>
-                <Route path="/monthly_suggestions" element={<Test/>}/>
                 <Route path="/all" element={<BrowseAll/>}/>
-                <Route path="/new_releases" element={<Test/>}/>
+                <Route path="/my_shelves" element={<MyShelves/>}/>
+                <Route path="/monthly_suggestions" element={<MonthlySuggestions/>}/>
+                <Route path="/new_releases" element={<NewReleases/>}/>
             </Routes>
         </BrowserRouter>
     </>

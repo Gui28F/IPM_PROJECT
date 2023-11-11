@@ -41,10 +41,12 @@ const Filter = (props) => {
         <div className="container">
             <hr/>
                 <div className="card">
+                    <header className="card-header">
+                        <h6 className="title"> </h6>
+                    </header>
                     <article className="card-group-item">
-                        <header className="card-header">
-                            <h6 className="title">Genre </h6>
-                        </header>
+                        <h6 className="title">Genre </h6>
+
                         <div className="filter-content">
                             <div className="card-body">
                                 <form>
@@ -64,9 +66,7 @@ const Filter = (props) => {
                         </div>
                     </article>
                     <article className="card-group-item">
-                        <header className="card-header">
-                            <h6 className="title">Rating</h6>
-                        </header>
+                        <h6 className="title">Rating</h6>
                         <div className="filter-content">
                             <div className="card-body">
                                 {[5, 4, 3, 2, 1].map((rating, index) => (

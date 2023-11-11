@@ -7,7 +7,7 @@ const BooksList = (props) => {
     return (
         <div className="books_container">
             {props.data.map((book, index) => (
-                <Link class="book_redirect" to={`/books/${book.id}`} key={index} className="book-link">
+                <Link className="book_redirect" to={`/books/${book.id}`} key={index} className="book-link">
                     <div className="book-container">
                         <div className='image-container'>
                             <img src={book.imageUrl} alt='book'></img>

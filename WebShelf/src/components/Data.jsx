@@ -5,7 +5,23 @@ const books = [
         genres: ["Horror", "Action"],
         rating: 4,
         imageUrl: "https://www.presenca.pt/cdn/shop/products/image-1_85c1dfac-79f9-431e-b96b-7ab26d9de938_1024x1024.jpg?v=1636630533",
-        synopsis: "This is the synopsis for Book 1. It can contain a brief description of the book.",
+        synopsis: "This is the synopsis for Book 1. It can contain a brief description of the book." +
+            "This is the synopsis for Book 1. It can contain a brief description of the book." +
+            "This is the synopsis for Book 1. It can contain a brief description of the book." +
+            "This is the synopsis for Book 1. It can contain a brief description of the book." +
+            "This is the synopsis for Book 1. It can contain a brief description of the book.This is the synopsis for Book 1. It can contain a brief description of the book." +
+            "This is the synopsis for Book 1. It can contain a brief description of the book." +
+            "This is the synopsis for Book 1. It can contain a brief description of the book." +
+            "This is the synopsis for Book 1. It can contain a brief description of the book." +
+            "This is the synopsis for Book 1. It can contain a brief description of the book." +
+            "This is the synopsis for Book 1. It can contain a brief description of the book." +
+            "This is the synopsis for Book 1. It can contain a brief description of the book.This is the synopsis for Book 1. It can contain a brief description of the book." +
+            "This is the synopsis for Book 1. It can contain a brief description of the book." +
+            "This is the synopsis for Book 1. It can contain a brief description of the book.This is the synopsis for Book 1. It can contain a brief description of the book." +
+            "" +
+            "" +
+            "" +
+            "",
     },
     {
         id: 2,

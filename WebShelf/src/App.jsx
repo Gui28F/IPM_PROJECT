@@ -8,7 +8,7 @@ import Filter from "./components/Filter.jsx";
 import NewReleases from "./components/NewReleases.jsx";
 import MonthlySuggestions from "./components/MonthlySuggestions.jsx";
 import MyShelves from "./components/MyShelves.jsx";
-
+import BookDetails from "./components/BookDetails.jsx";
 const App = () => {
   return (
     <>
@@ -20,7 +20,7 @@ const App = () => {
                 <Route path="/my_shelves" element={<MyShelves/>}/>
                 <Route path="/monthly_suggestions" element={<MonthlySuggestions/>}/>
                 <Route path="/new_releases" element={<NewReleases/>}/>
-
+                <Route path="/books/:id" element={<BookDetails />} />
             </Routes>
         </BrowserRouter>
     </>

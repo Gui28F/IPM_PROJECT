@@ -10,10 +10,11 @@ import MonthlySuggestions from "./components/MonthlySuggestions.jsx";
 import MyShelves from "./components/MyShelves.jsx";
 import SearchResults from './components/SearchResults.jsx';
 import BookDetails from "./components/BookDetails.jsx";
+import SearchResults from "./components/SearchResults.jsx";
 const App = () => {
   return (
     <>
-        <BrowserRouter basename="/IPM_PROJECT">
+        <BrowserRouter basename="/IPM_PROJECT/">
             <Navbar/>
             <Routes>
                 <Route exact path="/" element={<Home />}/>
@@ -23,6 +24,7 @@ const App = () => {
                 <Route path="/new_releases" element={<NewReleases/>}/>
                 <Route path="/search_results" element={<SearchResults/>}/>
                 <Route path="/books/:id" element={<BookDetails />} />
+                <Route path="/search_results" element={<SearchResults/>}/>
             </Routes>
         </BrowserRouter>
     </>

@@ -6,7 +6,7 @@
     margin-right: 5rem;
     margin-left: 5rem;
     max-width: 80vw;
-    justify-content: center;
+    position: relative;
 }
 
 .book-item {
@@ -15,6 +15,7 @@
 }
 
 .image-container {
+    position: relative;
     width: 100%;
     min-width: 150px;
 }
@@ -22,6 +23,7 @@
 .image-container img {
     width: 100%;
     height: auto;
+    transition: opacity 0.3s ease-in-out;
 }
 
 .book-title {
@@ -33,8 +35,43 @@
 
 }
 .book-container:hover{
-
     cursor: pointer;
     background-color: #e4e4e4;;
 }
 
+.rating {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    padding: 20px;
+    font-size: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.book-container:hover .image-container img {
+    filter: brightness(0.7);
+}
+
+
+.book-container:hover .rating {
+    opacity: 1;
+    visibility: visible;
+}
+
+.rating {
+    z-index: 10;
+}
+
+.star_rating{
+    margin-left: 1rem;
+    color:#dfdf01;
+    transform: translateY(-2.15rem) scale(1.3);
+}
+
+.book-link{
+
+}

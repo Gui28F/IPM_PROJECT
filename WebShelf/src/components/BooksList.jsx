@@ -1,15 +1,23 @@
 import React from 'react';
 import "./BooksList.css"
+import StarRateIcon from '@mui/icons-material/StarRate';
+import {Icon} from "@mui/material";
+import {Link} from "react-router-dom";
 const BooksList = (props) => {
     return (
         <div className="books_container">
             {props.data.map((book, index) => (
-                <div key={index} className="book-container">
-                <div  className='image-container'>
-                    <img src={book.imageUrl} alt='book'></img>
-                </div>
-                <div className="book-title">{book.title}</div>
-                </div>
+                <Link className="book_redirect" to={`/books/${book.id}`} key={index} className="book-link">
+                    <div className="book-container">
+                        <div className='image-container'>
+                            <img src={book.imageUrl} alt='book'></img>
+                            <div className="rating">{book.rating}
+                                <StarRateIcon className="star_rating" />
+                            </div>
+                        </div>
+                        <div className="book-title">{book.title}</div>
+                    </div>
+                </Link>
             ))}
         </div>
     );

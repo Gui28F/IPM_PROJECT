@@ -1,6 +1,7 @@
 /* BrowseAll.css */
 .main-container {
     display: flex;
+    overflow-x: hidden;
 }
 
 .browseall_title{
@@ -9,6 +10,29 @@
     margin-top: 2rem;
 }
 .book_container{
-    
+    min-width: 87vw;
     overflow-x: hidden;
+}
+.search-bar-container{
+    margin-top: 2rem;
+    margin-right: 10rem;
+}
+.search-bar{
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+.book_redirect:hover{
+    color: black !important;
+    text-decoration: none !important;
+}
+.search-bar-input{
+    margin-left: 1rem;
+    outline: none;
+    border-bottom: 2px solid #000000;
+}
+.search-bar-input:focus {
+    outline: none;
+    border-bottom: 2px solid #000000;
 }

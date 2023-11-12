@@ -43,7 +43,13 @@
 
 .nav-bar-item {
     margin-right:15px;
+
 }
+.nav-bar-item:hover{
+    color: white !important;
+    text-decoration: none !important;
+}
+
 /* Home.css */
 .header-background {
     background-image: url('../assets/no_background.png'); /* Replace 'path-to-your-image.jpg' with the actual path to your image file. */
@@ -58,6 +64,7 @@
     padding: 0 0 0 0;
     border: none;
     background-color: transparent;
+    box-shadow: none;
 }
 #dropdown-autoclose-true:hover{
     background-color: transparent;

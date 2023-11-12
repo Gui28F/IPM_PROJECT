@@ -1,0 +1,52 @@
+.indv_out-container {
+    display: grid;
+    background-color: #e7e5e5;
+    margin-left: 5rem;
+    margin-right: 5rem;
+    margin-top: 1.5rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adjust the values as needed */
+    border-radius: 10px;
+}
+
+
+.indv_book-title{
+    margin-top: 1rem;
+    margin-left: 1rem;
+}
+
+.indv_details-container{
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: 20rem 1fr;
+    margin-left: 1rem;
+}
+
+.indv_image-container{
+    width: 20rem;
+    margin-bottom: 1rem;
+}
+
+.indv_synopsis{
+    display: grid;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+
+
+.indv_genres-list {
+    margin-top: auto;
+    margin-bottom: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 7rem);
+}
+
+.indv_genre {
+    display: flex;
+    align-items: center; /* Center the content vertically */
+    justify-content: center; /* Center the content horizontally */
+    padding: 4px 8px;
+    border: 1px solid #ccc; /* Border style */
+    border-radius: 4px; /* Optional: Add rounded corners */
+    margin-right: 1rem;
+}

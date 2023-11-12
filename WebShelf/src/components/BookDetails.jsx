@@ -7,7 +7,7 @@ import bookMark from "../assets/book_mark_white.svg";
 import bookMarkTicked from "../assets/book_mark_ticked.svg";
 import favorite from "../assets/favorite_white.svg";
 import favoriteTicked from "../assets/favorite_ticked.svg";
-import {Rating} from "@mui/material";
+import {Box, Modal, Rating, Typography} from "@mui/material";
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 const BookDetails = (props) => {
     const location = useLocation();
@@ -15,6 +15,9 @@ const BookDetails = (props) => {
     const [favTicked, setFavTicked] = useState(false);
     const [bookmarkTicked, setBookmarkTicked] = useState(false);
     const [rating, setRating] = useState(0);
+    const [open, setOpen] = React.useState(false);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
 
     const toggleFavorite = () => {
         setFavTicked((favTicked) => !favTicked);
@@ -23,6 +26,7 @@ const BookDetails = (props) => {
     const toggleBookmark = () => {
         setBookmarkTicked((bookmarkTicked) => !bookmarkTicked);
     };
+
     const params = useParams();
     const bookId = parseInt(params.id, 10); // Convert id to integer
     const book = Data.find(book => book.id === bookId);
@@ -60,9 +64,24 @@ const BookDetails = (props) => {
                         ))}
                     </div>
                 </div>
-                <button className="indv_add_to_shelf" onClick={() => console.log("Button clicked!")}>
+                <button className="indv_add_to_shelf" onClick={handleOpen}>
                     Add to Shelf
                 </button>
+                <Modal
+                    open={open}
+                    onClose={()=>handleClose()}
+                    aria-labelledby="modal-modal-title"
+                    aria-describedby="modal-modal-description"
+                >
+                    <Box className={"modal-box"}>
+                        <Typography className="modal-modal-title" variant="h6" component="h2">
+                            Shelves
+                        </Typography>
+                        <Typography className="modal-modal-description" sx={{ mt: 2 }}>
+
+                        </Typography>
+                    </Box>
+                </Modal>
             </div>
             {/* Display other book details here */}
         </div>

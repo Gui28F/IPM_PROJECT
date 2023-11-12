@@ -14,7 +14,7 @@ const SearchResults = ({route,navigate}) => {
             </h2>
         </div>
         <div className='main-book-container grid-container'>
-            <SmallBook title={"Test title"} author={"J.K. Rowling"} className='grid-item'></SmallBook>
+            <SmallBook bname={"hp"} title={"Harry Potter"} author={"J.K. Rowling"} className='grid-item'></SmallBook>
             <SmallBook className='grid-item'></SmallBook>
             <SmallBook className='grid-item'></SmallBook>
             <SmallBook className='grid-item'></SmallBook>

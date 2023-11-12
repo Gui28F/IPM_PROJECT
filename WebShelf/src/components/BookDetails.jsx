@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import {useLocation, useParams} from "react-router-dom";
 import "./BookDetails.css"
+import { format } from 'react-string-format';
 import bookMark from "../assets/book_mark_white.svg";
 import bookMarkTicked from "../assets/book_mark_ticked.svg";
 import favorite from "../assets/favorite_white.svg";
@@ -50,9 +51,18 @@ const BookDetails = (props) => {
         // Handle the submission logic here
         handleClose(); // Close the modal after submission (you can adjust this based on your needs)
     };
+
+    function getBook() {
+        var bookId = parseInt(params.id, 10); // Convert id to integer
+        if(isNaN(bookId) ) {
+            bookId = location.state.bid
+        }
+        var book = books.find(book => book.id === bookId)
+        return book;
+    }
     const params = useParams();
-    const bookId = parseInt(params.id, 10); // Convert id to integer
-    const book = books.find(book => book.id === bookId);
+    
+    const book = getBook()
     const currentUser = users[0];
     return (
         <div className="indv_out-container">

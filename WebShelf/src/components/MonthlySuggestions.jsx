@@ -95,7 +95,7 @@ const MonthlySuggestions = () => {
     return (
         <html lang="en" className="no-js">
         <div className="container">
-	<div class="main">
+	<div className="main">
 		<ul id="bk-list" className="bk-list clearfix">
 			<li>
 				<div className="bk-book book-1 bk-bookdefault">

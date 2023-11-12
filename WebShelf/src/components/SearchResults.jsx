@@ -6,7 +6,7 @@ const SearchResults = ({route,navigate}) => {
     const location = useLocation();
 
     return(
-    <div className='main-container'>
+    <div className='main-container-search-results'>
         <div>
             <h2 className=''>
                 Search results for:&nbsp;

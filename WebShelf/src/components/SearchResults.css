@@ -1,4 +1,4 @@
-/*.main-container {
+.main-container-search-results {
     padding-top: 30px;
     padding-left: 30px;
     display: flex;
@@ -15,4 +15,4 @@
     grid-template-columns: repeat(3, 1fr);
     margin-left: 10%;
     width:85%;
-}*/
+}

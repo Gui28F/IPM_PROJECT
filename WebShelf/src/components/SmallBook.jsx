@@ -26,28 +26,28 @@ const SmallBook = (props) => {
         setBookmarkTicked((bookmarkTicked) => !bookmarkTicked);
     };
 
-    function get_stars() {
-        var rating = props.rating
-        if (rating == null) {
-            rating = 4
-        }
-        var temp;
+    // function get_stars() {
+    //     var rating = props.rating
+    //     if (rating == null) {
+    //         rating = 4
+    //     }
+    //     var temp;
 
-        for (let index = 0; index < rating + 1; index++) {
-            temp += format("<img src={starFilled} className=\"{0}\"></img>",star_rating)
-        }
+    //     for (let index = 0; index < rating + 1; index++) {
+    //         temp += format("<img src={starFilled} className=\"{0}\"></img>",star_rating)
+    //     }
 
-        for (let index = 5; index > rating; index--) { //rating = 3
-            temp += format("<img src={starOutline} className=\"{0}\"></img>",star_rating)
-        }
+    //     for (let index = 5; index > rating; index--) { //rating = 3
+    //         temp += format("<img src={starOutline} className=\"{0}\"></img>",star_rating)
+    //     }
 
 
-        var res = <div>
-            {temp}
-        </div>
-        console.log(temp)
-        return res
-    }
+    //     var res = <div>
+    //         {temp}
+    //     </div>
+    //     console.log(temp)
+    //     return res
+    // }
 
 return (
     <div className="container">
@@ -62,7 +62,7 @@ return (
                 {bookmarkTicked && (<img className='book_mark_ico' src={bookMarkTicked} onClick={toggleBookmark}></img>)}
                 {!favTicked && (<img className='favorite_ico' src={favorite} onClick={toggleFavorite}></img>)}
                 {favTicked && (<img className='favorite_ico' src={favoriteTicked} onClick={toggleFavorite}></img>)}
-                {get_stars()}
+                {/* {get_stars()} */}
                 <div className="content">
                     <div className="header">
                         <div className="title">{props.title}</div>

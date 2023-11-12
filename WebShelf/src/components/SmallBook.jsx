@@ -50,7 +50,7 @@ const SmallBook = (props) => {
     // }
 
 return (
-    <div className="container">
+    <div className="container-smallBook">
         <div className="mobile-layout">
             <div className="book-cover">
                 <img className="book-top" src={bookCover} alt="book-top" />

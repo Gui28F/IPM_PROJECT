@@ -9,6 +9,7 @@ import NewReleases from "./components/NewReleases.jsx";
 import MonthlySuggestions from "./components/MonthlySuggestions.jsx";
 import MyShelves from "./components/MyShelves.jsx";
 import BookDetails from "./components/BookDetails.jsx";
+import SearchResults from "./components/SearchResults.jsx";
 const App = () => {
   return (
     <>
@@ -21,6 +22,7 @@ const App = () => {
                 <Route path="/monthly_suggestions" element={<MonthlySuggestions/>}/>
                 <Route path="/new_releases" element={<NewReleases/>}/>
                 <Route path="/books/:id" element={<BookDetails />} />
+                <Route path="/search_results" element={<SearchResults/>}/>
             </Routes>
         </BrowserRouter>
     </>

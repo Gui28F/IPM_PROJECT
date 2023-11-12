@@ -6,6 +6,9 @@
     margin-top: 1.5rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adjust the values as needed */
     border-radius: 10px;
+    min-width: 38rem;
+    min-height: 35rem;
+    margin-bottom: 2rem;
 }
 
 
@@ -17,19 +20,103 @@
 .indv_details-container{
     margin-top: 1rem;
     display: grid;
+    grid-template-rows: repeat(1,31rem auto);
     grid-template-columns: 20rem 1fr;
     margin-left: 1rem;
 }
 
-.indv_image-container{
+
+.indv_image-container {
     width: 20rem;
-    margin-bottom: 1rem;
+    position: relative;
+    min-width: 150px;
+    max-height: 30rem;
 }
 
+.indv_image-container img {
+    width: 100%;
+    height: auto;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 1rem;
+}
+
+.indv_image-container:hover #book-img{
+    filter: brightness(0.4);
+}
+.indv_icons {
+    position: absolute;
+    display:grid;
+    grid-template-columns: repeat(2,2rem);
+    grid-column-gap: 1rem;
+    top: 80%;
+    left: 43%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    padding: 20px;
+    font-size: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.indv_image-container:hover .indv_icons {
+    opacity: 1;
+    visibility: visible;
+}
+.indv_image-container:hover .indv_book_mark_ico {
+    opacity: 1;
+    visibility: visible;
+}
+.indv_image-container:hover .indv_favorite_ico {
+    opacity: 1;
+    visibility: visible;
+}
+
+.indv_book_mark_ico {
+    z-index: 10;
+    margin-left: 1rem;
+    cursor: pointer;
+}
+
+.indv_favorite_ico {
+    z-index: 10;
+    margin-left: 1rem;
+    cursor: pointer;
+}
+
+.indv_rating_stars{
+    margin-top: 1rem !important;
+}
+
+
+.indv_add_to_shelf {
+    display: block; /* Adjust the margin as needed */
+    padding: 10px;
+    background-color: transparent; /* Set the background color as needed */
+    color: black; /* Set the text color */
+    border: 2px solid #c0bfbf; /* Border style */
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    max-width: 10rem;
+    margin-left: 5rem;
+}
+
+.indv_add_to_shelf:hover {
+    background-color: #dcdcdc; /* Set the hover background color */
+}
 .indv_synopsis{
     display: grid;
     margin-left: 2rem;
     margin-right: 2rem;
+    max-height: 32rem;
+}
+.indv_synopsis_text{
+    margin-bottom: 1.5rem;
+    overflow-y: scroll;
 }
 
 
@@ -46,7 +133,7 @@
     align-items: center; /* Center the content vertically */
     justify-content: center; /* Center the content horizontally */
     padding: 4px 8px;
-    border: 1px solid #ccc; /* Border style */
+    border: 2px solid #ccc; /* Border style */
     border-radius: 4px; /* Optional: Add rounded corners */
     margin-right: 1rem;
 }

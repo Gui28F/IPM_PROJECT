@@ -1,14 +1,15 @@
 // BookDetails.jsx
 import React, { useEffect, useState } from 'react';
 import {useLocation, useParams} from "react-router-dom";
-import Data from "./Data.jsx";
 import "./BookDetails.css"
 import bookMark from "../assets/book_mark_white.svg";
 import bookMarkTicked from "../assets/book_mark_ticked.svg";
 import favorite from "../assets/favorite_white.svg";
 import favoriteTicked from "../assets/favorite_ticked.svg";
-import {Box, Modal, Rating, Typography} from "@mui/material";
+import {Box, Checkbox, Modal, Rating, Typography} from "@mui/material";
 import StarBorderIcon from '@mui/icons-material/StarBorder';
+import {users, books} from "./Data.jsx";
+
 const BookDetails = (props) => {
     const location = useLocation();
 
@@ -16,6 +17,8 @@ const BookDetails = (props) => {
     const [bookmarkTicked, setBookmarkTicked] = useState(false);
     const [rating, setRating] = useState(0);
     const [open, setOpen] = React.useState(false);
+    const [selectedShelves, setSelectedShelves] = useState([]);
+    const [newShelfName, setNewShelfName] = useState('');
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
@@ -27,9 +30,30 @@ const BookDetails = (props) => {
         setBookmarkTicked((bookmarkTicked) => !bookmarkTicked);
     };
 
+    const handleShelfToggle = (shelf) => {
+        setSelectedShelves((prevSelected) => {
+            if (prevSelected.includes(shelf)) {
+                return prevSelected.filter((selected) => selected !== shelf);
+            } else {
+                return [...prevSelected, shelf];
+            }
+        });
+    };
+
+    if (newShelfName.trim() !== '') {
+        setSelectedShelves((prevShelves) => [...prevShelves, { name: newShelfName, books: [] }]);
+        setNewShelfName(''); // Clear the input field
+    }
+
+
+    const handleSubmit = () => {
+        // Handle the submission logic here
+        handleClose(); // Close the modal after submission (you can adjust this based on your needs)
+    };
     const params = useParams();
     const bookId = parseInt(params.id, 10); // Convert id to integer
-    const book = Data.find(book => book.id === bookId);
+    const book = books.find(book => book.id === bookId);
+    const currentUser = users[0];
     return (
         <div className="indv_out-container">
             <h1 className="indv_book-title">{book.title}</h1>
@@ -77,9 +101,37 @@ const BookDetails = (props) => {
                         <Typography className="modal-modal-title" variant="h6" component="h2">
                             Shelves
                         </Typography>
-                        <Typography className="modal-modal-description" sx={{ mt: 2 }}>
-
-                        </Typography>
+                        {currentUser.shelves.map((shelf) => (
+                            <div key={shelf.name} className="indv_shelf_row">
+                                <Checkbox
+                                    checked={selectedShelves.includes(shelf.name)}
+                                    onChange={() => handleShelfToggle(shelf.name)}
+                                    color="primary"
+                                />
+                                <span className="indv_shelf_name">{shelf.name}</span>
+                            </div>
+                        ))}
+                        <div className="indv_add_shelf_container">
+                            <Checkbox
+                                checked={selectedShelves.includes(newShelfName)}
+                                onChange={() => {
+                                    setSelectedShelves((prevSelected) =>
+                                        prevSelected.includes(newShelfName)
+                                            ? prevSelected.filter((selected) => selected !== newShelfName)
+                                            : [...prevSelected, newShelfName]
+                                    );
+                                }}
+                                color="primary"
+                            />
+                            <input className="indv_new_shelf_input"
+                                type="text"
+                                placeholder="New Shelf"
+                                onChange={(e) =>{ setNewShelfName(e.target.value)}}
+                            />
+                        </div>
+                        <button className="indv_submit_button">
+                            Save
+                        </button>
                     </Box>
                 </Modal>
             </div>

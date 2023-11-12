@@ -1,4 +1,4 @@
-const books = [
+export const books = [
     {
         id: 1,
         title: "Book 1 bigger bigger bigger bigger ",
@@ -125,5 +125,16 @@ const books = [
         synopsis: "This is the synopsis for Book 1. It can contain a brief description of the book."
     }
 ];
-
-export default books;
+export const users=[
+    {
+        name:"User 1",
+        shelves:[{
+            name: "Shelf 1",
+            books:["Book 5", "Book 4"]
+        },
+        {
+            name: "Shelf 2",
+            books:["Book 1", "Book 2"]
+        }]
+    }
+]

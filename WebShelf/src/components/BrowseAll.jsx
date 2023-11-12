@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import Filter from "./Filter.jsx";
-import books from "./Data.jsx";
+import {books} from "./Data.jsx";
 import "./BrowseAll.css";
 import BooksList from "./BooksList.jsx";
 

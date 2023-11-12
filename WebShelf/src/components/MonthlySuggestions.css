@@ -1,3 +1,166 @@
+/* General Demo Style */
+
+html {
+	height: 100%;
+}
+
+*,
+*:after,
+*:before {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+
+/* Clearfix hack by Nicolas Gallagher: http://nicolasgallagher.com/micro-clearfix-hack/ */
+
+.clearfix:before,
+.clearfix:after {
+	content: " ";
+	display: table;
+}
+
+.clearfix:after {
+	clear: both;
+}
+
+.clearfix {
+	*zoom: 1;
+}
+
+body {
+	background: #f6f6f6;
+	font-weight: 400;
+	font-size: 15px;
+	color: #333;
+	overflow: scroll;
+	overflow-x: hidden;
+}
+
+.demo-2 body {
+	background: url(https://tympanus.net/Development/3DBookShowcase/images/wood.jpg);
+}
+
+a {
+	color: #555;
+	text-decoration: none;
+}
+
+.container {
+	width: 100%;
+	position: relative;
+}
+
+.main,
+.container > header {
+	width: 90%;
+	max-width: 1060px;
+	margin: 0 auto;
+	position: relative;
+	padding: 0 30px 50px 30px;
+}
+
+.container > header {
+	padding: 30px 30px 40px 30px;
+}
+
+.container > header h1 {
+	font-size: 34px;
+	line-height: 38px;
+	margin: 0;
+	font-weight: 700;
+	color: #333;
+	float: left;
+}
+
+
+/* Header Style */
+
+.codrops-top {
+	line-height: 24px;
+	font-size: 11px;
+	background: #fff;
+	background: rgba(255, 255, 255, 0.5);
+	text-transform: uppercase;
+	z-index: 9999;
+	position: relative;
+	box-shadow: 1px 0px 2px rgba(0, 0, 0, 0.2);
+}
+
+.codrops-top a {
+	padding: 0px 10px;
+	letter-spacing: 1px;
+	color: #333;
+	display: inline-block;
+}
+
+.codrops-top a:hover {
+	background: rgba(255, 255, 255, 0.8);
+	color: #000;
+}
+
+.codrops-top span.right {
+	float: right;
+}
+
+.codrops-top span.right a {
+	float: left;
+	display: block;
+}
+
+
+/* Demo Buttons Style */
+
+.codrops-demos {
+	float: right;
+}
+
+.codrops-demos a {
+	display: inline-block;
+	margin: 10px;
+	color: #666;
+	font-weight: 700;
+	line-height: 30px;
+	border-bottom: 4px solid transparent;
+}
+
+.codrops-demos a:hover {
+	color: #000;
+	border-color: #000;
+}
+
+.codrops-demos a.current-demo,
+.codrops-demos a.current-demo:hover {
+	color: #aaa;
+	border-color: #aaa;
+}
+
+.support-note {
+	color: #d7823e;
+	font-size: 16px;
+	display: block;
+	font-weight: bold;
+	text-align: center;
+	padding: 5px 0;
+	text-align: left;
+	clear: both;
+}
+
+.bookshelf {
+	width: 100%;
+	height: 63px;
+	z-index: -1;
+	margin-top: -25px;
+	background: transparent url(https://tympanus.net/Development/3DBookShowcase/images/shelf.png) no-repeat center center;
+	position: relative;
+}
+
+
+/*book showcase*/
+
 .bk-list {
 	list-style: none;
 	position: relative;
@@ -25,7 +188,7 @@
 .bk-info h3 {
 	padding: 25px 0 10px;
 	margin-bottom: 20px;
-	border-bottom: 1px solid rgba(0,0,0,0.3);
+	border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 	font-size: 26px;
 }
 
@@ -55,14 +218,12 @@
 	text-transform: uppercase;
 	cursor: pointer;
 	margin-right: 4px;
-	box-shadow: 1px 1px 1px rgba(0,0,0,0.15);
+	box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
 }
 
 .bk-info button.bk-active,
 .bk-info button:active {
-	box-shadow: 
-		0 1px 0 rgba(255, 255, 255, 0.8), 
-		inset 0 -1px 1px rgba(0,0,0,0.2);
+	box-shadow: 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 -1px 1px rgba(0, 0, 0, 0.2);
 }
 
 .no-touch .bk-info button:hover,
@@ -81,8 +242,8 @@
 }
 
 .bk-list li .bk-book.bk-bookdefault:hover {
-	-webkit-transform: rotate3d(0,1,0,35deg);
-	transform: rotate3d(0,1,0,35deg);
+	-webkit-transform: rotate3d(0, 1, 0, 35deg);
+	transform: rotate3d(0, 1, 0, 35deg);
 }
 
 .bk-list li .bk-book > div,
@@ -98,8 +259,8 @@
 	transform-origin: 0% 50%;
 	-webkit-transition: -webkit-transform .5s;
 	transition: transform .5s;
-	-webkit-transform: translate3d(0,0,20px);
-	transform: translate3d(0,0,20px);
+	-webkit-transform: translate3d(0, 0, 20px);
+	transform: translate3d(0, 0, 20px);
 	z-index: 10;
 }
 
@@ -112,8 +273,8 @@
 }
 
 .bk-list li .bk-page {
-	-webkit-transform: translate3d(0,0,19px);
-	transform: translate3d(0,0,19px);
+	-webkit-transform: translate3d(0, 0, 19px);
+	transform: translate3d(0, 0, 19px);
 	display: none;
 	width: 295px;
 	height: 390px;
@@ -146,60 +307,62 @@
 }
 
 .bk-list li .bk-back {
-	-webkit-transform: rotate3d(0,1,0,-180deg) translate3d(0,0,20px);
-	transform: rotate3d(0,1,0,-180deg) translate3d(0,0,20px);
-	box-shadow: 10px 10px 30px rgba(0,0,0,0.3);
+	-webkit-transform: rotate3d(0, 1, 0, -180deg) translate3d(0, 0, 20px);
+	transform: rotate3d(0, 1, 0, -180deg) translate3d(0, 0, 20px);
+	box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.3);
 	border-radius: 3px 0 0 3px;
 }
 
 .bk-list li .bk-cover-back {
 	background-color: #000;
-	-webkit-transform: rotate3d(0,1,0,-179deg);
-	transform: rotate3d(0,1,0,-179deg);
+	-webkit-transform: rotate3d(0, 1, 0, -179deg);
+	transform: rotate3d(0, 1, 0, -179deg);
 }
 
 .bk-list li .bk-right {
 	height: 390px;
 	top: 5px;
-	-webkit-transform: rotate3d(0,1,0,90deg) translate3d(0,0,295px);
-	-moz-transform: rotate3d(0,1,0,90deg) translate3d(0,0,295px);
-	transform: rotate3d(0,1,0,90deg) translate3d(0,0,295px);
+	-webkit-transform: rotate3d(0, 1, 0, 90deg) translate3d(0, 0, 295px);
+	-moz-transform: rotate3d(0, 1, 0, 90deg) translate3d(0, 0, 295px);
+	transform: rotate3d(0, 1, 0, 90deg) translate3d(0, 0, 295px);
 	-webkit-backface-visibility: hidden;
 	backface-visibility: hidden;
 }
 
 .bk-list li .bk-left {
 	height: 400px;
-	-webkit-transform: rotate3d(0,1,0,-90deg);
-	transform: rotate3d(0,1,0,-90deg);
+	-webkit-transform: rotate3d(0, 1, 0, -90deg);
+	transform: rotate3d(0, 1, 0, -90deg);
 }
 
 .bk-list li .bk-top {
-	-webkit-transform: rotate3d(1,0,0,90deg);
-	transform: rotate3d(1,0,0,90deg);
+	-webkit-transform: rotate3d(1, 0, 0, 90deg);
+	transform: rotate3d(1, 0, 0, 90deg);
 }
 
 .bk-list li .bk-bottom {
-	-webkit-transform: rotate3d(1,0,0,-90deg) translate3d(0,0,390px);
-	transform: rotate3d(1,0,0,-90deg) translate3d(0,0,390px);
+	-webkit-transform: rotate3d(1, 0, 0, -90deg) translate3d(0, 0, 390px);
+	transform: rotate3d(1, 0, 0, -90deg) translate3d(0, 0, 390px);
 }
+
 
 /* Transform classes */
 
 .bk-list li .bk-viewinside .bk-front {
-	-webkit-transform: translate3d(0,0,20px) rotate3d(0,1,0,-160deg);
-	transform: translate3d(0,0,20px) rotate3d(0,1,0,-160deg);
+	-webkit-transform: translate3d(0, 0, 20px) rotate3d(0, 1, 0, -160deg);
+	transform: translate3d(0, 0, 20px) rotate3d(0, 1, 0, -160deg);
 }
 
 .bk-list li .bk-book.bk-viewinside {
-	-webkit-transform: translate3d(0,0,150px) rotate3d(0,1,0,0deg);
-	transform: translate3d(0,0,150px) rotate3d(0,1,0,0deg);
+	-webkit-transform: translate3d(0, 0, 150px) rotate3d(0, 1, 0, 0deg);
+	transform: translate3d(0, 0, 150px) rotate3d(0, 1, 0, 0deg);
 }
 
 .bk-list li .bk-book.bk-viewback {
-	-webkit-transform: translate3d(0,0,0px) rotate3d(0,1,0,180deg);
-	transform: translate3d(0,0,0px) rotate3d(0,1,0,180deg);
+	-webkit-transform: translate3d(0, 0, 0px) rotate3d(0, 1, 0, 180deg);
+	transform: translate3d(0, 0, 0px) rotate3d(0, 1, 0, 180deg);
 }
+
 
 /* Main colors and content */
 
@@ -212,8 +375,7 @@
 
 .bk-list li .bk-front > div {
 	border-radius: 0 3px 3px 0;
-	box-shadow: 
-		inset 4px 0 10px rgba(0, 0, 0, 0.1);
+	box-shadow: inset 4px 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .bk-list li .bk-front:after {
@@ -233,7 +395,7 @@
 	left: 10px;
 	bottom: 0;
 	width: 3px;
-	background: rgba(0,0,0,0.06);
+	background: rgba(0, 0, 0, 0.06);
 	box-shadow: 1px 0 3px rgba(255, 255, 255, 0.1);
 }
 
@@ -308,9 +470,12 @@
 	border-radius: 50%;
 }
 
+
 /* Individual style & artwork */
 
+
 /* Book 1 */
+
 .book-1 .bk-front > div,
 .book-1 .bk-back,
 .book-1 .bk-left,
@@ -319,7 +484,7 @@
 }
 
 .book-1 .bk-cover {
-	background-image: url(../images/1.png);	
+	background-image: url(https://tympanus.net/Development/3DBookShowcase/images/1.png);
 	background-repeat: no-repeat;
 	background-position: 10px 40px;
 }
@@ -330,9 +495,9 @@
 	right: 0;
 	left: 0;
 	padding: 30px;
-	background: rgba(255,255,255,0.2);
+	background: rgba(255, 255, 255, 0.2);
 	color: #fff;
-	text-shadow: 0 -1px 0 rgba(0,0,0,0.1);
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.1);
 }
 
 .book-1 .bk-cover h2 span:first-child,
@@ -350,7 +515,7 @@
 .book-1 .bk-cover h2 span:last-child,
 .book-1 .bk-left h2 span:last-child {
 	font-family: "Big Caslon", "Book Antiqua", "Palatino Linotype", Georgia, serif;
-} 
+}
 
 .book-1 .bk-content p {
 	font-family: Georgia, Times, "Times New Roman", serif;
@@ -372,6 +537,7 @@
 	font-weight: 700;
 }
 
+
 /* Book 2 */
 
 .book-2 .bk-front > div,
@@ -382,12 +548,12 @@
 }
 
 .book-2 .bk-cover {
-	background-image: url(../images/2.png);	
+	background-image: url(https://tympanus.net/Development/3DBookShowcase/images/2.png);
 	background-repeat: no-repeat;
 	background-position: 98% 0%;
 }
 
-.book-2 .bk-cover h2, 
+.book-2 .bk-cover h2,
 .book-2 .bk-left h2 {
 	color: #fff;
 	font-family: 'the_godfatherregular', Georgia, serif;
@@ -459,6 +625,7 @@
 	text-align: center;
 }
 
+
 /* Book 3 */
 
 .book-3 .bk-front > div,
@@ -469,7 +636,7 @@
 }
 
 .book-3 .bk-cover {
-	background-image: url(../images/3.png);	
+	background-image: url(https://tympanus.net/Development/3DBookShowcase/images/3.png);
 	background-repeat: no-repeat;
 	background-position: 100% 95%;
 }
@@ -481,7 +648,7 @@
 	left: 40px;
 	padding-top: 15px;
 	color: #fff;
-	text-shadow: 0 -1px 0 rgba(0,0,0,0.1);
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.1);
 }
 
 .book-3 .bk-cover h2 span:first-child,
@@ -498,9 +665,9 @@
 
 .book-3 .bk-cover h2 span:last-child,
 .book-3 .bk-left h2 span:last-child,
-.book-3 .bk-content p  {
+.book-3 .bk-content p {
 	font-family: Georgia, Times, "Times New Roman", serif;
-} 
+}
 
 .book-3 .bk-left h2 {
 	color: #fff;
@@ -521,14 +688,15 @@
 	font-family: Georgia, Times, "Times New Roman", serif;
 	padding: 40px;
 	text-align: center;
-	text-shadow: 0 -1px 0 rgba(0,0,0,0.1);
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.1);
 }
+
 
 /* Fallbacks */
 
 .no-csstransforms3d .bk-list li .bk-book > div,
 .no-csstransforms3d .bk-list li .bk-book .bk-cover-back {
-	display: none;
+	display: inline-block;
 }
 
 .no-csstransforms3d .bk-list li .bk-book > div.bk-front {
@@ -537,5 +705,5 @@
 
 .no-csstransforms3d .bk-info button,
 .no-js .bk-info button {
-	display: none;
+	display: inline-block;
 }

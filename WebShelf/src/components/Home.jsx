@@ -1,7 +1,10 @@
-
+import {useState} from 'react';
 import React, { useEffect } from 'react';
 import "../components/Home.css"
 import bgVideo from '../assets/library.mp4';
+import { useRef } from "react";
+import {useNavigate} from "react-router-dom";
+import { BookmarkBorder } from '@mui/icons-material';
 const Home = () => {
 
   useEffect(() => {
@@ -13,7 +16,24 @@ const Home = () => {
       document.body.style.overflow = 'visible';
     };
   }, []); // Empty dependency array ensures this effect runs only once on mount
+
+  const [bookName,setBookName] = useState('');
+  const inputRef = useRef(null);
+  const navigate = useNavigate();
+
+  const handleSearchSubmit = event => {
+    
+    console.log(bookName)
+    navigate('/search_results', {replace:true, state:{bookName:bookName}});
+  }
+
+  const handleBookNameChange = event => {
+    setBookName(event.target.value)
+  }
+
+
   return (
+    
     <header className='w-screen h-screen relative'>
        <video
         src={bgVideo}
@@ -24,12 +44,17 @@ const Home = () => {
       />
       
       <div className='absolute top-0 left-0 w-full h-full flex flex-col justify-center text-center'>
+      
         <form
-          action=''
+          onSubmit={handleSearchSubmit}
           className='flex  rounded-search-bar p-1 text-black bg-gray-100/90 max-w-[700px] w-[80%] mx-auto'
         >
           <input
+            ref={inputRef}
             type='text'
+            name='bookName'
+            value={bookName}
+            onChange={handleBookNameChange}
             placeholder='Search for a book...'
             className='placeholder-text'
           />
@@ -50,8 +75,10 @@ const Home = () => {
             </svg>
           </button>
         </form>
+        
       </div>
     </header>
+    
   );
 };
 

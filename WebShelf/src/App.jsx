@@ -10,7 +10,6 @@ import MonthlySuggestions from "./components/MonthlySuggestions.jsx";
 import MyShelves from "./components/MyShelves.jsx";
 import SearchResults from './components/SearchResults.jsx';
 import BookDetails from "./components/BookDetails.jsx";
-import SearchResults from "./components/SearchResults.jsx";
 const App = () => {
   return (
     <>

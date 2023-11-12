@@ -175,7 +175,7 @@
     margin-left: 8px; /* Adjust the margin as needed */
 }
 
-.indv_new_shelf_input:focus{
+.indv_new_shelf_input, .indv_new_shelf_input:focus{
     border: none;
     outline:none;
     border-bottom: 2px solid black;

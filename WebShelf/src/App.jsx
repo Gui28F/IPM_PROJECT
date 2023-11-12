@@ -12,7 +12,7 @@ import BookDetails from "./components/BookDetails.jsx";
 const App = () => {
   return (
     <>
-        <BrowserRouter basename="/IPM_PROJECT">
+        <BrowserRouter basename="/IPM_PROJECT/">
             <Navbar/>
             <Routes>
                 <Route exact path="/" element={<Home />}/>

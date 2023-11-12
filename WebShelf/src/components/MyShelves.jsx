@@ -4,6 +4,8 @@ import React from 'react';
 import './MyShelves.css';
 import books from './Data';
 import { Link } from 'react-router-dom';
+import StarRateIcon from '@mui/icons-material/StarRate';
+import {Icon} from "@mui/material";
 
 const shelvesData = [
   { id: 1, title: 'Horror', genre: 'Horror' },
@@ -36,10 +38,15 @@ const MyShelves = () => {
                     className="book-card"
                     onClick={() => handleBookClick(book.id)}
                   >
-                    <img src={book.imageUrl} alt={book.title} />
-                    <h4>{book.title}</h4>
-                    <p>Author: {book.author}</p>
-                    {/* Add more book details as needed */}
+                    <div className="book-container">
+                        <div className ="image-container">
+                            <img src={book.imageUrl} alt='book'></img>
+                            <div className="rating">{book.rating}
+                                <StarRateIcon className="star_rating" />
+                            </div>
+                        </div>
+                        <div className="book-title">{book.title}</div>
+                    </div>
                   </Link>
                 ))}
             </div>

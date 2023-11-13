@@ -1,0 +1,102 @@
+/* MyShelves.css */
+
+.my-shelves-container {
+    margin: 20px;
+}
+
+.shelves-heading {
+    font-size: 24px;
+    color: #333;
+}
+
+.shelves-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.shelf {
+    margin: 20px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.shelf h3 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.books-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 150px);
+    grid-column-gap: 50px;
+    grid-row-gap: 10px;
+    margin-right: 5rem;
+    margin-left: 5rem;
+    max-width: 80vw;
+    position: relative;
+}
+
+.book-item {
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    min-width: 150px;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.book-title {
+    font-weight: bold;
+    word-wrap: break-word;
+    padding: 10px;
+}
+
+.book-container:hover{
+    cursor: pointer;
+    background-color: #e4e4e4;;
+}
+
+.rating {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    padding: 20px;
+    font-size: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.book-container:hover .image-container img {
+    filter: brightness(0.7);
+}
+
+
+.book-container:hover .rating {
+    opacity: 1;
+    visibility: visible;
+}
+
+.rating {
+    z-index: 10;
+}
+
+.star_rating{
+    margin-left: 1rem;
+    color:#dfdf01;
+    transform: translateY(-2.15rem) scale(1.3);
+}
+

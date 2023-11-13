@@ -96,20 +96,24 @@
 
 
 .indv_add_to_shelf {
-    display: block; /* Adjust the margin as needed */
+    display: flex;
     padding: 10px;
     background-color: transparent; /* Set the background color as needed */
     color: black; /* Set the text color */
-    border: 2px solid #c0bfbf; /* Border style */
+    border: 2px solid #292929; /* Border style */
+    font-weight: bold;
     border-radius: 4px;
     cursor: pointer;
     margin-bottom: 1rem;
-    max-width: 10rem;
-    margin-left: 5rem;
+    font-family: sans-serif;
+    max-width: 12rem;
+    margin-left: 4.2rem;
+    justify-content: space-evenly;
 }
 
 .indv_add_to_shelf:hover {
-    background-color: #dcdcdc; /* Set the hover background color */
+    transition:transform .2s ease-in-out;
+    transform: scale(1.02);
 }
 .indv_synopsis{
     display: grid;

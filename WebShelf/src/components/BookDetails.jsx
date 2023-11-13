@@ -6,6 +6,7 @@ import { format } from 'react-string-format';
 import bookMark from "../assets/book_mark_white.svg";
 import bookMarkTicked from "../assets/book_mark_ticked.svg";
 import favorite from "../assets/favorite_white.svg";
+import add from "../assets/add_icon.svg";
 import favoriteTicked from "../assets/favorite_ticked.svg";
 import {Box, Checkbox, Modal, Rating, Typography} from "@mui/material";
 import StarBorderIcon from '@mui/icons-material/StarBorder';
@@ -176,9 +177,13 @@ const BookDetails = (props) => {
                         ))}
                     </div>
                 </div>
-                <button className="indv_add_to_shelf" onClick={handleOpen}>
+                <div className="indv_add_to_shelf" onClick={handleOpen}>
+                <img src={add}></img>
+                <button>
                     Add to Shelf
                 </button>
+                </div>
+                
                 <Modal
                     open={open}
                     onClose={()=>handleClose()}

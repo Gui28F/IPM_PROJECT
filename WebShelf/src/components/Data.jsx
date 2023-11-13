@@ -1,141 +1,130 @@
 export const books = [
     {
         id: 1,
-        title: "Book 1 bigger bigger bigger bigger_1",
-        genres: ["Horror", "Action"],
+        title: "Harry Potter and the Philosopher's Stone",
+        genres: ["Fantasy","Fiction","Young Adult","Magic"],
         rating: 4,
         author: "J. K. Rowling",
-        imageUrl: "https://www.presenca.pt/cdn/shop/products/image-1_85c1dfac-79f9-431e-b96b-7ab26d9de938_1024x1024.jpg?v=1636630533",
-        synopsis: "This is the synopsis for Book 1. It can contain a brief description of the book." +
-            "This is the synopsis for Book 1. It can contain a brief description of the book." +
-            "This is the synopsis for Book 1. It can contain a brief description of the book." +
-            "This is the synopsis for Book 1. It can contain a brief description of the book." +
-            "This is the synopsis for Book 1. It can contain a brief description of the book.This is the synopsis for Book 1. It can contain a brief description of the book." +
-            "This is the synopsis for Book 1. It can contain a brief description of the book." +
-            "This is the synopsis for Book 1. It can contain a brief description of the book." +
-            "This is the synopsis for Book 1. It can contain a brief description of the book." +
-            "This is the synopsis for Book 1. It can contain a brief description of the book." +
-            "This is the synopsis for Book 1. It can contain a brief description of the book." +
-            "This is the synopsis for Book 1. It can contain a brief description of the book.This is the synopsis for Book 1. It can contain a brief description of the book." +
-            "This is the synopsis for Book 1. It can contain a brief description of the book." +
-            "This is the synopsis for Book 1. It can contain a brief description of the book.This is the synopsis for Book 1. It can contain a brief description of the book." +
-            "" +
-            "" +
-            "" +
-            "",
+        imageUrl: "/IPM_PROJECT/src/assets/book_covers/hp_phil_cover.svg",
+        synopsis: "Harry Potter lives with his abusive aunt and uncle, Vernon and Petunia Dursley, and their bullying son, Dudley." +
+        "On Harry's eleventh birthday, Rubeus Hagrid, a half-giant, delivers an acceptance letter from Hogwarts School of Witchcraft" +
+        "and Wizardry, revealing that Harry's parents, James and Lily Potter, were wizards. When Harry was just a year old, a powerful" +
+        "but malevolent dark wizard named Lord Voldemort murdered his parents; Harry survived Voldemort's killing curse that rebounded" +
+        "and seemingly destroyed the Dark Lord, leaving a lightning bolt-shaped scar on his forehead. Unknown to Harry, this act made" +
+        "him famous in the wizarding world."
     },
     {
         id: 2,
-        title: "Book 2_2",
-        genres: ["Action"],
+        title: "Harry Potter and the Chamber of Secrets",
+        genres: ["Fantasy","Fiction","Young Adult","Magic"],
         rating: 3,
         author: "J. K. Rowling",
-        imageUrl: "https://www.presenca.pt/cdn/shop/products/image-1_85c1dfac-79f9-431e-b96b-7ab26d9de938_1024x1024.jpg?v=1636630533",
+        imageUrl: "/IPM_PROJECT/src/assets/book_covers/hp_chamber_cover.svg",
         synopsis: "This is the synopsis for Book 1. It can contain a brief description of the book."
     },
     {
         id: 3,
-        title: "Book 3_3",
-        genres: ["Comedy"],
+        title: "Harry Potter and the Prisioner of Azkaban",
+        genres: ["Fantasy","Fiction","Young Adult","Magic"],
         rating: 4,
         author: "J. K. Rowling",
-        imageUrl: "https://www.presenca.pt/cdn/shop/products/image-1_85c1dfac-79f9-431e-b96b-7ab26d9de938_1024x1024.jpg?v=1636630533",
+        imageUrl: "/IPM_PROJECT/src/assets/book_covers/hp_pris_cover.svg",
         synopsis: "This is the synopsis for Book 1. It can contain a brief description of the book."
     },
     {
         id: 4,
-        title: "Book 4_4",
-        genres: ["Drama"],
+        title: "Dune",
+        genres: ["Science Fiction","Fiction"],
         rating: 4,
-        author: "J. K. Rowling",
-        imageUrl: "https://www.presenca.pt/cdn/shop/products/image-1_85c1dfac-79f9-431e-b96b-7ab26d9de938_1024x1024.jpg?v=1636630533",
+        author: "Frank Herbert",
+        imageUrl: "/IPM_PROJECT/src/assets/book_covers/dune_cover.svg",
         synopsis: "This is the synopsis for Book 1. It can contain a brief description of the book."
     },
     {
         id: 5,
-        title: "Book 5_5",
-        genres: ["Sci-Fi"],
+        title: "The Diary of a Young Girl",
+        genres: ["Nonfiction","Biography"],
         rating: 1,
-        author: "J. K. Rowling",
-        imageUrl: "https://www.presenca.pt/cdn/shop/products/image-1_85c1dfac-79f9-431e-b96b-7ab26d9de938_1024x1024.jpg?v=1636630533",
+        author: "Anne Frank",
+        imageUrl: "/IPM_PROJECT/src/assets/book_covers/anne_cover.svg",
         synopsis: "This is the synopsis for Book 1. It can contain a brief description of the book."
     },
     {
         id: 6,
-        title: "Book 3_6",
-        genres: ["Comedy"],
+        title: "The Little Prince",
+        genres: ["Fiction","Fantasy","Childrens"],
         rating: 4,
-        author: "J. K. Rowling",
-        imageUrl: "https://www.presenca.pt/cdn/shop/products/image-1_85c1dfac-79f9-431e-b96b-7ab26d9de938_1024x1024.jpg?v=1636630533",
+        author: "Antoine de Saint-Exupéry",
+        imageUrl: "/IPM_PROJECT/src/assets/book_covers/prince_cover.svg",
         synopsis: "This is the synopsis for Book 1. It can contain a brief description of the book."
     },
     {
         id: 7,
-        title: "Book 4_7",
-        genres: ["Drama"],
+        title: "1984",
+        genres: ["Dystopia","Science Fiction","Politics"],
         rating: 4,
-        author: "J. K. Rowling",
-        imageUrl: "https://www.presenca.pt/cdn/shop/products/image-1_85c1dfac-79f9-431e-b96b-7ab26d9de938_1024x1024.jpg?v=1636630533",
+        author: "George Orwell",
+        imageUrl: "/IPM_PROJECT/src/assets/book_covers/1984_cover.svg",
         synopsis: "This is the synopsis for Book 1. It can contain a brief description of the book."
     },
     {
         id: 8,
-        title: "Book 5_8",
-        genres: ["Sci-Fi"],
+        title: "The Great Gatsby",
+        genres: ["Fiction","Romance"],
         rating: 1,
-        author: "J. K. Rowling",
-        imageUrl: "https://www.presenca.pt/cdn/shop/products/image-1_85c1dfac-79f9-431e-b96b-7ab26d9de938_1024x1024.jpg?v=1636630533",
+        author: "F. Scott Fitzgerald",
+        imageUrl: "/IPM_PROJECT/src/assets/book_covers/gatsby_cover.svg",
         synopsis: "This is the synopsis for Book 1. It can contain a brief description of the book."
     },  {
         id: 9,
-        title: "Book 4_9",
-        genres: ["Drama"],
+        title: "The Lord of the Rings",
+        genres: ["Fantasy","Fiction","Adventure"],
         rating: 4,
-        author: "J. K. Rowling",
-        imageUrl: "https://www.presenca.pt/cdn/shop/products/image-1_85c1dfac-79f9-431e-b96b-7ab26d9de938_1024x1024.jpg?v=1636630533",
+        author: "J.R.R. Tolkien",
+        imageUrl: "/IPM_PROJECT/src/assets/book_covers/lotr_cover.svg",
         synopsis: "This is the synopsis for Book 1. It can contain a brief description of the book."
     },
     {
         id: 10,
-        title: "Book 5_10",
-        genres: ["Sci-Fi"],
+        title: "The Chronicles of Narnia",
+        genres: ["Fantasy","Fiction","Adventure"],
         rating: 1,
-        author: "J. K. Rowling",
-        imageUrl: "https://www.presenca.pt/cdn/shop/products/image-1_85c1dfac-79f9-431e-b96b-7ab26d9de938_1024x1024.jpg?v=1636630533",
+        author: "C.S. Lewis",
+        imageUrl: "/IPM_PROJECT/src/assets/book_covers/narnia_cover.svg",
         synopsis: "This is the synopsis for Book 1. It can contain a brief description of the book."
     },  {
         id: 11,
-        title: "Book 4_11",
-        genres: ["Drama"],
+        title: "Lord of the Flies",
+        genres: ["Dystiopia","Fiction"],
         rating: 4,
-        author: "J. K. Rowling",
-        imageUrl: "https://www.presenca.pt/cdn/shop/products/image-1_85c1dfac-79f9-431e-b96b-7ab26d9de938_1024x1024.jpg?v=1636630533",
+        author: "William Golding",
+        imageUrl: "/IPM_PROJECT/src/assets/book_covers/flies_cover.svg",
         synopsis: "This is the synopsis for Book 1. It can contain a brief description of the book."
     },
     {
         id: 12,
-        title: "Book 5_12",
-        genres: ["Sci-Fi"],
+        title: "Green Eggs and Ham",
+        genres: ["Childrens","Fiction","Poetry"],
         rating: 1,
-        author: "J. K. Rowling",
-        imageUrl: "https://www.presenca.pt/cdn/shop/products/image-1_85c1dfac-79f9-431e-b96b-7ab26d9de938_1024x1024.jpg?v=1636630533",
+        author: "Dr. Seuss",
+        imageUrl: "/IPM_PROJECT/src/assets/book_covers/seuss_cover.svg",
         synopsis: "This is the synopsis for Book 1. It can contain a brief description of the book."
     },  {
         id: 13,
-        title: "Book 4_13",
-        genres: ["Drama"],
+        title: "The Picture of Dorian Gray",
+        genres: ["Fiction","Fantasy","Gothic"],
         rating: 4,
-        author: "J. K. Rowling",
-        imageUrl: "https://www.presenca.pt/cdn/shop/products/image-1_85c1dfac-79f9-431e-b96b-7ab26d9de938_1024x1024.jpg?v=1636630533",
+        author: "Oscar Wilde",
+        imageUrl: "/IPM_PROJECT/src/assets/book_covers/dorian_cover.svg",
         synopsis: "This is the synopsis for Book 1. It can contain a brief description of the book."
     },
     {
         id: 14,
-        title: "Book 5_14",
-        genres: ["Sci-Fi"],
+        title: "Don Quixote",
+        genres: ["Fiction","Literature"],
         rating: 1,
-        author: "J. K. Rowling",
-        imageUrl: "https://www.presenca.pt/cdn/shop/products/image-1_85c1dfac-79f9-431e-b96b-7ab26d9de938_1024x1024.jpg?v=1636630533",
+        author: "Miguel de Cervantes Saavedra",
+        imageUrl: "/IPM_PROJECT/src/assets/book_covers/quixote_cover.svg",
         synopsis: "This is the synopsis for Book 1. It can contain a brief description of the book."
     }
 ];

@@ -10,9 +10,9 @@
     --mobile-radius: 25px;
     --separator-height: 500px;
 
-    --bg: #ffffff;
-    --mobile-bg: #fdeae6;
-    --intro-bg: #eed7d1;
+    --bg: rgba(243, 181, 168, 0.427);
+    --mobile-bg: rgb(255, 217, 208);
+    --intro-bg: rgb(255, 217, 208);
     --font-color: #807b7b;
 
     --transition: transform 0.7s ease-in-out;
@@ -20,10 +20,12 @@
 
 .container-smallBook {
     display: flex;
+    margin-left:85px;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     background-color: var(--bg);
+    max-width: 13rem;
 }
 
 .info {
@@ -34,6 +36,7 @@
     margin-top: 10px;
     color: var(--font-color);
 }
+
 .link-no-underline {
     text-decoration: none !important;
     color: inherit !important;
@@ -44,16 +47,17 @@
     width: var(--mobile-width);
     height: var(--mobile-height);
     margin: 30px 0;
-    margin-left: 1rem;
+    margin-left: 0.5rem;
     border-radius: var(--mobile-radius);
     perspective: 500px;
     overflow: hidden;
     color: var(--font-color);
     background-color: var(--mobile-bg);
-    box-shadow: 36px 36px 50px 15px rgba(255, 255, 255, 0.82);
+    box-shadow: 36px 36px 36px 15px #ceb7b1d1;
 
     .book-cover {
         position: relative;
+        margin-top: -26px;
         height: var(--separator-height);
         width: calc(var(--mobile-width) * 2);
         left: -52.5%;
@@ -69,7 +73,7 @@
     .book-top {
         width: 220px;
         position: absolute;
-        top: 106px;
+        top: 110px;
         left: 220px;
         z-index: 5;
         transform: translateZ(28.5px);
@@ -77,11 +81,13 @@
 
     .book-side {
         position: absolute;
-        top: 430px;
-        left: 183px;
-        right:800px;
-        width: 293px;
-        transform: translateY(-15px) translateX(0px) translateZ(25px) rotateX(104deg);
+        top: 431px;
+        left: 184px;
+        right: 833px;
+        width: 292px;
+        visibility:visible;
+        transform: translateY(-13px) translateX(0px) translateZ(23px) rotateX(104deg);
+        transition: visibility 5s;
     }
 
     .preface {
@@ -96,7 +102,7 @@
             align-items: center;
         }
 
-        .samll_book_title {
+        .small_book_title {
             font-family: "Quicksand", sans-serif;
             font-size: 26px;
             margin-bottom: 10px;
@@ -129,6 +135,16 @@
     transform: rotateX(75deg) translateZ(3px) scale(0.75);
 }
 
+.mobile-layout:hover .book-side {
+    position: absolute;
+    top: 431px;
+    left: 184px;
+    right: 833px;
+    width: 292px;
+    visibility:visible;
+    transform: translateY(-13px) translateX(0px) translateZ(23px) rotateX(104deg);
+}
+
 .mobile-layout:hover .book-cover+.preface {
     transform: translateY(-302px);
 
@@ -136,6 +152,13 @@
         transform: rotateX(180deg);
     }
 }
+
+/* .mobile-layout:hover .preface {
+    padding-left: 28px;
+    background: white;
+    padding-right: 15px;
+    margin-top: -22px;
+} */
 
 .mobile-layout:hover .book_mark_ico {
     position: relative;

@@ -98,7 +98,7 @@ const SmallBook = (props) => {
     return (
         <div className="container-smallBook">
             <Link to={"/books/"+1} className="link-no-underline">
-            <div className="mobile-layout" >
+            <div className="mobile-layout">
                 <div className="book-cover">
                     <img className="book-top" src={book.imageUrl} alt="book-top" />
                     <img className="book-side" src="https://raw.githubusercontent.com/atomic-variable/images-repo/e37f432405904a280858e5437ce1960753bc78a3/book-side.svg" alt="book-side" />
@@ -111,7 +111,7 @@ const SmallBook = (props) => {
                     {favTicked && (<img className='favorite_ico' src={favoriteTicked} onClick={toggleFavorite}></img>)}
                     <div className="content">
                         <div className="header">
-                            <div className="samll_book_title">{book.title}</div>
+                            <div className="small_book_title">{book.title}</div>
                             <div className="icon">
                                 <i className="fas fa-chevron-down"></i>
                             </div>

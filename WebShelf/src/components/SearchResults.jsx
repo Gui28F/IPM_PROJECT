@@ -7,7 +7,7 @@ const SearchResults = ({route,navigate}) => {
     return(
     <div className='main-container-search-results'>
         <div>
-            <h2 className=''>
+            <h2 className='search-results-header'>
                 Search results for:&nbsp;
                 <u>{location.state.bookName}</u>
             </h2>

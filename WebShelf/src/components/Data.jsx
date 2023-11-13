@@ -1,7 +1,7 @@
 export const books = [
     {
         id: 1,
-        title: "Book 1 bigger bigger bigger bigger ",
+        title: "Book 1 bigger bigger bigger bigger_1",
         genres: ["Horror", "Action"],
         rating: 4,
         author: "J. K. Rowling",
@@ -26,7 +26,7 @@ export const books = [
     },
     {
         id: 2,
-        title: "Book 2",
+        title: "Book 2_2",
         genres: ["Action"],
         rating: 3,
         author: "J. K. Rowling",
@@ -35,7 +35,7 @@ export const books = [
     },
     {
         id: 3,
-        title: "Book 3",
+        title: "Book 3_3",
         genres: ["Comedy"],
         rating: 4,
         author: "J. K. Rowling",
@@ -44,7 +44,7 @@ export const books = [
     },
     {
         id: 4,
-        title: "Book 4",
+        title: "Book 4_4",
         genres: ["Drama"],
         rating: 4,
         author: "J. K. Rowling",
@@ -53,7 +53,7 @@ export const books = [
     },
     {
         id: 5,
-        title: "Book 5",
+        title: "Book 5_5",
         genres: ["Sci-Fi"],
         rating: 1,
         author: "J. K. Rowling",
@@ -62,7 +62,7 @@ export const books = [
     },
     {
         id: 6,
-        title: "Book 3",
+        title: "Book 3_6",
         genres: ["Comedy"],
         rating: 4,
         author: "J. K. Rowling",
@@ -71,7 +71,7 @@ export const books = [
     },
     {
         id: 7,
-        title: "Book 4",
+        title: "Book 4_7",
         genres: ["Drama"],
         rating: 4,
         author: "J. K. Rowling",
@@ -80,7 +80,7 @@ export const books = [
     },
     {
         id: 8,
-        title: "Book 5",
+        title: "Book 5_8",
         genres: ["Sci-Fi"],
         rating: 1,
         author: "J. K. Rowling",
@@ -88,7 +88,7 @@ export const books = [
         synopsis: "This is the synopsis for Book 1. It can contain a brief description of the book."
     },  {
         id: 9,
-        title: "Book 4",
+        title: "Book 4_9",
         genres: ["Drama"],
         rating: 4,
         author: "J. K. Rowling",
@@ -97,7 +97,7 @@ export const books = [
     },
     {
         id: 10,
-        title: "Book 5",
+        title: "Book 5_10",
         genres: ["Sci-Fi"],
         rating: 1,
         author: "J. K. Rowling",
@@ -105,7 +105,7 @@ export const books = [
         synopsis: "This is the synopsis for Book 1. It can contain a brief description of the book."
     },  {
         id: 11,
-        title: "Book 4",
+        title: "Book 4_11",
         genres: ["Drama"],
         rating: 4,
         author: "J. K. Rowling",
@@ -114,7 +114,7 @@ export const books = [
     },
     {
         id: 12,
-        title: "Book 5",
+        title: "Book 5_12",
         genres: ["Sci-Fi"],
         rating: 1,
         author: "J. K. Rowling",
@@ -122,7 +122,7 @@ export const books = [
         synopsis: "This is the synopsis for Book 1. It can contain a brief description of the book."
     },  {
         id: 13,
-        title: "Book 4",
+        title: "Book 4_13",
         genres: ["Drama"],
         rating: 4,
         author: "J. K. Rowling",
@@ -131,7 +131,7 @@ export const books = [
     },
     {
         id: 14,
-        title: "Book 5",
+        title: "Book 5_14",
         genres: ["Sci-Fi"],
         rating: 1,
         author: "J. K. Rowling",

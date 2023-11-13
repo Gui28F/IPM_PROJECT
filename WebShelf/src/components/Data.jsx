@@ -143,12 +143,14 @@ export const users=[
     {
         name:"User 1",
         shelves:[{
+            id : 1,
             name: "Favourites",
-            books:["Book 5", "Book 4"]
+            books:["Book 5_14", "Book 4_9"]
         },
         {
+            id : 2,
             name: "To Read",
-            books:["Book 1", "Book 2"]
+            books:["Book 2_2", "Book 3_6"]
         }]
     }
 ]

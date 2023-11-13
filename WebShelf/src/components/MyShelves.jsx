@@ -2,29 +2,11 @@
 
 import React from 'react';
 import './MyShelves.css';
-import {books} from "./Data.jsx";
+import {books,users} from "./Data.jsx";
 import { Link } from 'react-router-dom';
 import StarRateIcon from '@mui/icons-material/StarRate';
 import {Icon} from "@mui/material";
 
-const shelvesData = [
-  { id: 1, title: 'Favourites', books: [
-
-    {
-        id: 1,
-    },
-  ]
-
-
-},
-    { id: 2, title: 'To Read', books: [
-    
-        {
-            id: 2,
-        },
-    ]
-},
-]
 
 const MyShelves = () => {
   const handleBookClick = (id) => {
@@ -32,19 +14,22 @@ const MyShelves = () => {
     console.log(`Book ${id} clicked`);
   };
 
+  const userShelves = users[0].shelves;
+  console.log(userShelves[1]);
+
   return (
     <div className="my-shelves-container">
       <h2 className="shelves-heading">My Shelves</h2>
       <div className="shelves-container">
-        {shelvesData.map((shelf) => (
+        {userShelves.map((shelf) => (
           <div key={shelf.id} className="shelf">
-            <h3>{shelf.title}</h3>
+            <h3>{shelf.name}</h3>
             <div className="books-container">
               {books
-                .filter((book) => shelf.books.map((b) => b.id).includes(book.id))
-                .map((book) => (
+                .filter((book) => shelf.books.includes(book.title))
+                .map((book,index) => (
                   <Link
-                    key={book.id}
+                    key={index}
                     to={`/books/${book.id}`}
                     className="book-card"
                     onClick={() => handleBookClick(book.id)}

@@ -1,28 +1,76 @@
 import "./SmallBook.css";
-import { format } from 'react-string-format';
-import React, { useState } from 'react';
-import {Link, useLocation} from 'react-router-dom';
+import React, {useState} from 'react';
+import {Link, useNavigate} from 'react-router-dom';
 import bookMark from '../assets/book_mark.svg'
 import bookMarkTicked from '../assets/book_mark_ticked.svg'
 import favorite from '../assets/favorite.svg'
 import favoriteTicked from '../assets/favorite_ticked.svg'
-import starFilled from '../assets/star_filled.svg'
-import starOutline from '../assets/star_outline.svg'
-import {useNavigate} from "react-router-dom";
+import {users} from "./Data.jsx";
 
 
 const SmallBook = (props) => {
-    const [favTicked, setFavTicked] = useState(false);
-    const [bookmarkTicked, setBookmarkTicked] = useState(false);
-    const navigate = useNavigate();
     let book = props.book;
+    const [favTicked, setFavTicked] = useState(() => {
+        // Check if the book is in "Favourites" shelf
+        const isBookInFavourites = users[0].shelves.find(
+            (shelf) => shelf.name === "Favourites" && shelf.books.includes(book.title)
+        );
+
+        return !!isBookInFavourites; // Set to true if the book is in "Favourites" shelf, false otherwise
+    });
+    const [bookmarkTicked, setBookmarkTicked] = useState(() => {
+        // Check if the book is in "To Read" shelf
+        const isBookInToRead = users[0].shelves.find(
+            (shelf) => shelf.name === "To Read" && shelf.books.includes(book.title)
+        );
+
+        return !!isBookInToRead; // Set to true if the book is in "To Read" shelf, false otherwise
+    });
+    const navigate = useNavigate();
     const toggleFavorite = (event) => {
         event.preventDefault();
+        const isBookInFavourites = users[0].shelves.find(shelf => shelf.name === "Favourites" && shelf.books.includes(book.title));
+
+        if (isBookInFavourites) {
+            // Book is in "Favourites" shelf, remove it
+            users[0].shelves = users[0].shelves.map(shelf =>
+                shelf.name === "Favourites"
+                    ? {...shelf, books: shelf.books.filter(bookTitle => bookTitle !== book.title)}
+                    : shelf
+            );
+        } else {
+            // Book is not in "Favourites" shelf, add it
+            users[0].shelves = users[0].shelves.map(shelf =>
+                shelf.name === "Favourites"
+                    ? {...shelf, books: [...shelf.books, book.title]}
+                    : shelf
+            );
+        }
         setFavTicked((favTicked) => !favTicked);
     };
 
     const toggleBookmark = (event) => {
         event.preventDefault();
+        // Check if the book is already in the "To Read" shelf
+        const isBookInToRead = users[0].shelves.find(
+            (shelf) => shelf.name === "To Read" && shelf.books.includes(book.title)
+        );
+
+        if (isBookInToRead) {
+            // Book is in "To Read" shelf, remove it
+            users[0].shelves = users[0].shelves.map((shelf) =>
+                shelf.name === "To Read"
+                    ? {...shelf, books: shelf.books.filter((bookTitle) => bookTitle !== book.title)}
+                    : shelf
+            );
+        } else {
+            // Book is not in "To Read" shelf, add it
+            users[0].shelves = users[0].shelves.map((shelf) =>
+                shelf.name === "To Read"
+                    ? {...shelf, books: [...shelf.books, book.title]}
+                    : shelf
+            );
+        }
         setBookmarkTicked((bookmarkTicked) => !bookmarkTicked);
     };
 

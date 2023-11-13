@@ -13,10 +13,10 @@ const SearchResults = ({route,navigate}) => {
             </h2>
         </div>
         <div className='main-book-container grid-container'>
-            {books.map((book,index)=>(
-                <SmallBook key={index} book={book} className='grid-item'></SmallBook>
-            ))
-            }
+            {books.filter(book => book.title.toLowerCase().includes(location.state.bookName.toLowerCase()))
+            .map((book, index) => (
+            <SmallBook key={index} book={book} className='grid-item' />
+            ))}
         </div>
     </div>
     

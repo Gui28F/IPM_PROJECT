@@ -22,7 +22,7 @@ const Home = () => {
 
   const handleSearchSubmit = event => {
     console.log(bookName)
-    navigate('/search_results', {replace:true, state:{bookName:bookName}});
+    navigate('/search_results', {replace:false, state:{bookName:bookName}});
   }
 
   const handleBookNameChange = event => {

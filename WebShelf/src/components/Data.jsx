@@ -143,11 +143,11 @@ export const users=[
     {
         name:"User 1",
         shelves:[{
-            name: "Shelf 1",
+            name: "Favourites",
             books:["Book 5", "Book 4"]
         },
         {
-            name: "Shelf 2",
+            name: "To Read",
             books:["Book 1", "Book 2"]
         }]
     }

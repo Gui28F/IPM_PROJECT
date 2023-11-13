@@ -13,21 +13,82 @@ import {users, books} from "./Data.jsx";
 
 const BookDetails = (props) => {
     const location = useLocation();
+    function getBook() {
+        var bookId = parseInt(params.id, 10); // Convert id to integer
+        if(isNaN(bookId) ) {
+            bookId = location.state.bid
+        }
+        var book = books.find(book => book.id === bookId)
+        return book;
+    }
+    const params = useParams();
 
-    const [favTicked, setFavTicked] = useState(false);
-    const [bookmarkTicked, setBookmarkTicked] = useState(false);
+    const book = getBook()
+    const [favTicked, setFavTicked] = useState(() => {
+        // Check if the book is in "Favourites" shelf
+        const isBookInFavourites = users[0].shelves.find(
+            (shelf) => shelf.name === "Favourites" && shelf.books.includes(book.title)
+        );
+
+        return !!isBookInFavourites; // Set to true if the book is in "Favourites" shelf, false otherwise
+    });
+    const [bookmarkTicked, setBookmarkTicked] = useState(() => {
+        // Check if the book is in "To Read" shelf
+        const isBookInToRead = users[0].shelves.find(
+            (shelf) => shelf.name === "To Read" && shelf.books.includes(book.title)
+        );
+
+        return !!isBookInToRead; // Set to true if the book is in "To Read" shelf, false otherwise
+    });
     const [rating, setRating] = useState(0);
     const [open, setOpen] = React.useState(false);
     const [selectedShelves, setSelectedShelves] = useState([]);
     const [newShelfName, setNewShelfName] = useState('');
+    const [success, setSuccess] = useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
     const toggleFavorite = () => {
+        const isBookInFavourites = users[0].shelves.find(shelf => shelf.name === "Favourites" && shelf.books.includes(book.title));
+
+        if (isBookInFavourites) {
+            // Book is in "Favourites" shelf, remove it
+            users[0].shelves = users[0].shelves.map(shelf =>
+                shelf.name === "Favourites"
+                    ? {...shelf, books: shelf.books.filter(bookTitle => bookTitle !== book.title)}
+                    : shelf
+            );
+        } else {
+            // Book is not in "Favourites" shelf, add it
+            users[0].shelves = users[0].shelves.map(shelf =>
+                shelf.name === "Favourites"
+                    ? {...shelf, books: [...shelf.books, book.title]}
+                    : shelf
+            );
+        }
         setFavTicked((favTicked) => !favTicked);
     };
 
     const toggleBookmark = () => {
+        const isBookInToRead = users[0].shelves.find(
+            (shelf) => shelf.name === "To Read" && shelf.books.includes(book.title)
+        );
+
+        if (isBookInToRead) {
+            // Book is in "To Read" shelf, remove it
+            users[0].shelves = users[0].shelves.map((shelf) =>
+                shelf.name === "To Read"
+                    ? {...shelf, books: shelf.books.filter((bookTitle) => bookTitle !== book.title)}
+                    : shelf
+            );
+        } else {
+            // Book is not in "To Read" shelf, add it
+            users[0].shelves = users[0].shelves.map((shelf) =>
+                shelf.name === "To Read"
+                    ? {...shelf, books: [...shelf.books, book.title]}
+                    : shelf
+            );
+        }
         setBookmarkTicked((bookmarkTicked) => !bookmarkTicked);
     };
 
@@ -41,28 +102,45 @@ const BookDetails = (props) => {
         });
     };
 
-    if (newShelfName.trim() !== '') {
-        setSelectedShelves((prevShelves) => [...prevShelves, { name: newShelfName, books: [] }]);
-        setNewShelfName(''); // Clear the input field
-    }
+
 
 
     const handleSubmit = () => {
-        // Handle the submission logic here
-        handleClose(); // Close the modal after submission (you can adjust this based on your needs)
+        selectedShelves.forEach((selectedShelf) => {
+            const existingShelf = currentUser.shelves.find((shelf) => shelf.name === selectedShelf);
+
+            if (existingShelf) {
+                // Shelf already exists, add the book if not already present
+                if (!existingShelf.books.includes(book.title)) {
+                    users[0].shelves = users[0].shelves.map((shelf) =>
+                        shelf.name === existingShelf.name
+                            ? { ...shelf, books: [...shelf.books, book.title] }
+                            : shelf
+                    );
+                }
+            } else {
+                // Shelf does not exist, create a new one and add the book
+                users[0].shelves = [...users[0].shelves, { name: selectedShelf, books: [book.title] }];
+            }
+        });
+        setSuccess(true);
+
+        setTimeout(() => {
+            handleClose();
+            setSuccess(false);
+            setNewShelfName(''); // Clear the old shelf name
+        }, 1000); // 1000 milliseconds = 1 second
     };
 
-    function getBook() {
-        var bookId = parseInt(params.id, 10); // Convert id to integer
-        if(isNaN(bookId) ) {
-            bookId = location.state.bid
-        }
-        var book = books.find(book => book.id === bookId)
-        return book;
-    }
-    const params = useParams();
-    
-    const book = getBook()
+    const handleShelfNameChange = (newName) => {
+        setNewShelfName(newName);
+        setSelectedShelves((prevSelected) =>
+            prevSelected.map((shelf) =>
+                shelf === newShelfName ? newName : shelf
+            )
+        );
+    };
+
     const currentUser = users[0];
     return (
         <div className="indv_out-container">
@@ -133,13 +211,15 @@ const BookDetails = (props) => {
                                 }}
                                 color="primary"
                             />
-                            <input className="indv_new_shelf_input"
+                            <input
+                                className="indv_new_shelf_input"
                                 type="text"
                                 placeholder="New Shelf"
-                                onChange={(e) =>{ setNewShelfName(e.target.value)}}
+                                value={newShelfName}
+                                onChange={(e) => handleShelfNameChange(e.target.value)}
                             />
                         </div>
-                        <button className="indv_submit_button">
+                        <button className={`indv_submit_button${success ? '_success' : ''}`} onClick={handleSubmit}>
                             Save
                         </button>
                     </Box>

@@ -180,3 +180,14 @@
     outline:none;
     border-bottom: 2px solid black;
 }
+
+.indv_submit_button_success {
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    align-items: center; /* Center the content vertically */
+    justify-content: center; /* Center the content horizontally */
+    padding: 4px 10px;
+    border-radius: 1rem;
+    background-color: #50f56a;
+    border: 2px solid green;
+}

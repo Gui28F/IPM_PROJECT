@@ -220,7 +220,7 @@ const BookDetails = (props) => {
                             />
                         </div>
                         <button className={`indv_submit_button${success ? '_success' : ''}`} onClick={handleSubmit}>
-                            Save
+                            {success ? 'Saved' : 'Save'}
                         </button>
                     </Box>
                 </Modal>

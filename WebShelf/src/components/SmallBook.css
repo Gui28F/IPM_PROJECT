@@ -10,7 +10,7 @@
     --mobile-radius: 25px;
     --separator-height: 500px;
 
-    --bg: #fdf3f2;
+    --bg: #ffffff;
     --mobile-bg: #fdeae6;
     --intro-bg: #eed7d1;
     --font-color: #807b7b;
@@ -24,7 +24,6 @@
     align-items: center;
     justify-content: center;
     background-color: var(--bg);
-    max-width: 13rem;
 }
 
 .info {
@@ -35,17 +34,23 @@
     margin-top: 10px;
     color: var(--font-color);
 }
+.link-no-underline {
+    text-decoration: none !important;
+    color: inherit !important;
+}
+
 
 .mobile-layout {
     width: var(--mobile-width);
     height: var(--mobile-height);
     margin: 30px 0;
+    margin-left: 1rem;
     border-radius: var(--mobile-radius);
     perspective: 500px;
     overflow: hidden;
     color: var(--font-color);
     background-color: var(--mobile-bg);
-    box-shadow: 36px 36px 50px 15px #eed7d1d1;
+    box-shadow: 36px 36px 50px 15px rgba(255, 255, 255, 0.82);
 
     .book-cover {
         position: relative;
@@ -64,7 +69,7 @@
     .book-top {
         width: 220px;
         position: absolute;
-        top: 110px;
+        top: 106px;
         left: 220px;
         z-index: 5;
         transform: translateZ(28.5px);
@@ -91,7 +96,7 @@
             align-items: center;
         }
 
-        .title {
+        .samll_book_title {
             font-family: "Quicksand", sans-serif;
             font-size: 26px;
             margin-bottom: 10px;
@@ -106,6 +111,8 @@
         .icon {
             transform-origin: top;
             transition: var(--transition);
+            margin-right: 1rem;
+            margin-left: 1rem;
         }
 
         .body {

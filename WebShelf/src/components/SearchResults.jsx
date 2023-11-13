@@ -1,10 +1,9 @@
 import {useLocation} from 'react-router-dom';
 import "./SearchResults.css";
 import SmallBook from "./SmallBook.jsx";
-
+import {books} from "./Data.jsx";
 const SearchResults = ({route,navigate}) => {
     const location = useLocation();
-
     return(
     <div className='main-container-search-results'>
         <div>
@@ -14,11 +13,10 @@ const SearchResults = ({route,navigate}) => {
             </h2>
         </div>
         <div className='main-book-container grid-container'>
-            <SmallBook bname={"hp"} title={"Harry Potter"} author={"J.K. Rowling"} className='grid-item'></SmallBook>
-            <SmallBook className='grid-item'></SmallBook>
-            <SmallBook className='grid-item'></SmallBook>
-            <SmallBook className='grid-item'></SmallBook>
-            <SmallBook className='grid-item'></SmallBook>
+            {books.map((book,index)=>(
+                <SmallBook key={index} book={book} className='grid-item'></SmallBook>
+            ))
+            }
         </div>
     </div>
     

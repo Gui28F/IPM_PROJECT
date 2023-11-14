@@ -143,7 +143,10 @@ const BookDetails = (props) => {
             }
         });
         setSuccess(true);
-
+        if(selectedShelves.includes("To Read") && !bookmarkTicked)
+            setBookmarkTicked(true)
+        if(selectedShelves.includes("Favourites") && !favTicked)
+            setFavTicked(true)
         setTimeout(() => {
             handleClose();
             setSuccess(false);
@@ -243,7 +246,11 @@ const BookDetails = (props) => {
                             component="h2"
                         >
                             Shelves
+                            <button className="modal-close-button" onClick={() => handleClose()}>
+                                x
+                            </button>
                         </Typography>
+
                         {currentUser.shelves.map((shelf) => (
                             <div key={shelf.name} className="indv_shelf_row">
                                 <Checkbox

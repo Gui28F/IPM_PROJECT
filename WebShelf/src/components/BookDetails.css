@@ -158,6 +158,10 @@
 }
 .modal-modal-title {
     margin-bottom: 1.5rem !important;
+    display: flex !important;
+    justify-content: right;
+
+
 }
 .indv_submit_button {
     margin-bottom: 2rem;
@@ -199,4 +203,15 @@
     border-radius: 1rem;
     background-color: #50f56a;
     border: 2px solid green;
+}
+.modal-close-button{
+    position: inherit;
+    margin-left: 11rem;
+    margin-right: 1rem;
+    border: 2px solid #cecece;
+    border-radius: 10px;
+    padding-left: 3px;
+    padding-right: 3px;
+    max-height: 30px;
+
 }

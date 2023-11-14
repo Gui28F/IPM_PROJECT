@@ -1,56 +1,150 @@
-// MyShelves.jsx
+// MyShelves.js
 
-import React from 'react';
-import './MyShelves.css';
-import {books,users} from "./Data.jsx";
-import { Link } from 'react-router-dom';
-import StarRateIcon from '@mui/icons-material/StarRate';
-import {Icon} from "@mui/material";
+import clsx from "clsx";
+import { useState } from "react";
 
-
-const MyShelves = () => {
-  const handleBookClick = (id) => {
-    // Add logic for handling book click, e.g., navigate to the book details page
-    console.log(`Book ${id} clicked`);
-  };
-
-  const userShelves = users[0].shelves;
-  console.log(userShelves[1]);
-
-  return (
-    <div className="my-shelves-container">
-      <h2 className="shelves-heading">My Shelves</h2>
-      <div className="shelves-container">
-        {userShelves.map((shelf) => (
-          <div key={shelf.id} className="shelf">
-            <h3>{shelf.name}</h3>
-            <div className="books-container">
-              {books
-                .filter((book) => shelf.books.includes(book.title))
-                .map((book,index) => (
-                  <Link
-                    key={index}
-                    to={`/books/${book.id}`}
-                    className="book-card"
-                    onClick={() => handleBookClick(book.id)}
-                  >
-                    <div className="book-container">
-                        <div className ="image-container">
-                            <img src={book.imageUrl} alt='book'></img>
-                            <div className="rating">{book.rating}
-                                <StarRateIcon className="star_rating" />
-                            </div>
-                        </div>
-                        <div className="book-title">{book.title}</div>
-                    </div>
-                  </Link>
-                ))}
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
+const listContainerStyles = {
+  margin: 'auto', // Set margin-top to auto
+  position: 'absolute',
+  top: '20%', // Adjust the percentage as needed
+  // Add any additional styles you want here
+  // Example: backgroundColor: 'lightgray',
 };
 
-export default MyShelves;
+const books = [
+  {
+    title: "1984",
+    coverUrl: "./src/test_images/1984.webp",
+    spineBackgroundColor: "#ae2d32",
+    spineForegroundColor: "#ffe9a2",
+  },
+  {
+    title: "Steve Jobs",
+    coverUrl: "./src/test_images/steve-jobs.webp",
+    spineBackgroundColor: "#ffffff",
+    spineForegroundColor: "#050505",
+  },
+  {
+    title: "Hitcher's Guide to the Galaxy",
+    coverUrl: "./src/test_images/hitchhikers-guide-to-the-galaxy.webp",
+    spineBackgroundColor: "#1f7189",
+    spineForegroundColor: "#ffffd5",
+  },
+  {
+    title: "The Ascent of Money",
+    coverUrl: "./src/test_images/the-ascent-of-money.webp",
+    spineBackgroundColor: "#000004",
+    spineForegroundColor: "#fffffd",
+  },
+  {
+    title: "Snow Crash",
+    coverUrl: "./src/test_images/snow-crash.webp",
+    spineBackgroundColor: "#262a57",
+    spineForegroundColor: "#fefcff",
+  },
+];
+
+const animationStyle = "transition-all duration-500 ease will-change-auto";
+
+export default function Shelves() {
+  const [focusedIndex, setFocusedIndex] = useState(2);
+
+  return (
+    <>
+      <svg className="invisible absolute inset-0">
+        <defs>
+          <filter id="paper" x="0%" y="0%" width="100%" height="100%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="8" result="noise" />
+            <feDiffuseLighting in="noise" lightingColor="white" surfaceScale="1" result="diffLight">
+              <feDistantLight azimuth="45" elevation="35" />
+            </feDiffuseLighting>
+          </filter>
+        </defs>
+      </svg>
+      <div role="list" style={listContainerStyles} className="flex flex-row justify-center space-x-4">
+        {books.map((book, index) => (
+          <button
+            role="listitem"
+            key={book.title}
+            onClick={() => {
+              if (index === focusedIndex) {
+                setFocusedIndex(-1);
+              } else {
+                setFocusedIndex(index);
+              }
+            }}
+            className={clsx(
+              "flex shrink-0 flex-row items-center outline-none",
+              focusedIndex !== index && "hover:-translate-y-4 focus-visible:-translate-y-4",
+              focusedIndex === index ? "basis-60" : "basis-12",
+              animationStyle
+            )}
+            style={{ perspective: "1000px", WebkitPerspective: "1000px" }}
+          >
+            <div
+              className={clsx(
+                "z-50 h-full w-[44px] shrink-0 origin-right py-4 brightness-[0.80] contrast-[2.00]",
+                animationStyle
+              )}
+              style={{
+                backgroundColor: book.spineBackgroundColor,
+                color: book.spineForegroundColor,
+                transformStyle: "preserve-3d",
+                height : "18rem", // this is to change the size of the side of the book
+                transform: `translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(${
+                  focusedIndex === index ? "-60deg" : "0deg"
+                }) rotateZ(0deg) skew(0deg, 0deg)`,
+              }}
+            >
+              <span
+                aria-hidden
+                className="pointer-events-none fixed top-0 left-0 z-50 h-full w-full opacity-40 [filter:url(#paper)]"
+              />
+              <h2 className="text-md m-auto font-medium" style={{ writingMode: "vertical-lr" }}>
+                {book.title}
+              </h2>
+            </div>
+            <div
+              className={clsx(
+                "relative z-10 h-72 shrink-0 origin-left overflow-hidden border-gray-900 brightness-[0.80] contrast-[2.00]",
+                animationStyle
+              )}
+              style={{
+                transformStyle: "preserve-3d",
+                transform: `translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(${
+                  focusedIndex === index ? "30deg" : "90deg"
+                }) rotateZ(0deg) skew(0deg, 0deg)`,
+              }}
+            >
+              {/* Media query styles for h2 - The book sidebar names */}
+              <style>
+                {`@media (min-width: 768px) {
+                  h2 {
+                    font-size: 1rem;
+                    line-height: 2.25rem;
+                  }
+                }`}
+              </style>
+
+              <span
+                aria-hidden
+                className="pointer-events-none fixed top-0 right-0 z-50 h-full w-full opacity-40 [filter:url(#paper)]"
+              />
+              <span
+                aria-hidden
+                className="pointer-events-none absolute top-0 left-0 z-50 h-full w-full"
+                style={{
+                  background: `linear-gradient(to right, rgba(255, 255, 255, 0) 2px, rgba(255, 255, 255, 0.5) 3px, rgba(255, 255, 255, 0.25) 4px, rgba(255, 255, 255, 0.25) 6px, transparent 7px, transparent 9px, rgba(255, 255, 255, 0.25) 9px, transparent 12px)`,
+                }}
+              />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={book.coverUrl} alt={book.title} className={clsx("h-full w-48 bg-cover", animationStyle)} />
+            </div>
+          </button>
+        ))}
+      </div>
+    </>
+  );
+}
+
+

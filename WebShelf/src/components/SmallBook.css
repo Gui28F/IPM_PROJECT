@@ -10,7 +10,7 @@
     --mobile-radius: 25px;
     --separator-height: 500px;
 
-    --bg: rgba(243, 181, 168, 0.427);
+    --bg: white;
     --mobile-bg: rgb(255, 217, 208);
     --intro-bg: rgb(255, 217, 208);
     --font-color: #807b7b;
@@ -47,13 +47,14 @@
     width: var(--mobile-width);
     height: var(--mobile-height);
     margin: 30px 0;
-    margin-left: 0.5rem;
+    margin-left: 1rem;
     border-radius: var(--mobile-radius);
     perspective: 500px;
     overflow: hidden;
     color: var(--font-color);
     background-color: var(--mobile-bg);
     box-shadow: 36px 36px 36px 15px #ceb7b1d1;
+
 
     .book-cover {
         position: relative;

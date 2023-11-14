@@ -11,7 +11,6 @@
 }
 
 .card {
-
     border-radius: 0;
     min-width: 100%;
     min-height: calc(100vh - 64px); /* Adjust based on your actual navbar height */
@@ -24,4 +23,8 @@
 .card-header{
     margin-bottom: 1.2rem;
     height: 2rem;
+}
+.card-body{
+    overflow-y: scroll;
+    max-height: 16rem;
 }

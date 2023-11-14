@@ -1,15 +1,14 @@
 .main-container-search-results {
     padding-top: 30px;
-    display: flex;
+    display: grid;
     flex-direction: column;
 }
 
 .main-book-container {
     display: grid;
     margin-top: 50px;
-
     row-gap: 50px;
-    column-gap: 0px;
+    grid-column-gap: 3rem;
     grid-template-columns: repeat(3, 1fr);
     margin-left: 10%;
     width:85%;

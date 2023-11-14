@@ -132,7 +132,7 @@
     margin-top: auto;
     margin-bottom: 2rem;
     display: grid;
-    grid-template-columns: repeat(2, 7rem);
+    grid-template-columns: repeat(6, 8rem);
 }
 
 .indv_genre {

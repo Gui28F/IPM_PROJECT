@@ -6,7 +6,7 @@
     margin-top: 1.5rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adjust the values as needed */
     border-radius: 10px;
-    min-width: 38rem;
+    min-width: 57rem;
     min-height: 35rem;
     margin-bottom: 2rem;
 }
@@ -26,8 +26,9 @@
     margin-top: 1rem;
     display: grid;
     grid-template-rows: repeat(1, 31rem auto);
-    grid-template-columns: 20rem 1fr;
-    margin-left: 1rem;
+    grid-template-columns: 20rem 100vw;
+    max-width: 70%;
+    min-width: 50%;
 }
 
 .indv_image-container {
@@ -123,10 +124,13 @@
     margin-left: 2rem;
     margin-right: 2rem;
     max-height: 32rem;
+    max-width: inherit;
 }
 .indv_synopsis_text {
     margin-bottom: 1.5rem;
     overflow-y: scroll;
+    overflow-wrap: break-word;
+    max-width: inherit;
 }
 
 .indv_genres-list {

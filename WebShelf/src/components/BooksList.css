@@ -18,6 +18,11 @@
     position: relative;
     width: 100%;
     min-width: 150px;
+    
+}
+
+.browse-all-image{
+    border-radius: 7px;
 }
 
 .image-container img {

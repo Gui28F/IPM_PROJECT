@@ -10,7 +10,7 @@ const BooksList = (props) => {
                 <Link className="book_redirect" to={`/books/${book.id}`} key={index}>
                     <div className="book-container">
                         <div className='image-container'>
-                            <img src={book.imageUrl} alt='book'></img>
+                            <img src={book.imageUrl} alt='book' className='browse-all-image'></img>
                             <div className="rating">{book.rating}
                                 <StarRateIcon className="star_rating" />
                             </div>

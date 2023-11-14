@@ -6,31 +6,28 @@
 
 :root {
     --mobile-width: 325px;
-    --mobile-height: 670px;
     --mobile-radius: 25px;
+    --mobile-height: 670px;
     --separator-height: 500px;
 
-    --bg: white;
-    --mobile-bg: rgb(255, 217, 208);
-    --intro-bg: rgb(255, 217, 208);
+    --bg: #fdf3f2;
+    --mobile-bg: #fdeae6;
+    --intro-bg: #eed7d1;
     --font-color: #807b7b;
 
     --transition: transform 0.7s ease-in-out;
 }
 
 .container-smallBook {
+    min-height: 100vh;
     display: flex;
-    margin-left:85px;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: var(--bg);
-    max-width: 13rem;
 }
 
 .info {
-    font-family: "Quicksand", sans-serif;
-    font-family: "Open Sans", sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-style: italic;
     font-size: 26px;
     margin-top: 10px;
@@ -47,18 +44,16 @@
     width: var(--mobile-width);
     height: var(--mobile-height);
     margin: 30px 0;
-    margin-left: 1rem;
     border-radius: var(--mobile-radius);
     perspective: 500px;
     overflow: hidden;
     color: var(--font-color);
     background-color: var(--mobile-bg);
-    box-shadow: 36px 36px 36px 15px #ceb7b1d1;
+    box-shadow: 36px 36px 50px 15px #eed7d1d1;
 
 
     .book-cover {
         position: relative;
-        margin-top: -26px;
         height: var(--separator-height);
         width: calc(var(--mobile-width) * 2);
         left: -52.5%;
@@ -72,29 +67,24 @@
     }
 
     .book-top {
-        width: 220px;
+        width: 170px;
         position: absolute;
-        top: 110px;
-        left: 220px;
+        top: 180px;
+        left: 250px;
         z-index: 5;
         transform: translateZ(28.5px);
     }
 
     .book-side {
         position: absolute;
-        top: 431px;
-        left: 184px;
-        right: 833px;
-        width: 292px;
-        visibility:visible;
-        transform: translateY(-13px) translateX(0px) translateZ(23px) rotateX(104deg);
-        transition: visibility 5s;
+        top: 430px;
+        left: 222px;
+        transform: translateY(-15px) translateX(0px) translateZ(15px) rotateX(104deg);
     }
 
     .preface {
         height: var(--separator-height);
-        padding-left: 40px;
-        padding-top: 14px;
+        padding: 50px;
         transition: var(--transition);
         background: white;
 
@@ -138,12 +128,19 @@
 
 .mobile-layout:hover .book-side {
     position: absolute;
-    top: 431px;
-    left: 184px;
-    right: 833px;
-    width: 292px;
-    visibility:visible;
-    transform: translateY(-13px) translateX(0px) translateZ(23px) rotateX(104deg);
+    top: 430px;
+    left: 222px;
+    transform: translateY(-15px) translateX(0px) translateZ(15px) rotateX(104deg);
+}
+
+.mobile-layout:hover .book-top {
+    width: 170px;
+    position: absolute;
+    top: 170px;
+    left: 250px;
+    z-index: 5;
+    transition: transform 1s ease-in-out;
+    transform: translateZ(28.5px);
 }
 
 .mobile-layout:hover .book-cover+.preface {
@@ -154,27 +151,22 @@
     }
 }
 
-/* .mobile-layout:hover .preface {
-    padding-left: 28px;
-    background: white;
-    padding-right: 15px;
-    margin-top: -22px;
-} */
+
 
 .mobile-layout:hover .book_mark_ico {
     position: relative;
     left: 208px;
     top: 380px;
-    display:block;
-    width: 50px;    
+    display: block;
+    width: 50px;
 }
 
 .mobile-layout:hover .favorite_ico {
     position: relative;
     left: 151px;
     top: 330px;
-    display:block;
-    width: 50px;    
+    display: block;
+    width: 50px;
 }
 
 .book_mark_ico:hover {
@@ -192,13 +184,11 @@
 }
 
 .book_mark_ico {
-    display:none;
+    display: none;
     cursor: pointer;
 }
 
 .favorite_ico {
-    display:none;
+    display: none;
     cursor: pointer;
 }
-
-

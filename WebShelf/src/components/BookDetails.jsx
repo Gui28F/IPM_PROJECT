@@ -11,6 +11,7 @@ import favoriteTicked from "../assets/favorite_ticked.svg";
 import { Box, Checkbox, Modal, Rating, Typography } from "@mui/material";
 import StarBorderIcon from "@mui/icons-material/StarBorder";
 import { users, books } from "./Data.jsx";
+import CloseIcon from '@mui/icons-material/Close';
 
 const BookDetails = (props) => {
     const location = useLocation();
@@ -239,16 +240,15 @@ const BookDetails = (props) => {
                     aria-labelledby="modal-modal-title"
                     aria-describedby="modal-modal-description"
                 >
-                    <Box className={"modal-box"}>
+                    <Box closeButton className={"modal-box"}>
                         <Typography
                             className="modal-modal-title"
                             variant="h6"
                             component="h2"
                         >
                             Shelves
-                            <button className="modal-close-button" onClick={() => handleClose()}>
-                                x
-                            </button>
+                            <CloseIcon className="close-icon-details"></CloseIcon>
+                            
                         </Typography>
 
                         {currentUser.shelves.map((shelf) => (

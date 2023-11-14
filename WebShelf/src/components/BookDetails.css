@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+  }
+
 .indv_out-container {
     display: grid;
     background-color: #e7e5e5;
@@ -127,6 +131,7 @@
 .indv_synopsis_text {
     margin-bottom: 1.5rem;
     overflow-y: scroll;
+    overflow: hidden;
 }
 
 .indv_genres-list {
@@ -135,6 +140,8 @@
     display: grid;
     grid-template-columns: repeat(6, 8rem);
 }
+
+
 
 .indv_genre {
     display: flex;

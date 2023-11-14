@@ -11,20 +11,24 @@
     margin-bottom: 2rem;
 }
 
-
-.indv_book-title{
+.indv_book-title {
     margin-top: 1rem;
     margin-left: 1rem;
 }
 
-.indv_details-container{
+.indiv_book_author {
+    margin-top: 0.5rem;
+    margin-left: 1rem;
+    font-size: 1.5em;
+}
+
+.indv_details-container {
     margin-top: 1rem;
     display: grid;
-    grid-template-rows: repeat(1,31rem auto);
+    grid-template-rows: repeat(1, 31rem auto);
     grid-template-columns: 20rem 1fr;
     margin-left: 1rem;
 }
-
 
 .indv_image-container {
     width: 20rem;
@@ -43,13 +47,13 @@
     border-radius: 1rem;
 }
 
-.indv_image-container:hover #book-img{
+.indv_image-container:hover #book-img {
     filter: brightness(0.4);
 }
 .indv_icons {
     position: absolute;
-    display:grid;
-    grid-template-columns: repeat(2,2rem);
+    display: grid;
+    grid-template-columns: repeat(2, 2rem);
     grid-column-gap: 1rem;
     top: 80%;
     left: 43%;
@@ -90,10 +94,9 @@
     cursor: pointer;
 }
 
-.indv_rating_stars{
+.indv_rating_stars {
     margin-top: 1rem !important;
 }
-
 
 .indv_add_to_shelf {
     display: flex;
@@ -112,21 +115,19 @@
 }
 
 .indv_add_to_shelf:hover {
-    transition:transform .2s ease-in-out;
+    transition: transform 0.2s ease-in-out;
     transform: scale(1.02);
 }
-.indv_synopsis{
+.indv_synopsis {
     display: grid;
     margin-left: 2rem;
     margin-right: 2rem;
     max-height: 32rem;
 }
-.indv_synopsis_text{
+.indv_synopsis_text {
     margin-bottom: 1.5rem;
     overflow-y: scroll;
 }
-
-
 
 .indv_genres-list {
     margin-top: auto;
@@ -144,7 +145,7 @@
     border-radius: 4px; /* Optional: Add rounded corners */
     margin-right: 1rem;
 }
-.modal-box{
+.modal-box {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -155,10 +156,10 @@
     text-align: center;
     border-radius: 10px;
 }
-.modal-modal-title{
+.modal-modal-title {
     margin-bottom: 1.5rem !important;
 }
-.indv_submit_button{
+.indv_submit_button {
     margin-bottom: 2rem;
     margin-top: 2rem;
     align-items: center; /* Center the content vertically */
@@ -167,8 +168,8 @@
     border-radius: 1rem;
     border: 2px solid #ccc;
 }
-.indv_submit_button:hover{
-   background-color: #dde1e8;
+.indv_submit_button:hover {
+    background-color: #dde1e8;
 }
 
 .indv_shelf_row {
@@ -182,9 +183,10 @@
     margin-left: 8px; /* Adjust the margin as needed */
 }
 
-.indv_new_shelf_input, .indv_new_shelf_input:focus{
+.indv_new_shelf_input,
+.indv_new_shelf_input:focus {
     border: none;
-    outline:none;
+    outline: none;
     border-bottom: 2px solid black;
 }
 

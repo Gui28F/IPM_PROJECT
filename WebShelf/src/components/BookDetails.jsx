@@ -247,7 +247,7 @@ const BookDetails = (props) => {
                             component="h2"
                         >
                             Shelves
-                            <CloseIcon className="close-icon-details"></CloseIcon>
+                            <CloseIcon className="close-icon-details" onClick={handleClose}></CloseIcon>
                             
                         </Typography>
 

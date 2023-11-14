@@ -211,3 +211,6 @@
     left: 30px;
 }
 
+.close-icon-details:hover {
+    cursor: pointer;
+}

@@ -1,3 +1,17 @@
+import book1 from '../assets/book_covers/hp_phil_cover.svg';
+import book2 from '../assets/book_covers/hp_chamber_cover.svg';
+import book3 from '../assets/book_covers/hp_pris_cover.svg';
+import book4 from '../assets/book_covers/dune_cover.svg';
+import book5 from '../assets/book_covers/anne_cover.svg';
+import book6 from '../assets/book_covers/prince_cover.svg';
+import book7 from '../assets/book_covers/1984_cover.svg';
+import book8 from '../assets/book_covers/gatsby_cover.svg';
+import book9 from '../assets/book_covers/lotr_cover.svg';
+import book10 from '../assets/book_covers/narnia_cover.svg';
+import book11 from '../assets/book_covers/flies_cover.svg';
+import book12 from '../assets/book_covers/seuss_cover.svg';
+import book13 from '../assets/book_covers/dorian_cover.svg';
+import book14 from '../assets/book_covers/quixote_cover.svg';
 export const books = [
     {
         id: 1,
@@ -5,7 +19,7 @@ export const books = [
         genres: ["Fantasy","Fiction","Young Adult","Magic"],
         rating: 4,
         author: "J. K. Rowling",
-        imageUrl: "/IPM_PROJECT/src/assets/book_covers/hp_phil_cover.svg",
+        imageUrl: book1,
         synopsis: "Harry Potter lives with his abusive aunt and uncle, Vernon and Petunia Dursley, and their bullying son, Dudley." +
         "On Harry's eleventh birthday, Rubeus Hagrid, a half-giant, delivers an acceptance letter from Hogwarts School of Witchcraft" +
         "and Wizardry, revealing that Harry's parents, James and Lily Potter, were wizards. When Harry was just a year old, a powerful" +
@@ -19,7 +33,7 @@ export const books = [
         genres: ["Fantasy","Fiction","Young Adult","Magic"],
         rating: 3,
         author: "J. K. Rowling",
-        imageUrl: "/IPM_PROJECT/src/assets/book_covers/hp_chamber_cover.svg",
+        imageUrl: book2,
         synopsis: "This is the synopsis for Book 1. It can contain a brief description of the book."
     },
     {
@@ -28,7 +42,7 @@ export const books = [
         genres: ["Fantasy","Fiction","Young Adult","Magic"],
         rating: 4,
         author: "J. K. Rowling",
-        imageUrl: "/IPM_PROJECT/src/assets/book_covers/hp_pris_cover.svg",
+        imageUrl: book3,
         synopsis: "This is the synopsis for Book 1. It can contain a brief description of the book."
     },
     {
@@ -37,7 +51,7 @@ export const books = [
         genres: ["Science Fiction","Fiction"],
         rating: 4,
         author: "Frank Herbert",
-        imageUrl: "/IPM_PROJECT/src/assets/book_covers/dune_cover.svg",
+        imageUrl: book4,
         synopsis: "This is the synopsis for Book 1. It can contain a brief description of the book."
     },
     {
@@ -46,7 +60,7 @@ export const books = [
         genres: ["Nonfiction","Biography"],
         rating: 1,
         author: "Anne Frank",
-        imageUrl: "/IPM_PROJECT/src/assets/book_covers/anne_cover.svg",
+        imageUrl: book5,
         synopsis: "This is the synopsis for Book 1. It can contain a brief description of the book."
     },
     {
@@ -55,7 +69,7 @@ export const books = [
         genres: ["Fiction","Fantasy","Childrens"],
         rating: 4,
         author: "Antoine de Saint-Exupéry",
-        imageUrl: "/IPM_PROJECT/src/assets/book_covers/prince_cover.svg",
+        imageUrl: book6,
         synopsis: "This is the synopsis for Book 1. It can contain a brief description of the book."
     },
     {
@@ -64,7 +78,7 @@ export const books = [
         genres: ["Dystopia","Science Fiction","Politics"],
         rating: 4,
         author: "George Orwell",
-        imageUrl: "/IPM_PROJECT/src/assets/book_covers/1984_cover.svg",
+        imageUrl: book7,
         synopsis: "This is the synopsis for Book 1. It can contain a brief description of the book."
     },
     {
@@ -73,7 +87,7 @@ export const books = [
         genres: ["Fiction","Romance"],
         rating: 1,
         author: "F. Scott Fitzgerald",
-        imageUrl: "/IPM_PROJECT/src/assets/book_covers/gatsby_cover.svg",
+        imageUrl: book8,
         synopsis: "This is the synopsis for Book 1. It can contain a brief description of the book."
     },  {
         id: 9,
@@ -81,7 +95,7 @@ export const books = [
         genres: ["Fantasy","Fiction","Adventure"],
         rating: 4,
         author: "J.R.R. Tolkien",
-        imageUrl: "/IPM_PROJECT/src/assets/book_covers/lotr_cover.svg",
+        imageUrl: book9,
         synopsis: "This is the synopsis for Book 1. It can contain a brief description of the book."
     },
     {
@@ -90,7 +104,7 @@ export const books = [
         genres: ["Fantasy","Fiction","Adventure"],
         rating: 1,
         author: "C.S. Lewis",
-        imageUrl: "/IPM_PROJECT/src/assets/book_covers/narnia_cover.svg",
+        imageUrl: book10,
         synopsis: "This is the synopsis for Book 1. It can contain a brief description of the book."
     },  {
         id: 11,
@@ -98,7 +112,7 @@ export const books = [
         genres: ["Dystiopia","Fiction"],
         rating: 4,
         author: "William Golding",
-        imageUrl: "/IPM_PROJECT/src/assets/book_covers/flies_cover.svg",
+        imageUrl: book11,
         synopsis: "This is the synopsis for Book 1. It can contain a brief description of the book."
     },
     {
@@ -107,7 +121,7 @@ export const books = [
         genres: ["Childrens","Fiction","Poetry"],
         rating: 1,
         author: "Dr. Seuss",
-        imageUrl: "/IPM_PROJECT/src/assets/book_covers/seuss_cover.svg",
+        imageUrl: book12,
         synopsis: "This is the synopsis for Book 1. It can contain a brief description of the book."
     },  {
         id: 13,
@@ -115,7 +129,7 @@ export const books = [
         genres: ["Fiction","Fantasy","Gothic"],
         rating: 4,
         author: "Oscar Wilde",
-        imageUrl: "/IPM_PROJECT/src/assets/book_covers/dorian_cover.svg",
+        imageUrl: book13,
         synopsis: "This is the synopsis for Book 1. It can contain a brief description of the book."
     },
     {
@@ -124,7 +138,7 @@ export const books = [
         genres: ["Fiction","Literature"],
         rating: 1,
         author: "Miguel de Cervantes Saavedra",
-        imageUrl: "/IPM_PROJECT/src/assets/book_covers/quixote_cover.svg",
+        imageUrl: book14,
         synopsis: "This is the synopsis for Book 1. It can contain a brief description of the book."
     }
 ];

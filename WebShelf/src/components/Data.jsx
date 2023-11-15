@@ -1,17 +1,17 @@
-import book1 from '../assets/book_covers/hp_phil_cover.svg';
-import book2 from '../assets/book_covers/hp_chamber_cover.svg';
-import book3 from '../assets/book_covers/hp_pris_cover.svg';
-import book4 from '../assets/book_covers/dune_cover.svg';
-import book5 from '../assets/book_covers/anne_cover.svg';
-import book6 from '../assets/book_covers/prince_cover.svg';
-import book7 from '../assets/book_covers/1984_cover.svg';
-import book8 from '../assets/book_covers/gatsby_cover.svg';
-import book9 from '../assets/book_covers/lotr_cover.svg';
-import book10 from '../assets/book_covers/narnia_cover.svg';
-import book11 from '../assets/book_covers/flies_cover.svg';
-import book12 from '../assets/book_covers/seuss_cover.svg';
-import book13 from '../assets/book_covers/dorian_cover.svg';
-import book14 from '../assets/book_covers/quixote_cover.svg';
+import book1 from '../assets/book_covers/hp_phil_cover.jpg';
+import book2 from '../assets/book_covers/hp_chamber_cover.jpg';
+import book3 from '../assets/book_covers/hp_pris_cover.jpg';
+import book4 from '../assets/book_covers/dune_cover.jpg';
+import book5 from '../assets/book_covers/anne_cover.jpg';
+import book6 from '../assets/book_covers/prince_cover.jpg';
+import book7 from '../assets/book_covers/1984_cover.jpg';
+import book8 from '../assets/book_covers/gatsby_cover.jpg';
+import book9 from '../assets/book_covers/lotr_cover.jpg';
+import book10 from '../assets/book_covers/narnia_cover.jpg';
+import book11 from '../assets/book_covers/flies_cover.jpg';
+import book12 from '../assets/book_covers/seuss_cover.jpg';
+import book13 from '../assets/book_covers/dorian_cover.jpg';
+import book14 from '../assets/book_covers/quixote_cover.jpg';
 export const books = [
     {
         id: 1,

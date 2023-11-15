@@ -7,11 +7,11 @@
 .main-book-container {
     display: grid;
     margin-top: 50px;
-    row-gap: 50px;
-    grid-column-gap: 3rem;
-    grid-template-columns: repeat(3, 1fr);
-    margin-left: 10%;
-    width:85%;
+    row-gap: 28px;
+    grid-column-gap: 0rem;
+    grid-template-columns: repeat(4, 1fr);
+    margin-left: 5%;
+    width: 95%;
 }
 
 .search-results-header {

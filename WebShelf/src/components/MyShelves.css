@@ -66,10 +66,6 @@
     color:inherit;
 }
 
-.book-container:hover{
-    cursor: pointer;
-    background-color: #e4e4e4;;
-}
 
 .rating {
     position: absolute;
@@ -84,15 +80,7 @@
     transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
 }
 
-.book-container:hover .image-container img {
-    filter: brightness(0.7);
-}
 
-
-.book-container:hover .rating {
-    opacity: 1;
-    visibility: visible;
-}
 
 .rating {
     z-index: 10;

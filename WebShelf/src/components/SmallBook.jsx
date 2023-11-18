@@ -110,7 +110,7 @@ const SmallBook = (props) => {
   };
 
   return (
-    <Link to={"/books/" + 1} className="link-no-underline">
+    <Link to={"/books/" + book.id} className="link-no-underline">
       <div className="small-book-container">
         <div className="small-book-image">
         <img className="book-top" src={book.imageUrl} alt="book-top" />

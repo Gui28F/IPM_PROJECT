@@ -11,6 +11,7 @@ import { Box, Checkbox, Modal, Rating, Typography, Popover } from "@mui/material
 import StarBorderIcon from "@mui/icons-material/StarBorder";
 import { users, books } from "./Data.jsx";
 import CloseIcon from '@mui/icons-material/Close';
+import StarRateIcon from "@mui/icons-material/StarRate.js";
 
 
 
@@ -374,12 +375,17 @@ const BookDetails = (props) => {
                     </div>
                     <div className="indv_synopsis">
                         <div className="indv_synopsis_text">{book.synopsis}</div>
+                        <div className="indv_infos">
+                        <div className="indv_rating">
+                            <StarRateIcon className="indv_star_rating" />{book.rating}/5
+                        </div>
                         <div className="indv_genres-list">
                             {book.genres.map((genre, index) => (
                                 <span key={index} className="indv_genre">
                                     {genre}
                                 </span>
                             ))}
+                        </div>
                         </div>
                     </div>
                     <div className="indv_add_to_shelf" onClick={handleOpen}>

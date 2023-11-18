@@ -29,6 +29,7 @@
 .indv_details-container {
     margin-top: 1rem;
     display: grid;
+    margin-left: 30px;
     grid-template-rows: repeat(1, 31rem auto);
     grid-template-columns: 20rem 100vw;
     max-width: 70%;
@@ -223,4 +224,22 @@
 
 .close-icon-details:hover {
     cursor: pointer;
+}
+.indv_rating{
+
+    font-size: 18px;
+    flex-direction:column;
+    justify-content:flex-end;
+    margin-bottom: 1rem ;
+}
+.indv_star_rating{
+    margin-left: 1rem;
+    margin-right: 1rem;
+    color: black;
+    transform: translateY(-0.23rem) scale(1.6);
+
+}
+
+.indv_infos{
+    margin-top: auto;
 }

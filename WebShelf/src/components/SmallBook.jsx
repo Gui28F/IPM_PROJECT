@@ -1,9 +1,9 @@
 import "./SmallBook.css";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import bookMark from "../assets/book_mark.svg";
+import bookMark from "../assets/book_mark_white.svg";
 import bookMarkTicked from "../assets/book_mark_ticked.svg";
-import favorite from "../assets/favorite.svg";
+import favorite from "../assets/favorite_white.svg";
 import favoriteTicked from "../assets/favorite_ticked.svg";
 import { Typography, Popover } from "@mui/material";
 import { users } from "./Data.jsx";
@@ -110,23 +110,13 @@ const SmallBook = (props) => {
   };
 
   return (
-    <Link to={"/books/" + 1} className="link-no-underline">
+    <Link to={"/books/" + book.id} className="link-no-underline">
       <div className="small-book-container">
         <div className="small-book-image">
-          <img className="book-top" src={book.imageUrl} alt="book-top" />
-        </div>
-        <div className="small-book-preface">
-            <div className="header small_book_title">
-              {book.title}
-            </div>
-            <div>
-              <div className="author">{book.author}</div>
-              <div className="body">
-              <p>
-                {book.synopsis}
-                {book.author}
-              </p>
-                {!bookmarkTicked && (
+        <img className="book-top" src={book.imageUrl} alt="book-top" />
+          <div className="small-cover">
+          
+          {!bookmarkTicked && (
                   <div>
                     <Typography
                       aria-owns={openPopupBMark ? 'mouse-over-popover' : undefined}
@@ -134,7 +124,7 @@ const SmallBook = (props) => {
                       onMouseEnter={handlePopoverOpenBMark}
                       onMouseLeave={handlePopoverCloseBMark}
                     >
-                      <img
+                      <img className="small-cover-icons"
                         alt="favourites"
                         src={bookMark}
                         onClick={toggleBookmark}
@@ -149,7 +139,7 @@ const SmallBook = (props) => {
                       anchorEl={anchorBMark}
                       anchorOrigin={{
                         vertical: 'top',
-                        horizontal: 'right',
+                        horizontal: 'center',
                       }}
                       transformOrigin={{
                         vertical: 'bottom',
@@ -170,7 +160,7 @@ const SmallBook = (props) => {
                       onMouseEnter={handlePopoverOpenBMark}
                       onMouseLeave={handlePopoverCloseBMark}
                     >
-                      <img
+                      <img className="small-cover-icons"
                         alt="favourites"
                         src={bookMarkTicked}
                         onClick={toggleBookmark}
@@ -185,7 +175,7 @@ const SmallBook = (props) => {
                       anchorEl={anchorBMark}
                       anchorOrigin={{
                         vertical: 'top',
-                        horizontal: 'right',
+                        horizontal: 'center',
                       }}
                       transformOrigin={{
                         vertical: 'bottom',
@@ -206,7 +196,7 @@ const SmallBook = (props) => {
                       onMouseEnter={handlePopoverOpenFav}
                       onMouseLeave={handlePopoverCloseFav}
                     >
-                      <img
+                      <img className="small-cover-icons"
                         src={favorite}
                         onClick={toggleFavorite}
                       ></img>
@@ -220,7 +210,7 @@ const SmallBook = (props) => {
                       anchorEl={anchorFav}
                       anchorOrigin={{
                         vertical: 'top',
-                        horizontal: 'right',
+                        horizontal: 'center',
                       }}
                       transformOrigin={{
                         vertical: 'bottom',
@@ -241,7 +231,7 @@ const SmallBook = (props) => {
                       onMouseEnter={handlePopoverOpenFav}
                       onMouseLeave={handlePopoverCloseFav}
                     >
-                      <img
+                      <img className="small-cover-icons"
                         src={favoriteTicked}
                         onClick={toggleFavorite}
                       ></img>
@@ -255,7 +245,7 @@ const SmallBook = (props) => {
                       anchorEl={anchorFav}
                       anchorOrigin={{
                         vertical: 'top',
-                        horizontal: 'right',
+                        horizontal: 'center',
                       }}
                       transformOrigin={{
                         vertical: 'bottom',
@@ -268,6 +258,21 @@ const SmallBook = (props) => {
                     </Popover>
                   </div>
                 )}
+              
+          </div>
+        </div>
+        <div className="small-book-preface">
+            <div className="header small_book_title">
+              {book.title}
+            </div>
+            <div>
+              <div className="author">{book.author}</div>
+              <div className="body">
+              <p>
+                
+                {book.synopsis}
+              </p>
+                
               </div>
           </div>
         </div>

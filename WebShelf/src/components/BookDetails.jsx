@@ -11,6 +11,7 @@ import { Box, Checkbox, Modal, Rating, Typography, Popover } from "@mui/material
 import StarBorderIcon from "@mui/icons-material/StarBorder";
 import { users, books } from "./Data.jsx";
 import CloseIcon from '@mui/icons-material/Close';
+import StarRateIcon from "@mui/icons-material/StarRate.js";
 
 
 
@@ -18,6 +19,7 @@ const BookDetails = (props) => {
 
     const [anchorFav, setAnchorFav] = React.useState(null);
     const [anchorBMark, setAnchorBMark] = React.useState(null);
+    
 
     const handlePopoverOpenFav = (event) => {
         setAnchorFav(event.currentTarget);
@@ -69,6 +71,8 @@ const BookDetails = (props) => {
 
         return !!isBookInToRead; // Set to true if the book is in "To Read" shelf, false otherwise
     });
+
+    const [customTicked, setCustomTicked] = useState(false);
     const [rating, setRating] = useState(0);
     const [open, setOpen] = React.useState(false);
     const [selectedShelves, setSelectedShelves] = useState([]);
@@ -188,6 +192,13 @@ const BookDetails = (props) => {
                 shelf === newShelfName ? newName : shelf
             )
         );
+
+        if(newName != "" && !customTicked){
+            console.log("Not null")
+            setCustomTicked(!customTicked)
+        } else if(newName == "") {
+            setCustomTicked(!customTicked)
+        }
     };
 
     const currentUser = users[0];
@@ -364,12 +375,17 @@ const BookDetails = (props) => {
                     </div>
                     <div className="indv_synopsis">
                         <div className="indv_synopsis_text">{book.synopsis}</div>
+                        <div className="indv_infos">
+                        <div className="indv_rating">
+                            <StarRateIcon className="indv_star_rating" />{book.rating}/5
+                        </div>
                         <div className="indv_genres-list">
                             {book.genres.map((genre, index) => (
                                 <span key={index} className="indv_genre">
                                     {genre}
                                 </span>
                             ))}
+                        </div>
                         </div>
                     </div>
                     <div className="indv_add_to_shelf" onClick={handleOpen}>
@@ -412,7 +428,7 @@ const BookDetails = (props) => {
                             ))}
                             <div className="indv_add_shelf_container">
                                 <Checkbox
-                                    checked={selectedShelves.includes(newShelfName)}
+                                    checked={selectedShelves.includes(newShelfName) || customTicked}
                                     onChange={() => {
                                         setSelectedShelves((prevSelected) =>
                                             prevSelected.includes(newShelfName)

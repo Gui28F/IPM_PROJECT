@@ -7,7 +7,7 @@ import book11 from '../assets/book_covers/flies_cover.jpg';
 import book12 from '../assets/book_covers/seuss_cover.jpg';
 import book13 from '../assets/book_covers/dorian_cover.jpg';
 import book14 from '../assets/book_covers/quixote_cover.jpg';
-
+import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/solid'; // Import the icons
 
 const listContainerStyles = {
     margin: 'auto',
@@ -218,12 +218,12 @@ export default function Shelves() {
           </button>
         ))}
       </div>
-      <div style={{ transform: 'translateY(40.5rem)' }} className="flex justify-center mt-4 buttons-container" >
-        <button onClick={handlePrevPage} className="mr-2 px-4 py-2 bg-gray-800 text-white">
-          Prev
+      <div className="flex justify-between mt-4" style={{ transform: 'translateY(25.5rem)' }}>
+        <button onClick={handlePrevPage} className="px-2 py-2 ml-4 bg-gray-800 text-white">
+          <ChevronLeftIcon className="h-6 w-6" /> {/* Left Arrow Icon */}
         </button>
-        <button onClick={handleNextPage} className="px-4 py-2 bg-gray-800 text-white">
-          Next
+        <button onClick={handleNextPage} className="px-2 py-2 mr-4 bg-gray-800 text-white">
+          <ChevronRightIcon className="h-6 w-6" /> {/* Right Arrow Icon */}
         </button>
       </div>
     </>

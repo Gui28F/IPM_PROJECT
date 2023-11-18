@@ -7,7 +7,8 @@ import book11 from '../assets/book_covers/flies_cover.jpg';
 import book12 from '../assets/book_covers/seuss_cover.jpg';
 import book13 from '../assets/book_covers/dorian_cover.jpg';
 import book14 from '../assets/book_covers/quixote_cover.jpg';
-import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/solid'; // Import the icons
+import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/solid';
+import {Link} from "react-router-dom"; // Import the icons
 
 const listContainerStyles = {
     margin: 'auto',
@@ -212,7 +213,9 @@ export default function Shelves() {
                 }}
               />
               {/* eslint-disable-next-line @next/next/no-img-element */}
+                <Link to={"/books/"+1}>
               <img src={book.coverUrl} alt={book.title} className={clsx("h-full w-48 bg-cover", animationStyle)} />
+                </Link>
             </div>
           </button>
         ))}

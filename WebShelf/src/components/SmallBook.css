@@ -244,6 +244,7 @@
 .small-book-image {
     width: 50%;
     border-radius: 14px;
+    max-height: revert !important;
 }
 
 .book-top {

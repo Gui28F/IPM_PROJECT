@@ -12,9 +12,10 @@ import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/solid'; // I
 const listContainerStyles = {
     margin: 'auto',
     position: 'absolute',
-    top: '40%',
-    right: '40%', // Adjust the percentage as needed
-    width: 'calc((44px + 24px) * 10)', // Adjust based on the book width and spacing, and the number of books per page
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -35%)',
+    width: 'calc((44px + 24px) * 10)',
 };
 
 const buttonsContainerStyles = {
@@ -97,8 +98,6 @@ const books = [
     spineBackgroundColor : "#ffffff",
     spineForegroundColor : "#050505",
  }
- 
-
 ];
 
 const animationStyle = "transition-all duration-500 ease will-change-auto";

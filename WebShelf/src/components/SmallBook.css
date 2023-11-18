@@ -169,6 +169,18 @@
     box-sizing: border-box;
 }
 
+/* Hide scrollbar but keep functionality*/
+*::-webkit-scrollbar {
+    display: none;
+}
+* {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+
 .link-no-underline {
     text-decoration: none !important;
     color: inherit !important;
@@ -182,27 +194,35 @@
     margin-bottom: 0px;
 }
 
-.header {
-
-}
 
 .small_book_title {
     font-weight: bolder;
     font-size: 1.2rem;
     word-wrap: break-word;
-    
+
 }
 
 .small-book-preface {
-    width: 50%;
+    width: 52%;
     max-height: 100px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-content: flex-start;
     justify-content: flex-start;
-    margin-top: 10px;
     overflow: hidden;
+    padding:10px;
+    margin-left: -5px;
+    margin-bottom: ;
+    margin-left: ;
+    margin-right: ;
+    background-color: #fcf7f0;
+    border-radius: 10px;
+}
+
+.author {
+    font-size: 1.1rem;
+    text-decoration: underline;
 }
 
 .small-book-container:hover .small-book-preface {
@@ -214,20 +234,39 @@
 
 .small-book-container:hover .book-top {
     filter: brightness(0.6);
-    transform:  translateY(-10px) scale(1.1);
+    transform: translateY(-10px) scale(1.1);
     transition: all 1s ease-in-out();
     box-shadow: 10px -2px 10px #81818196;
+}
+
+.small-book-container:hover .small-cover {
+    visibility: visible;
 }
 
 .small-book-image {
     width: 50%;
     box-shadow: 10px -2px 10px #818181;
     border-radius: 14px;
+    height: 332px;
 }
 
 .book-top {
     border-radius: 13px;
-    
+
+}
+
+.small-cover {
+    display: flex;
+    color: white;
+    flex-direction: row;
+    bottom: 196px;
+    position: relative;
+    visibility: hidden;
+    justify-content: space-around;
+}
+
+.small-cover-icons {
+    width: 50px;
 }
 
 
@@ -253,4 +292,9 @@
 .favorite_ico {
     display: none;
     cursor: pointer;
+}
+
+.main-container-search-results {
+    overflow: hidden;
+    /* Hide scrollbars */
 }

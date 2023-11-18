@@ -18,6 +18,7 @@ const BookDetails = (props) => {
 
     const [anchorFav, setAnchorFav] = React.useState(null);
     const [anchorBMark, setAnchorBMark] = React.useState(null);
+    
 
     const handlePopoverOpenFav = (event) => {
         setAnchorFav(event.currentTarget);
@@ -69,6 +70,8 @@ const BookDetails = (props) => {
 
         return !!isBookInToRead; // Set to true if the book is in "To Read" shelf, false otherwise
     });
+
+    const [customTicked, setCustomTicked] = useState(false);
     const [rating, setRating] = useState(0);
     const [open, setOpen] = React.useState(false);
     const [selectedShelves, setSelectedShelves] = useState([]);
@@ -188,6 +191,13 @@ const BookDetails = (props) => {
                 shelf === newShelfName ? newName : shelf
             )
         );
+
+        if(newName != "" && !customTicked){
+            console.log("Not null")
+            setCustomTicked(!customTicked)
+        } else if(newName == "") {
+            setCustomTicked(!customTicked)
+        }
     };
 
     const currentUser = users[0];
@@ -412,7 +422,7 @@ const BookDetails = (props) => {
                             ))}
                             <div className="indv_add_shelf_container">
                                 <Checkbox
-                                    checked={selectedShelves.includes(newShelfName)}
+                                    checked={selectedShelves.includes(newShelfName) || customTicked}
                                     onChange={() => {
                                         setSelectedShelves((prevSelected) =>
                                             prevSelected.includes(newShelfName)

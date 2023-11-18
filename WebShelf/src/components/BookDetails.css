@@ -29,6 +29,7 @@
 .indv_details-container {
     margin-top: 1rem;
     display: grid;
+    margin-left: 30px;
     grid-template-rows: repeat(1, 31rem auto);
     grid-template-columns: 20rem 100vw;
     max-width: 70%;

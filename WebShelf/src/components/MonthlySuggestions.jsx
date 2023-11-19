@@ -116,11 +116,15 @@ export default function Shelves() {
   const handleNextPage = () => {
     const totalPages = Math.ceil(books.length / booksPerPage);
     setCurrentPage((prevPage) => (prevPage + 1) % totalPages);
+    // Reser the focused index when changing pages
+    setFocusedIndex(-1);
   };
 
   const handlePrevPage = () => {
     const totalPages = Math.ceil(books.length / booksPerPage);
     setCurrentPage((prevPage) => (prevPage - 1 + totalPages) % totalPages);
+    // Reser the focused index when changing pages
+    setFocusedIndex(-1);
   };
 
   return (

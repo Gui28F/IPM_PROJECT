@@ -10,6 +10,7 @@ import MonthlySuggestions from "./components/MonthlySuggestions.jsx";
 import MyShelves from "./components/MyShelves.jsx";
 import SearchResults from './components/SearchResults.jsx';
 import BookDetails from "./components/BookDetails.jsx";
+import Shelf from "./components/Shelf.jsx";
 const App = () => {
   return (
     <>
@@ -23,6 +24,7 @@ const App = () => {
                 <Route path="/new_releases" element={<NewReleases/>}/>
                 <Route path="/search_results" element={<SearchResults/>}/>
                 <Route path="/books/:id" element={<BookDetails />} />
+                <Route path="/shelves/:id" element={<Shelf />} />
                 <Route path="/search_results" element={<SearchResults/>}/>
             </Routes>
         </BrowserRouter>

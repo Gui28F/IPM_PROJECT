@@ -148,12 +148,14 @@ export const users=[
         shelves:[{
             id : 1,
             name: "Favourites",
-            books:["Don Quixote", "Green Eggs and Ham"]
+            books:["Don Quixote", "Green Eggs and Ham"],
+            booksIDs: [14, 12],
         },
         {
             id : 2,
             name: "To Read",
-            books:["The Picture of Dorian Gray"]
+            books:["The Picture of Dorian Gray"],
+            booksIDs: [13],
         }]
     }
 ]

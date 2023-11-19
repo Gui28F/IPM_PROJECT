@@ -110,174 +110,179 @@ const SmallBook = (props) => {
   };
 
   return (
-    <Link to={"/books/" + book.id} className="link-no-underline">
-      <div className="small-book-container">
-        <div className="small-book-image">
-        <img className="book-top" src={book.imageUrl} alt="book-top" />
-          <div className="small-cover">
-          
+
+    <div className="small-book-container">
+      <div className="small-book-image">
+        <Link to={"/books/" + book.id} className="link-no-underline">
+          <img className="book-top" src={book.imageUrl} alt="book-top" />
+        </Link>
+
+        <div className="small-cover">
+
           {!bookmarkTicked && (
-                  <div>
-                    <Typography
-                      aria-owns={openPopupBMark ? 'mouse-over-popover' : undefined}
-                      aria-haspopup="true"
-                      onMouseEnter={handlePopoverOpenBMark}
-                      onMouseLeave={handlePopoverCloseBMark}
-                    >
-                      <img className="small-cover-icons"
-                        alt="favourites"
-                        src={bookMark}
-                        onClick={toggleBookmark}
-                      ></img>
-                    </Typography>
-                    <Popover
-                      id="mouse-over-popover"
-                      sx={{
-                        pointerEvents: 'none',
-                      }}
-                      open={openPopupBMark}
-                      anchorEl={anchorBMark}
-                      anchorOrigin={{
-                        vertical: 'top',
-                        horizontal: 'center',
-                      }}
-                      transformOrigin={{
-                        vertical: 'bottom',
-                        horizontal: 'center',
-                      }}
-                      onClose={handlePopoverCloseBMark}
-                      disableRestoreFocus
-                    >
-                      <Typography sx={{ p: 1 }}>Add to Bookmarks</Typography>
-                    </Popover>
-                  </div>
-                )}
-                {bookmarkTicked && (
-                  <div>
-                    <Typography
-                      aria-owns={openPopupBMark ? 'mouse-over-popover' : undefined}
-                      aria-haspopup="true"
-                      onMouseEnter={handlePopoverOpenBMark}
-                      onMouseLeave={handlePopoverCloseBMark}
-                    >
-                      <img className="small-cover-icons"
-                        alt="favourites"
-                        src={bookMarkTicked}
-                        onClick={toggleBookmark}
-                      ></img>
-                    </Typography>
-                    <Popover
-                      id="mouse-over-popover"
-                      sx={{
-                        pointerEvents: 'none',
-                      }}
-                      open={openPopupBMark}
-                      anchorEl={anchorBMark}
-                      anchorOrigin={{
-                        vertical: 'top',
-                        horizontal: 'center',
-                      }}
-                      transformOrigin={{
-                        vertical: 'bottom',
-                        horizontal: 'center',
-                      }}
-                      onClose={handlePopoverCloseBMark}
-                      disableRestoreFocus
-                    >
-                      <Typography sx={{ p: 1 }}>Remove from Bookmarks</Typography>
-                    </Popover>
-                  </div>
-                )}
-                {!favTicked && (
-                  <div>
-                    <Typography
-                      aria-owns={openPopupFav ? 'mouse-over-popover' : undefined}
-                      aria-haspopup="true"
-                      onMouseEnter={handlePopoverOpenFav}
-                      onMouseLeave={handlePopoverCloseFav}
-                    >
-                      <img className="small-cover-icons"
-                        src={favorite}
-                        onClick={toggleFavorite}
-                      ></img>
-                    </Typography>
-                    <Popover
-                      id="mouse-over-popover"
-                      sx={{
-                        pointerEvents: 'none',
-                      }}
-                      open={openPopupFav}
-                      anchorEl={anchorFav}
-                      anchorOrigin={{
-                        vertical: 'top',
-                        horizontal: 'center',
-                      }}
-                      transformOrigin={{
-                        vertical: 'bottom',
-                        horizontal: 'center',
-                      }}
-                      onClose={handlePopoverCloseFav}
-                      disableRestoreFocus
-                    >
-                      <Typography sx={{ p: 1 }}>Add to favorites</Typography>
-                    </Popover>
-                  </div>
-                )}
-                {favTicked && (
-                  <div>
-                    <Typography
-                      aria-owns={openPopupFav ? 'mouse-over-popover' : undefined}
-                      aria-haspopup="true"
-                      onMouseEnter={handlePopoverOpenFav}
-                      onMouseLeave={handlePopoverCloseFav}
-                    >
-                      <img className="small-cover-icons"
-                        src={favoriteTicked}
-                        onClick={toggleFavorite}
-                      ></img>
-                    </Typography>
-                    <Popover
-                      id="mouse-over-popover"
-                      sx={{
-                        pointerEvents: 'none',
-                      }}
-                      open={openPopupFav}
-                      anchorEl={anchorFav}
-                      anchorOrigin={{
-                        vertical: 'top',
-                        horizontal: 'center',
-                      }}
-                      transformOrigin={{
-                        vertical: 'bottom',
-                        horizontal: 'center',
-                      }}
-                      onClose={handlePopoverCloseFav}
-                      disableRestoreFocus
-                    >
-                      <Typography sx={{ p: 1 }}>Remove from favorites</Typography>
-                    </Popover>
-                  </div>
-                )}
-              
-          </div>
+            <div>
+              <Typography
+                aria-owns={openPopupBMark ? 'mouse-over-popover' : undefined}
+                aria-haspopup="true"
+                onMouseEnter={handlePopoverOpenBMark}
+                onMouseLeave={handlePopoverCloseBMark}
+              >
+                <img className="small-cover-icons"
+                  alt="favourites"
+                  src={bookMark}
+                  onClick={toggleBookmark}
+                ></img>
+              </Typography>
+              <Popover
+                id="mouse-over-popover"
+                sx={{
+                  pointerEvents: 'none',
+                }}
+                open={openPopupBMark}
+                anchorEl={anchorBMark}
+                anchorOrigin={{
+                  vertical: 'top',
+                  horizontal: 'center',
+                }}
+                transformOrigin={{
+                  vertical: 'bottom',
+                  horizontal: 'center',
+                }}
+                onClose={handlePopoverCloseBMark}
+                disableRestoreFocus
+              >
+                <Typography sx={{ p: 1 }}>Add to Bookmarks</Typography>
+              </Popover>
+            </div>
+          )}
+          {bookmarkTicked && (
+            <div>
+              <Typography
+                aria-owns={openPopupBMark ? 'mouse-over-popover' : undefined}
+                aria-haspopup="true"
+                onMouseEnter={handlePopoverOpenBMark}
+                onMouseLeave={handlePopoverCloseBMark}
+              >
+                <img className="small-cover-icons"
+                  alt="favourites"
+                  src={bookMarkTicked}
+                  onClick={toggleBookmark}
+                ></img>
+              </Typography>
+              <Popover
+                id="mouse-over-popover"
+                sx={{
+                  pointerEvents: 'none',
+                }}
+                open={openPopupBMark}
+                anchorEl={anchorBMark}
+                anchorOrigin={{
+                  vertical: 'top',
+                  horizontal: 'center',
+                }}
+                transformOrigin={{
+                  vertical: 'bottom',
+                  horizontal: 'center',
+                }}
+                onClose={handlePopoverCloseBMark}
+                disableRestoreFocus
+              >
+                <Typography sx={{ p: 1 }}>Remove from Bookmarks</Typography>
+              </Popover>
+            </div>
+          )}
+          {!favTicked && (
+            <div>
+              <Typography
+                aria-owns={openPopupFav ? 'mouse-over-popover' : undefined}
+                aria-haspopup="true"
+                onMouseEnter={handlePopoverOpenFav}
+                onMouseLeave={handlePopoverCloseFav}
+              >
+                <img className="small-cover-icons"
+                  src={favorite}
+                  onClick={toggleFavorite}
+                ></img>
+              </Typography>
+              <Popover
+                id="mouse-over-popover"
+                sx={{
+                  pointerEvents: 'none',
+                }}
+                open={openPopupFav}
+                anchorEl={anchorFav}
+                anchorOrigin={{
+                  vertical: 'top',
+                  horizontal: 'center',
+                }}
+                transformOrigin={{
+                  vertical: 'bottom',
+                  horizontal: 'center',
+                }}
+                onClose={handlePopoverCloseFav}
+                disableRestoreFocus
+              >
+                <Typography sx={{ p: 1 }}>Add to favorites</Typography>
+              </Popover>
+            </div>
+          )}
+          {favTicked && (
+            <div>
+              <Typography
+                aria-owns={openPopupFav ? 'mouse-over-popover' : undefined}
+                aria-haspopup="true"
+                onMouseEnter={handlePopoverOpenFav}
+                onMouseLeave={handlePopoverCloseFav}
+              >
+                <img className="small-cover-icons"
+                  src={favoriteTicked}
+                  onClick={toggleFavorite}
+                ></img>
+              </Typography>
+              <Popover
+                id="mouse-over-popover"
+                sx={{
+                  pointerEvents: 'none',
+                }}
+                open={openPopupFav}
+                anchorEl={anchorFav}
+                anchorOrigin={{
+                  vertical: 'top',
+                  horizontal: 'center',
+                }}
+                transformOrigin={{
+                  vertical: 'bottom',
+                  horizontal: 'center',
+                }}
+                onClose={handlePopoverCloseFav}
+                disableRestoreFocus
+              >
+                <Typography sx={{ p: 1 }}>Remove from favorites</Typography>
+              </Popover>
+            </div>
+          )}
+
         </div>
+
+
         <div className="small-book-preface">
+          <Link to={"/books/" + book.id} className="link-no-underline">
             <div className="header small_book_title">
               {book.title}
             </div>
-            <div>
-              <div className="author">{book.author}</div>
-              <div className="body">
+          </Link>
+          <div>
+            <div className="author">{book.author}</div>
+            <div className="body">
               <p>
-                
+
                 {book.synopsis}
               </p>
-                
-              </div>
+            </div>
           </div>
         </div>
       </div>
-    </Link>
+    </div>
   );
 };
 

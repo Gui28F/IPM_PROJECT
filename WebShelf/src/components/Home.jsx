@@ -1,4 +1,3 @@
-
 import React, {useEffect, useRef, useState} from 'react';
 import "../components/Home.css"
 import bgVideo from '../assets/library.mp4';

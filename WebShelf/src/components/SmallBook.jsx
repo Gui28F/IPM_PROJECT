@@ -6,7 +6,7 @@ import bookMarkTicked from "../assets/book_mark_ticked.svg";
 import favorite from "../assets/favorite_white.svg";
 import favoriteTicked from "../assets/favorite_ticked.svg";
 import { Typography, Popover } from "@mui/material";
-import { users } from "./Data.jsx";
+import { users} from "./Data.jsx";
 
 const SmallBook = (props) => {
 
@@ -51,63 +51,90 @@ const SmallBook = (props) => {
   });
   const navigate = useNavigate();
   const toggleFavorite = (event) => {
-    event.preventDefault();
+    event.preventDefault(); // Prevent the default behavior of the link
+
     const isBookInFavourites = users[0].shelves.find(
-      (shelf) => shelf.name === "Favourites" && shelf.books.includes(book.title)
+        (shelf) =>
+            shelf.name === "Favourites" && shelf.books.includes(book.title)
     );
+
+    const bookID = book.id;
 
     if (isBookInFavourites) {
-      // Book is in "Favourites" shelf, remove it
-      users[0].shelves = users[0].shelves.map((shelf) =>
-        shelf.name === "Favourites"
-          ? {
-            ...shelf,
-            books: shelf.books.filter(
-              (bookTitle) => bookTitle !== book.title
-            ),
-          }
-          : shelf
-      );
+        // Book is in "Favourites" shelf, remove it
+        const updatedShelves = users[0].shelves.map((shelf) =>
+            shelf.name === "Favourites"
+                ? {
+                    ...shelf,
+                    books: shelf.books.filter(
+                        (bookTitle) => bookTitle !== book.title
+                    ),
+                    booksIDs: shelf.booksIDs.filter(
+                        (id) => id !== bookID
+                    ),
+                }
+                : shelf
+        );
+        users[0].shelves = updatedShelves;
     } else {
-      // Book is not in "Favourites" shelf, add it
-      users[0].shelves = users[0].shelves.map((shelf) =>
-        shelf.name === "Favourites"
-          ? { ...shelf, books: [...shelf.books, book.title] }
-          : shelf
-      );
+        // Book is not in "Favourites" shelf, add it
+        const updatedShelves = users[0].shelves.map((shelf) =>
+            shelf.name === "Favourites"
+                ? {
+                    ...shelf,
+                    books: [...shelf.books, book.title],
+                    booksIDs: [...shelf.booksIDs, bookID],
+                }
+                : shelf
+        );
+        users[0].shelves = updatedShelves;
     }
     setFavTicked((favTicked) => !favTicked);
-  };
+};
 
-  const toggleBookmark = (event) => {
-    event.preventDefault();
-    // Check if the book is already in the "To Read" shelf
-    const isBookInToRead = users[0].shelves.find(
-      (shelf) => shelf.name === "To Read" && shelf.books.includes(book.title)
-    );
 
-    if (isBookInToRead) {
+const toggleBookmark = (event) => {
+  event.preventDefault(); // Prevent the default behavior of the link
+
+  const isBookInToRead = users[0].shelves.find(
+      (shelf) =>
+          shelf.name === "To Read" && shelf.books.includes(book.title)
+  );
+
+  const bookID = book.id;
+
+  if (isBookInToRead) {
       // Book is in "To Read" shelf, remove it
-      users[0].shelves = users[0].shelves.map((shelf) =>
-        shelf.name === "To Read"
-          ? {
-            ...shelf,
-            books: shelf.books.filter(
-              (bookTitle) => bookTitle !== book.title
-            ),
-          }
-          : shelf
+      const updatedShelves = users[0].shelves.map((shelf) =>
+          shelf.name === "To Read"
+              ? {
+                  ...shelf,
+                  books: shelf.books.filter(
+                      (bookTitle) => bookTitle !== book.title
+                  ),
+                  booksIDs: shelf.booksIDs.filter(
+                      (id) => id !== bookID
+                  ),
+              }
+              : shelf
       );
-    } else {
+      users[0].shelves = updatedShelves;
+  } else {
       // Book is not in "To Read" shelf, add it
-      users[0].shelves = users[0].shelves.map((shelf) =>
-        shelf.name === "To Read"
-          ? { ...shelf, books: [...shelf.books, book.title] }
-          : shelf
+      const updatedShelves = users[0].shelves.map((shelf) =>
+          shelf.name === "To Read"
+              ? {
+                  ...shelf,
+                  books: [...shelf.books, book.title],
+                  booksIDs: [...shelf.booksIDs, bookID],
+              }
+              : shelf
       );
-    }
-    setBookmarkTicked((bookmarkTicked) => !bookmarkTicked);
-  };
+      users[0].shelves = updatedShelves;
+  }
+  setBookmarkTicked((bookmarkTicked) => !bookmarkTicked);
+};
+
 
   return (
     <Link to={"/books/" + book.id} className="link-no-underline">

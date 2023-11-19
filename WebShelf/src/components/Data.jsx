@@ -25,7 +25,9 @@ export const books = [
         "and Wizardry, revealing that Harry's parents, James and Lily Potter, were wizards. When Harry was just a year old, a powerful" +
         "but malevolent dark wizard named Lord Voldemort murdered his parents; Harry survived Voldemort's killing curse that rebounded" +
         "and seemingly destroyed the Dark Lord, leaving a lightning bolt-shaped scar on his forehead. Unknown to Harry, this act made" +
-        "him famous in the wizarding world."
+        "him famous in the wizarding world.",
+        spineBackgroundColor: "#ae2d32",
+        spineForegroundColor: "#ffe9a2", // color title
     },
     {
         id: 2,
@@ -34,7 +36,9 @@ export const books = [
         rating: 3,
         author: "J. K. Rowling",
         imageUrl: book2,
-        synopsis: "This is the synopsis for Book 1. It can contain a brief description of the book."
+        synopsis: "This is the synopsis for Book 1. It can contain a brief description of the book.",
+        spineBackgroundColor: "#ae2d32",
+        spineForegroundColor: "#ffe9a2", // color title
     },
     {
         id: 3,
@@ -43,7 +47,9 @@ export const books = [
         rating: 4,
         author: "J. K. Rowling",
         imageUrl: book3,
-        synopsis: "This is the synopsis for Book 1. It can contain a brief description of the book."
+        synopsis: "This is the synopsis for Book 1. It can contain a brief description of the book.",
+        spineBackgroundColor: "#ae2d32",
+        spineForegroundColor: "#ffe9a2", // color title
     },
     {
         id: 4,
@@ -52,7 +58,9 @@ export const books = [
         rating: 4,
         author: "Frank Herbert",
         imageUrl: book4,
-        synopsis: "This is the synopsis for Book 1. It can contain a brief description of the book."
+        synopsis: "This is the synopsis for Book 1. It can contain a brief description of the book.",
+        spineBackgroundColor: "#ae2d32",
+        spineForegroundColor: "#ffe9a2", // color title
     },
     {
         id: 5,
@@ -61,7 +69,9 @@ export const books = [
         rating: 1,
         author: "Anne Frank",
         imageUrl: book5,
-        synopsis: "This is the synopsis for Book 1. It can contain a brief description of the book."
+        synopsis: "This is the synopsis for Book 1. It can contain a brief description of the book.",
+        spineBackgroundColor: "#ae2d32",
+        spineForegroundColor: "#ffe9a2", // color title
     },
     {
         id: 6,
@@ -70,7 +80,9 @@ export const books = [
         rating: 4,
         author: "Antoine de Saint-Exupéry",
         imageUrl: book6,
-        synopsis: "This is the synopsis for Book 1. It can contain a brief description of the book."
+        synopsis: "This is the synopsis for Book 1. It can contain a brief description of the book.",
+        spineBackgroundColor: "#ae2d32",
+        spineForegroundColor: "#ffe9a2", // color title
     },
     {
         id: 7,
@@ -79,7 +91,9 @@ export const books = [
         rating: 4,
         author: "George Orwell",
         imageUrl: book7,
-        synopsis: "This is the synopsis for Book 1. It can contain a brief description of the book."
+        synopsis: "This is the synopsis for Book 1. It can contain a brief description of the book.",
+        spineBackgroundColor: "#ae2d32",
+        spineForegroundColor: "#ffe9a2", // color title
     },
     {
         id: 8,
@@ -88,7 +102,9 @@ export const books = [
         rating: 1,
         author: "F. Scott Fitzgerald",
         imageUrl: book8,
-        synopsis: "This is the synopsis for Book 1. It can contain a brief description of the book."
+        synopsis: "This is the synopsis for Book 1. It can contain a brief description of the book.",
+        spineBackgroundColor: "#ae2d32",
+        spineForegroundColor: "#ffe9a2", // color title
     },  {
         id: 9,
         title: "The Lord of the Rings",
@@ -96,7 +112,9 @@ export const books = [
         rating: 4,
         author: "J.R.R. Tolkien",
         imageUrl: book9,
-        synopsis: "This is the synopsis for Book 1. It can contain a brief description of the book."
+        synopsis: "This is the synopsis for Book 1. It can contain a brief description of the book.",
+        spineBackgroundColor: "#ae2d32",
+        spineForegroundColor: "#ffe9a2", // color title
     },
     {
         id: 10,
@@ -105,7 +123,9 @@ export const books = [
         rating: 1,
         author: "C.S. Lewis",
         imageUrl: book10,
-        synopsis: "This is the synopsis for Book 1. It can contain a brief description of the book."
+        synopsis: "This is the synopsis for Book 1. It can contain a brief description of the book.",
+        spineBackgroundColor: "#ae2d32",
+        spineForegroundColor: "#ffe9a2", // color title
     },  {
         id: 11,
         title: "Lord of the Flies",
@@ -113,7 +133,9 @@ export const books = [
         rating: 4,
         author: "William Golding",
         imageUrl: book11,
-        synopsis: "This is the synopsis for Book 1. It can contain a brief description of the book."
+        synopsis: "This is the synopsis for Book 1. It can contain a brief description of the book.",
+        spineBackgroundColor: "#ae2d32",
+        spineForegroundColor: "#ffe9a2", // color title
     },
     {
         id: 12,
@@ -122,7 +144,9 @@ export const books = [
         rating: 1,
         author: "Dr. Seuss",
         imageUrl: book12,
-        synopsis: "This is the synopsis for Book 1. It can contain a brief description of the book."
+        synopsis: "This is the synopsis for Book 1. It can contain a brief description of the book.",
+        spineBackgroundColor: "#ae2d32",
+        spineForegroundColor: "#ffe9a2", // color title
     },  {
         id: 13,
         title: "The Picture of Dorian Gray",
@@ -130,7 +154,9 @@ export const books = [
         rating: 4,
         author: "Oscar Wilde",
         imageUrl: book13,
-        synopsis: "This is the synopsis for Book 1. It can contain a brief description of the book."
+        synopsis: "This is the synopsis for Book 1. It can contain a brief description of the book.",
+        spineBackgroundColor: "#ae2d32",
+        spineForegroundColor: "#ffe9a2", // color title
     },
     {
         id: 14,
@@ -139,7 +165,9 @@ export const books = [
         rating: 1,
         author: "Miguel de Cervantes Saavedra",
         imageUrl: book14,
-        synopsis: "This is the synopsis for Book 1. It can contain a brief description of the book."
+        synopsis: "This is the synopsis for Book 1. It can contain a brief description of the book.",
+        spineBackgroundColor: "#ae2d32",
+        spineForegroundColor: "#ffe9a2", // color title
     }
 ];
 export const users=[
@@ -155,7 +183,7 @@ export const users=[
             id : 2,
             name: "To Read",
             books:["The Picture of Dorian Gray"],
-            booksIDs: [13],
+            booksIDs: [13,1,2],
         }]
     }
 ]

@@ -86,7 +86,9 @@ const BookDetails = (props) => {
             (shelf) =>
                 shelf.name === "Favourites" && shelf.books.includes(book.title)
         );
-
+    
+        const bookID = book.id;
+    
         if (isBookInFavourites) {
             // Book is in "Favourites" shelf, remove it
             users[0].shelves = users[0].shelves.map((shelf) =>
@@ -96,6 +98,9 @@ const BookDetails = (props) => {
                         books: shelf.books.filter(
                             (bookTitle) => bookTitle !== book.title
                         ),
+                        booksIDs: shelf.booksIDs.filter(
+                            (bookID) => bookID !== book.id
+                        ),
                     }
                     : shelf
             );
@@ -103,20 +108,25 @@ const BookDetails = (props) => {
             // Book is not in "Favourites" shelf, add it
             users[0].shelves = users[0].shelves.map((shelf) =>
                 shelf.name === "Favourites"
-                    ? { ...shelf, books: [...shelf.books, book.title] }
+                    ? {
+                        ...shelf,
+                        books: [...shelf.books, book.title],
+                        booksIDs: [...shelf.booksIDs, bookID],
+                    }
                     : shelf
             );
         }
         setFavTicked((favTicked) => !favTicked);
     };
-
-
+    
     const toggleBookmark = () => {
         const isBookInToRead = users[0].shelves.find(
             (shelf) =>
                 shelf.name === "To Read" && shelf.books.includes(book.title)
         );
-
+    
+        const bookID = book.id;
+    
         if (isBookInToRead) {
             // Book is in "To Read" shelf, remove it
             users[0].shelves = users[0].shelves.map((shelf) =>
@@ -126,6 +136,9 @@ const BookDetails = (props) => {
                         books: shelf.books.filter(
                             (bookTitle) => bookTitle !== book.title
                         ),
+                        booksIDs: shelf.booksIDs.filter(
+                            (bookID) => bookID !== book.id
+                        ),
                     }
                     : shelf
             );
@@ -133,7 +146,11 @@ const BookDetails = (props) => {
             // Book is not in "To Read" shelf, add it
             users[0].shelves = users[0].shelves.map((shelf) =>
                 shelf.name === "To Read"
-                    ? { ...shelf, books: [...shelf.books, book.title] }
+                    ? {
+                        ...shelf,
+                        books: [...shelf.books, book.title],
+                        booksIDs: [...shelf.booksIDs, bookID],
+                    }
                     : shelf
             );
         }
@@ -155,51 +172,93 @@ const BookDetails = (props) => {
             const existingShelf = currentUser.shelves.find(
                 (shelf) => shelf.name === selectedShelf
             );
-
+    
+            const bookID = book.id;
+    
             if (existingShelf) {
                 // Shelf already exists, add the book if not already present
                 if (!existingShelf.books.includes(book.title)) {
                     users[0].shelves = users[0].shelves.map((shelf) =>
                         shelf.name === existingShelf.name
-                            ? { ...shelf, books: [...shelf.books, book.title] }
+                            ? {
+                                ...shelf,
+                                books: [...shelf.books, book.title],
+                                booksIDs: [...shelf.booksIDs, bookID],
+                            }
                             : shelf
                     );
                 }
             } else {
+                console.log("entrei aquii")
                 // Shelf does not exist, create a new one and add the book
-                users[0].shelves = [
-                    ...users[0].shelves,
-                    { name: selectedShelf, books: [book.title] },
-                ];
+                const newShelfID = users[0].shelves.reduce((maxID, shelf) => Math.max(shelf.id, maxID), 0) + 1;
+                const newShelf = {
+                    id: newShelfID,
+                    name: selectedShelf,
+                    books: [book.title],
+                    booksIDs: [bookID],
+                };
+                users[0].shelves = [...users[0].shelves, newShelf];
             }
         });
+    
+        // Update the Data file with the new shelf
+        // Assuming that users and books are exported from the Data file
+        const newData = { users, books };
+    
+        // Perform the logic to save the newData to your Data file
+        // This depends on your project setup (e.g., using a backend API, localStorage, etc.)
+    
         setSuccess(true);
         if (selectedShelves.includes("To Read") && !bookmarkTicked)
-            setBookmarkTicked(true)
+            setBookmarkTicked(true);
         if (selectedShelves.includes("Favourites") && !favTicked)
-            setFavTicked(true)
+            setFavTicked(true);
+    
         setTimeout(() => {
             handleClose();
             setSuccess(false);
             setNewShelfName(""); // Clear the old shelf name
         }, 1000); // 1000 milliseconds = 1 second
     };
+    
+    
 
     const handleShelfNameChange = (newName) => {
-        setNewShelfName(newName);
-        setSelectedShelves((prevSelected) =>
-            prevSelected.map((shelf) =>
-                shelf === newShelfName ? newName : shelf
-            )
-        );
+        // Update the customTicked state based on whether the shelf name is not empty
+        setCustomTicked(newName !== "");
 
-        if(newName != "" && !customTicked){
-            console.log("Not null")
-            setCustomTicked(!customTicked)
-        } else if(newName == "") {
-            setCustomTicked(!customTicked)
-        }
+        // Update the selectedShelves state with only the latest value
+        setSelectedShelves((prevSelected) => {
+            // Check if the new name already exists in the selected shelves
+            if (prevSelected.includes(newName)) {
+                // If it does, return the array unchanged
+                return prevSelected;
+            }
+
+            // Filter out only the exact match of the new name
+            const filteredShelves = prevSelected.filter((shelf) => shelf !== newShelfName);
+
+            // Add the new name to the filtered shelves only if it does not already exist
+            if (!filteredShelves.includes(newName)) {
+                return [...filteredShelves, newName];
+            }
+
+            // If the new name already exists, return the filtered shelves unchanged
+            return filteredShelves;
+        });
+
+        // Update the new shelf name
+        console.log(newName);
+        setNewShelfName(newName);
     };
+
+    
+      
+      
+      
+      
+      
 
     const currentUser = users[0];
     return (

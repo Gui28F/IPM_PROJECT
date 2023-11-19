@@ -18,6 +18,25 @@
     border:solid 2px #888888;
 }
 
+.navbar-search-bar {
+    width: 257px;
+    height: 48px;
+    border-radius: 25px;
+}
+
+.navbar-search-button {
+    border-radius: 50px;
+    border-width: 1px;
+    margin-right: 65px;
+    background-image: linear-gradient(to right, var(--tw-gradient-stops));
+    --tw-gradient-from: #1F2232 var(--tw-gradient-from-position);
+    --tw-gradient-to: rgb(86 81 229 / 0) var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+    --tw-gradient-to: #709dff var(--tw-gradient-to-position);
+    padding: 0.5rem;
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+}
 
 .placeholder-text {
     margin-left: 10px;

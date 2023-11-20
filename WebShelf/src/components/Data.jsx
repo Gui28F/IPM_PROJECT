@@ -27,8 +27,8 @@ export const books = [
         "but malevolent dark wizard named Lord Voldemort murdered his parents; Harry survived Voldemort's killing curse that rebounded" +
         "and seemingly destroyed the Dark Lord, leaving a lightning bolt-shaped scar on his forehead. Unknown to Harry, this act made" +
         "him famous in the wizarding world.",
-        spineBackgroundColor: "#ae2d32",
-        spineForegroundColor: "#ffe9a2", // color title
+        spineBackgroundColor: "#262a57",
+        spineForegroundColor: "#fefcff",
     },
     {
         id: 2,
@@ -38,8 +38,8 @@ export const books = [
         author: "J. K. Rowling",
         imageUrl: book2,
         synopsis: "The plot follows Harry's second year at Hogwarts School of Witchcraft and Wizardry, during which a series of messages on the walls of the school's corridors warn that the Chamber of Secrets has been opened and that the heir of Slytherin would kill all pupils who do not come from all-magical families.",
-        spineBackgroundColor: "#ae2d32",
-        spineForegroundColor: "#ffe9a2", // color title
+        spineBackgroundColor: "#000004",
+        spineForegroundColor: "#fffffd",
     },
     {
         id: 3,
@@ -49,8 +49,8 @@ export const books = [
         author: "J. K. Rowling",
         imageUrl: book3,
         synopsis: "The book follows Harry Potter, a young wizard, in his third year at Hogwarts School of Witchcraft and Wizardry. Along with friends Ronald Weasley and Hermione Granger, Harry investigates Sirius Black, an escaped prisoner from Azkaban, the wizard prison, believed to be one of Lord Voldemort's old allies.",
-        spineBackgroundColor: "#ae2d32",
-        spineForegroundColor: "#ffe9a2", // color title
+        spineBackgroundColor: "#262a57",
+        spineForegroundColor: "#fefcff",
     },
     {
         id: 4,
@@ -71,8 +71,8 @@ export const books = [
         author: "Anne Frank",
         imageUrl: book5,
         synopsis: "The Diary of a Young Girl (first published 1952; this edition 1977) tells the story of Anne Frank, a Jewish girl who went into hiding with her family during the Second World War. It offers a remarkable portrait of a maturing young woman forced into an unbelievable situation but rising to the occasion",
-        spineBackgroundColor: "#ae2d32",
-        spineForegroundColor: "#ffe9a2", // color title
+        spineBackgroundColor: "#000004",
+        spineForegroundColor: "#fffffd",
     },
     {
         id: 6,
@@ -82,8 +82,8 @@ export const books = [
         author: "Antoine de Saint-Exupéry",
         imageUrl: book6,
         synopsis: "The Little Prince tells the story of a pilot whose plane crashes in the desert. There he meets and befriends a young boy from another planet, and as he works to fix his plane, he listens to the boy's tales of his interstellar travels.",
-        spineBackgroundColor: "#ae2d32",
-        spineForegroundColor: "#ffe9a2", // color title
+        spineBackgroundColor: "#ffffff",
+        spineForegroundColor: "#050505",
     },
     {
         id: 7,
@@ -104,8 +104,8 @@ export const books = [
         author: "F. Scott Fitzgerald",
         imageUrl: book8,
         synopsis: "The Great Gatsby is an American classic following Jay Gatsby's quest to win back his long-lost love by faking a successful life, depicting the struggles around love, relationships, societal standing, and consumerism of people in the “roaring” 1920s.",
-        spineBackgroundColor: "#ae2d32",
-        spineForegroundColor: "#ffe9a2", // color title
+        spineBackgroundColor: "#000004",
+        spineForegroundColor: "#fffffd",
     },  {
         id: 9,
         title: "The Lord of the Rings",
@@ -114,8 +114,8 @@ export const books = [
         author: "J.R.R. Tolkien",
         imageUrl: book9,
         synopsis: "A hobbit named Frodo inherits the One Ring, which can destroy the entire world. With the recently reawakened evil being Sauron after the ring to cement his reign, Frodo joins with eight others to destroy the Ring and defeat Sauron.",
-        spineBackgroundColor: "#ae2d32",
-        spineForegroundColor: "#ffe9a2", // color title
+        spineBackgroundColor: "#262a57",
+        spineForegroundColor: "#fefcff",
     },
     {
         id: 10,
@@ -135,8 +135,8 @@ export const books = [
         author: "William Golding",
         imageUrl: book11,
         synopsis: "The plot concerns a group of British boys who are stranded on an uninhabited island and their disastrous attempts to govern themselves. Themes include the tension between groupthink and individuality, between rational and emotional reactions, and between morality and immorality.",
-        spineBackgroundColor: "#ae2d32",
-        spineForegroundColor: "#ffe9a2", // color title
+        spineBackgroundColor: "#ffffff",
+        spineForegroundColor: "#050505",
     },
     {
         id: 12,
@@ -156,8 +156,8 @@ export const books = [
         author: "Oscar Wilde",
         imageUrl: book13,
         synopsis: "The Picture of Dorian Gray tells the story of a young, beautiful man who trades his soul for eternal youth, then descends further and further into a moral abyss — until he discovers there is, after all, a price to pay for his actions.",
-        spineBackgroundColor: "#ae2d32",
-        spineForegroundColor: "#ffe9a2", // color title
+        spineBackgroundColor: "#1f7189",
+        spineForegroundColor: "#ffffd5",
     },
     {
         id: 14,
@@ -167,8 +167,8 @@ export const books = [
         author: "Miguel de Cervantes Saavedra",
         imageUrl: book14,
         synopsis: "The plot revolves around the adventures of a member of the lowest nobility, an hidalgo from La Mancha named Alonso Quijano, who reads so many chivalric romances that he loses his mind and decides to become a knight-errant.",
-        spineBackgroundColor: "#ae2d32",
-        spineForegroundColor: "#ffe9a2", // color title
+        spineBackgroundColor: "#ffffff",
+        spineForegroundColor: "#050505",
     },
     {
         id: 15,
@@ -178,8 +178,9 @@ export const books = [
         author: "Eça de Queirós",
         imageUrl: book15,
         synopsis: "Our hero Carlos Maia, heir to one of the greatest fortunes in Portugal, is rich, handsome, generous and intelligent: he means to do something for his country, something useful, something that will make his beloved grandfather proud.",
-        spineBackgroundColor: "#ae2d32",
-        spineForegroundColor: "#ffe9a2", // color title
+        spineBackgroundColor: "#000004",
+        spineForegroundColor: "#fffffd",
+
     }
 ];
 

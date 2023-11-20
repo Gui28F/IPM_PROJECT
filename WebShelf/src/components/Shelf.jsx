@@ -93,8 +93,6 @@ export default function MonthlySuggestions() {
                 book.title.toLowerCase().includes(bookName.toLowerCase())
             )
         );
-
-        console.log(booksSearched);
     };
 
     return (

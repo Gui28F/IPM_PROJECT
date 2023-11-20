@@ -20,7 +20,6 @@
 
 .navbar-search-container{
     max-width: 60px;
-    
 }
 
 .navbar-search-container:hover, .navbar-search-container:focus, .navbar-search-container:active {
@@ -69,7 +68,7 @@
     outline: 2px solid transparent;
     outline-offset: 2px;
     flex-grow: 1;
-    width: 100%;
+    max-width: 100%;
     overflow: hidden;
     --bs-bg-opacity: 1;
     background-color: transparent!important;

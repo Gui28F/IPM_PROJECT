@@ -3,7 +3,6 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import "./Home.css";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-import $ from "jquery"
 
 const Navbar = () => {
 
@@ -27,7 +26,12 @@ const Navbar = () => {
         if(!isSearching) {
             setIsSearching(!isSearching)
         }
-        
+    }
+
+    const disableFix = event => {
+        if(isSearching && bookName == "") {
+            setIsSearching(false)
+        }
     }
 
     const handleSearchSubmit = event => {
@@ -86,7 +90,9 @@ const Navbar = () => {
                         type='text'
                         name='bookName'
                         value={bookName}
-                        onClick={fixMaxWidth}
+                        // onClick={fixMaxWidth}
+                        onMouseEnter={fixMaxWidth}
+                        onMouseLeave={disableFix}
                         onChange={handleBookNameChange}
                         placeholder='Search for a book...'
                         className={isSearching ? 'navbar-placeholder-text navbar-input-text-active' : 'navbar-placeholder-text navbar-input-text'}

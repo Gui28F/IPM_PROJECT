@@ -18,16 +18,70 @@
     border:solid 2px #888888;
 }
 
+.navbar-search-container{
+    max-width: 60px;
+    
+}
+
+.navbar-search-container:hover, .navbar-search-container:focus, .navbar-search-container:active {
+    transition: max-width .4s ease-in-out;
+    max-width: 320px;
+}
+
+.navbar-searching{
+    transition: max-width .4s ease-in-out;
+    max-width: 320px;
+}
+
+.navbar-input-text {
+    visibility: hidden;
+}
+
+.navbar-search-container:hover .navbar-input-text {
+    transition: all .5s ease-in-out;
+    visibility: visible;
+}
+
+
+.navbar-input-text-active {
+    transition: all .5s ease-in-out;
+    visibility: visible !important;
+}
 .navbar-search-bar {
-    width: 257px;
+    width: 80%;
     height: 48px;
     border-radius: 25px;
+}
+
+.navbar-search-container:hover .navbar-search-bar, .navbar-search-container:focus .navbar-search-bar, .navbar-search-container:active .navbar-search-bar
+{
+    width:96%;
+}
+
+.navbar-search-bar-active {
+    width:96%;
+    height: 48px;
+    border-radius: 25px;
+}
+
+.navbar-placeholder-text {
+    margin-left: 10px;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    flex-grow: 1;
+    width: 100%;
+    overflow: hidden;
+    --bs-bg-opacity: 1;
+    background-color: transparent!important;
+    visibility: hidden;
 }
 
 .navbar-search-button {
     border-radius: 50px;
     border-width: 1px;
-    margin-right: 65px;
+    position: absolute;
+    right: 38px;
+    top: 11px;
     background-image: linear-gradient(to right, var(--tw-gradient-stops));
     --tw-gradient-from: #1F2232 var(--tw-gradient-from-position);
     --tw-gradient-to: rgb(86 81 229 / 0) var(--tw-gradient-to-position);
@@ -97,4 +151,9 @@
     background-color: #1F2232;
     color:black;
     height: 4rem;
+}
+
+.navbar-center-items {
+    position: absolute;
+    left: 42%;
 }

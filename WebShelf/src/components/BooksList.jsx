@@ -14,7 +14,7 @@ const BooksList = (props) => {
                 >
                     <div className="book-container">
                         <div className="image-container">
-                            <img src={book.imageUrl} alt="book"></img>
+                            <img className="browse-all-image" src={book.imageUrl} alt="book"></img>
                             <div className="rating">
                                 {book.rating}
                                 <StarRateIcon className="star_rating" />

@@ -7,9 +7,18 @@ import book11 from '../assets/book_covers/flies_cover.jpg';
 import book12 from '../assets/book_covers/seuss_cover.jpg';
 import book13 from '../assets/book_covers/dorian_cover.jpg';
 import book14 from '../assets/book_covers/quixote_cover.jpg';
+
+import book15 from '../assets/test_images/1984.webp';
+import book16 from '../assets/test_images/steve-jobs.webp';
+import book17 from '../assets/test_images/hitchhikers-guide-to-the-galaxy.webp';
+import book18 from '../assets/test_images/the-ascent-of-money.webp';
+import book19 from '../assets/test_images/snow-crash.webp';
+import book20 from '../assets/book_covers/lotr_cover.jpg';
+import book21 from '../assets/book_covers/dune_cover.jpg';
+import book22 from '../assets/book_covers/prince_cover.jpg';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/solid';
 import {Link} from "react-router-dom"; // Import the icons
-
+import {monthlySuggestions} from "./Data.jsx";
 const listContainerStyles = {
     margin: 'auto',
     position: 'absolute',
@@ -24,82 +33,7 @@ const buttonsContainerStyles = {
     textAlign: 'center',
   };
 
-const books = [
-  {
-    title: "1984",
-    coverUrl: "./src/test_images/1984.webp",
-    spineBackgroundColor: "#ae2d32",
-    spineForegroundColor: "#ffe9a2", // color title
-  },
-  {
-    title: "Steve Jobs",
-    coverUrl: "./src/test_images/steve-jobs.webp",
-    spineBackgroundColor: "#ffffff",
-    spineForegroundColor: "#050505",
-  },
-  {
-    title: "Hitcher's Guide to the Galaxy",
-    coverUrl: "./src/test_images/hitchhikers-guide-to-the-galaxy.webp",
-    spineBackgroundColor: "#1f7189",
-    spineForegroundColor: "#ffffd5",
-  },
-  {
-    title: "The Ascent of Money",
-    coverUrl: "./src/test_images/the-ascent-of-money.webp",
-    spineBackgroundColor: "#000004",
-    spineForegroundColor: "#fffffd",
-  },
-  {
-    title: "Snow Crash",
-    coverUrl: "./src/test_images/snow-crash.webp",
-    spineBackgroundColor: "#262a57",
-    spineForegroundColor: "#fefcff",
-  },
-  {
-    title: "Lord of the Rings",
-    coverUrl: "./src/assets/book_covers/lotr_cover.jpg",
-    spineBackgroundColor: "#000000",
-    spineForegroundColor: "#ffffff",
-  }, 
-  {
-    title: "Dune",
-    coverUrl: "./src/assets/book_covers/dune_cover.jpg",
-    spineBackgroundColor: "#9E9764",
-    spineForegroundColor: "#050505", 
- },
- {
-    title : "The Little Prince",
-    coverUrl : "./src/assets/book_covers/prince_cover.jpg",
-    spineBackgroundColor : "#ffffff",
-    spineForegroundColor : "#050505",
-
- },
- {
-    title : "Lord of the Flies",
-    coverUrl : book11,
-    spineBackgroundColor : "#ffffff",
-    spineForegroundColor : "#050505",
- },
- {
-    title : "Greend Eggs and Ham",
-    coverUrl : book12,
-    spineBackgroundColor : "#ffffff",
-    spineForegroundColor : "#050505",
- }, 
- {
-    title : "The Picture of Dorian Gray",
-    coverUrl : book13,
-    spineBackgroundColor : "#ffffff",
-    spineForegroundColor : "#050505",
-
- },
- {
-    title : "Don Quixote",
-    coverUrl : book14,
-    spineBackgroundColor : "#ffffff",
-    spineForegroundColor : "#050505",
- }
-];
+let books = monthlySuggestions;
 
 const animationStyle = "transition-all duration-500 ease will-change-auto";
 
@@ -217,7 +151,7 @@ export default function Shelves() {
                 }}
               />
               {/* eslint-disable-next-line @next/next/no-img-element */}
-                <Link to={"/books/"+1}>
+                <Link to={"/books/"+book.id}>
               <img src={book.coverUrl} alt={book.title} className={clsx("h-full w-48 bg-cover", animationStyle)} />
                 </Link>
             </div>

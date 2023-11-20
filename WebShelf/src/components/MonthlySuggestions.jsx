@@ -158,7 +158,7 @@ export default function Shelves() {
           </button>
         ))}
       </div>
-      <div className="flex justify-between mt-4" style={{ transform: 'translateY(25.5rem)' }}>
+      <div className="flex justify-between mt-4" style={{ transform: 'translateY(50%)' }}>
         <button onClick={handlePrevPage} className="px-2 py-2 ml-4 bg-gray-800 text-white">
           <ChevronLeftIcon className="h-6 w-6" /> {/* Left Arrow Icon */}
         </button>

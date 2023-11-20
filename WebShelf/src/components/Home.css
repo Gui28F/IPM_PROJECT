@@ -52,7 +52,9 @@
     height: 48px;
     border-radius: 25px;
 }
-
+.rounded-search-bar:focus{
+    outline: none;
+}
 .navbar-search-container:hover .navbar-search-bar, .navbar-search-container:focus .navbar-search-bar, .navbar-search-container:active .navbar-search-bar
 {
     width:96%;

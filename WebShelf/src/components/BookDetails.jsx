@@ -1,6 +1,6 @@
 // BookDetails.jsx
 import React, { useEffect, useState } from "react";
-import { useLocation, useParams } from "react-router-dom";
+import {Link, useLocation, useParams} from "react-router-dom";
 import "./BookDetails.css";
 import bookMark from "../assets/book_mark_white.svg";
 import bookMarkTicked from "../assets/book_mark_ticked.svg";
@@ -253,10 +253,9 @@ const BookDetails = (props) => {
         setNewShelfName(newName);
     };
 
-    
-      
-      
-      
+
+
+
       
       
 
@@ -440,9 +439,11 @@ const BookDetails = (props) => {
                         </div>
                         <div className="indv_genres-list">
                             {book.genres.map((genre, index) => (
-                                <span key={index} className="indv_genre">
+                                <Link key={index} to={`/all?genre=${genre}`}>
+                                <span  className="indv_genre">
                                     {genre}
                                 </span>
+                                </Link>
                             ))}
                         </div>
                         </div>

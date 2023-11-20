@@ -3,12 +3,14 @@ import Filter from "./Filter.jsx";
 import {books} from "./Data.jsx";
 import "./BrowseAll.css";
 import BooksList from "./BooksList.jsx";
+import {useLocation} from "react-router-dom";
 
 const BrowseAll = (props) => {
+    const location = useLocation();
+    const genre = new URLSearchParams(location.search).get('genre');
     const [filterValues, setFilterValues] = useState({ genres: [], rating: [] });
     const [filteredBooks, setFilteredBooks] = useState([]);
     const [searchQuery, setSearchQuery] = useState('');
-
     const handleSearchChange = (event) => {
         const query = event.target.value;
         setSearchQuery(query);
@@ -16,7 +18,11 @@ const BrowseAll = (props) => {
     };
     useEffect(() => {
         // Show all books initially
-        setFilteredBooks(books);
+        setFilterValues({genres: [genre], rating: []})
+        if(genre != null)
+        setFilteredBooks(books.filter((book)=>book.genres.includes(genre)));
+        else
+            setFilteredBooks(books)
     }, []); // Empty dependency array ensures this effect runs only once on mount
 
     const handleFilterChange = (values) => {
@@ -38,10 +44,9 @@ const BrowseAll = (props) => {
 
         setFilteredBooks(filtered);
     };
-
     return (
         <div className="main-container">
-            <Filter data={books} onFilterChange={handleFilterChange}></Filter>
+            <Filter data={books} genre={genre} onFilterChange={handleFilterChange}></Filter>
             {/* Use filterValues and filteredBooks in your application as needed */}
             <div className="book_container">
                 <div className="search-bar-container">

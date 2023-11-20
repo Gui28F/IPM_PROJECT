@@ -148,6 +148,7 @@
 
 
 .indv_genre {
+    cursor: pointer;
     display: flex;
     align-items: center; /* Center the content vertically */
     justify-content: center; /* Center the content horizontally */

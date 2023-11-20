@@ -16,10 +16,19 @@ const listContainerStyles = {
     width: "calc((44px + 24px) * 10)",
 };
 
-const buttonsContainerStyles = {
+const buttonsContainerStyles2 = {
     marginTop: "40.5rem", // Adjust the margin as needed
     textAlign: "center",
 };
+
+const buttonsContainerStyles = {
+    marginTop: "40rem", // Default margin
+  
+    // Media query for larger screens
+    '@media (min-width: 768px)': {
+      marginTop: '4rem', // Adjust the margin for larger screens
+    },
+  };
 
 const animationStyle = "transition-all duration-500 ease will-change-auto";
 
@@ -98,6 +107,7 @@ export default function MonthlySuggestions() {
     return (
         <>
             <svg className="invisible absolute inset-0">
+            
                 <defs>
                     <filter id="paper" x="0%" y="0%" width="100%" height="100%">
                         <feTurbulence
@@ -242,27 +252,25 @@ export default function MonthlySuggestions() {
                     </button>
                 ))}
             </div>
-            <div
-                className="flex justify-between mt-4"
-                style={{ transform: "translateY(17.5rem)" }}
+            <div className="button-container">
+            <button
+                onClick={handlePrevPage}
+                className="px-2 py-2 bg-gray-800 text-white"
+                style={{ marginRight: '1rem' }}
             >
-                <button
-                    onClick={handlePrevPage}
-                    className="px-2 py-2 ml-20 bg-gray-800 text-white"
-                    style={{ marginLeft: '650px' }}
-                >
-                    <ChevronLeftIcon className="h-6 w-6" />{" "}
-                    {/* Left Arrow Icon */}
-                </button>
-                <button
-                    onClick={handleNextPage}
-                    className="px-2 py-2 mr-20 bg-gray-800 text-white"
-                    style={{ marginRight: '650px' }}
-                >
-                    <ChevronRightIcon className="h-6 w-6" />{" "}
-                    {/* Right Arrow Icon */}
-                </button>
+                <ChevronLeftIcon className="h-6 w-6" />{" "}
+                {/* Left Arrow Icon */}
+            </button>
+            <button
+                onClick={handleNextPage}
+                className="px-2 py-2 bg-gray-800 text-white"
+                style={{ marginLeft: '1rem' }}
+            >
+                <ChevronRightIcon className="h-6 w-6" />{" "}
+                {/* Right Arrow Icon */}
+            </button>
             </div>
+                
         </>
     );
 }

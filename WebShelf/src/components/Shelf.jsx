@@ -119,7 +119,7 @@ export default function MonthlySuggestions() {
             </svg>
 
             <h1 className="shelf__title">{currentShelf.name}</h1>
-
+            <div className="search-bar-container">
             <div className="search-bar">
                 <form
                     onSubmit={(e) => {
@@ -138,6 +138,7 @@ export default function MonthlySuggestions() {
                         onChange={handleBookNameChange}
                     />
                 </form>
+            </div>
             </div>
             <div
                 role="list"

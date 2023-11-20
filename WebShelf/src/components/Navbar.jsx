@@ -67,9 +67,9 @@ const Navbar = () => {
                         <Dropdown.Item as={Link} to="/monthly_suggestions" >
                             Monthly Suggestions
                         </Dropdown.Item>
-                        <Dropdown.Item as={Link} to="/new_releases" >
+                        {/*<Dropdown.Item as={Link} to="/new_releases" >
                             New Releases
-                        </Dropdown.Item>
+                        </Dropdown.Item>*/}
                     </Dropdown.Menu>
                 </Dropdown>
                 <li>

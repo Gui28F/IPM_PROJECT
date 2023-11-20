@@ -12,6 +12,7 @@ import book11 from '../assets/book_covers/flies_cover.jpg';
 import book12 from '../assets/book_covers/seuss_cover.jpg';
 import book13 from '../assets/book_covers/dorian_cover.jpg';
 import book14 from '../assets/book_covers/quixote_cover.jpg';
+import book15 from '../assets/test_images/1984.webp';
 export const books = [
     {
         id: 1,
@@ -170,6 +171,67 @@ export const books = [
         spineForegroundColor: "#ffe9a2", // color title
     }
 ];
+
+export const monthlySuggestions = [
+    {
+        id:7,
+        title: "1984",
+        coverUrl: book15,
+        spineBackgroundColor: "#ae2d32",
+        spineForegroundColor: "#ffe9a2", // color title
+    },
+    {
+        id:14,
+        title: "Don Quixote",
+        coverUrl: book14,
+        spineBackgroundColor: "#ffffff",
+        spineForegroundColor: "#050505",
+    },
+    {
+        id:13,
+        title: "The Picture of Dorian Gray",
+        coverUrl: book13,
+        spineBackgroundColor: "#1f7189",
+        spineForegroundColor: "#ffffd5",
+    },
+    {
+        id:8,
+        title: "The Great Gatsby",
+        coverUrl: book8,
+        spineBackgroundColor: "#000004",
+        spineForegroundColor: "#fffffd",
+    },
+    {
+        id:9,
+        title: "The Lord of the Rings",
+        coverUrl: book9,
+        spineBackgroundColor: "#262a57",
+        spineForegroundColor: "#fefcff",
+    },
+    {
+        id:4,
+        title: "Dune",
+        coverUrl: book4,
+        spineBackgroundColor: "#000000",
+        spineForegroundColor: "#ffffff",
+    },
+    {
+        id:6,
+        title: "The Little Prince",
+        coverUrl: book6,
+        spineBackgroundColor: "#ffffff",
+        spineForegroundColor: "#050505",
+    },
+    {
+        id:12,
+        title : "Green Eggs and Ham",
+        coverUrl :book12,
+        spineBackgroundColor : "#ffffff",
+        spineForegroundColor : "#050505",
+
+    }
+];
+
 export const users=[
     {
         name:"User 1",

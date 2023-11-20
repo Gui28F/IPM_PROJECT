@@ -12,7 +12,7 @@ import book11 from '../assets/book_covers/flies_cover.jpg';
 import book12 from '../assets/book_covers/seuss_cover.jpg';
 import book13 from '../assets/book_covers/dorian_cover.jpg';
 import book14 from '../assets/book_covers/quixote_cover.jpg';
-import book15 from '../assets/test_images/1984.webp';
+import book15 from '../assets/book_covers/maias.jpg';
 export const books = [
     {
         id: 1,
@@ -169,6 +169,17 @@ export const books = [
         synopsis: "This is the synopsis for Book 1. It can contain a brief description of the book.",
         spineBackgroundColor: "#ae2d32",
         spineForegroundColor: "#ffe9a2", // color title
+    },
+    {
+        id: 15,
+        title: "Os Maias",
+        genres: ["Fiction","Literature"],
+        rating: 2,
+        author: "Eça de Queirós",
+        imageUrl: book15,
+        synopsis: "Os Maias é uma das obras mais conhecidas do escritor português Eça de Queiroz. O livro foi publicado no Porto em 1888. A acção de Os Maias passa-se em Lisboa, na segunda metade do século XIX, e apresenta-nos a história de três gerações da família Maia. A acção inicia-se no Outono de 1875, quando Afonso da Maia, nobre e pobre proprietário, se instala no Ramalhete com o neto recém formado em Medicina. Neste momento faz-se uma longa descrição da casa - \"O Ramalhete,\" cujo nome tem origem num painel de azulejos com um ramo de girassóis, e não em algo fresco ou campestre, tal como o nome nos remete a pensar. Afonso da Maia era o personagem mais simpático do romance e aquele que o autor mais valorizou, pois não se lhe conhecem defeitos. É um homem de carácter, culto e requintado nos gostos. Em jovem aderiu aos ideais do Liberalismo e foi obrigado, por seu pai, a sair de casa e a instalar-se em Inglaterra. Após o pai falecer regressa a Lisboa para casar com Maria Eduarda Runa, mas pouco tempo depois escolhe o exílio por razões de ordem política...",
+        spineBackgroundColor: "#ae2d32",
+        spineForegroundColor: "#ffe9a2", // color title
     }
 ];
 
@@ -176,7 +187,7 @@ export const monthlySuggestions = [
     {
         id:7,
         title: "1984",
-        coverUrl: book15,
+        coverUrl: book7,
         spineBackgroundColor: "#ae2d32",
         spineForegroundColor: "#ffe9a2", // color title
     },

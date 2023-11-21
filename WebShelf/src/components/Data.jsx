@@ -255,7 +255,7 @@ export const users=[
         },
         {
             id : 2,
-            name: "To Read",
+            name: "Bookmarked",
             books:["The Picture of Dorian Gray"],
             booksIDs: [13,1,2],
         }]

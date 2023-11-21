@@ -159,6 +159,12 @@ export default function MonthlySuggestions() {
                     <button
                         role="listitem"
                         key={book.title}
+                        onMouseEnter={() => {
+                            setFocusedIndex(index)
+                        }}
+                        onMouseLeave={() => {
+                            setFocusedIndex(-1)
+                        }}
                         onClick={() => {
                             if (index === focusedIndex) {
                                 setFocusedIndex(-1);
@@ -189,7 +195,7 @@ export default function MonthlySuggestions() {
                                 transformStyle: "preserve-3d",
                                 height: "18rem", // this is to change the size of the side of the book
                                 transform: `translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(${
-                                    focusedIndex === index ? "-60deg" : "0deg"
+                                    focusedIndex === index ? "-60deg" : "-22deg"
                                 }) rotateZ(0deg) skew(0deg, 0deg)`,
                             }}
                         >
@@ -198,7 +204,7 @@ export default function MonthlySuggestions() {
                                 className="pointer-events-none fixed top-0 left-0 z-50 h-full w-full opacity-40 [filter:url(#paper)]"
                             />
                             <h2
-                                className="text-md m-auto font-medium"
+                                className="text-md m-auto font-medium book-spine"
                                 style={{ writingMode: "vertical-lr" }}
                             >
                                 {book.title}
@@ -212,7 +218,7 @@ export default function MonthlySuggestions() {
                             style={{
                                 transformStyle: "preserve-3d",
                                 transform: `translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(${
-                                    focusedIndex === index ? "30deg" : "90deg"
+                                    focusedIndex === index ? "30deg" : "68deg"
                                 }) rotateZ(0deg) skew(0deg, 0deg)`,
                             }}
                         >

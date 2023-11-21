@@ -7,7 +7,7 @@ import bookMarkTicked from "../assets/book_mark_ticked.svg";
 import favorite from "../assets/favorite_white.svg";
 import add from "../assets/add_icon.svg";
 import favoriteTicked from "../assets/favorite_ticked.svg";
-import { Box, Checkbox, Modal, Rating, Typography, Popover } from "@mui/material";
+import { Box, Checkbox, Modal, Rating, Typography, Popover, Button } from "@mui/material";
 import StarBorderIcon from "@mui/icons-material/StarBorder";
 import { users, books } from "./Data.jsx";
 import CloseIcon from '@mui/icons-material/Close';
@@ -450,7 +450,7 @@ const BookDetails = (props) => {
                     </div>
                     <div className="indv_add_to_shelf" onClick={handleOpen}>
                         <img src={add}></img>
-                        <button>Add to Shelf</button>
+                        Add To Shelf
                     </div>
 
                     <Modal

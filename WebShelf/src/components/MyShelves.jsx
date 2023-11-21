@@ -5,7 +5,6 @@ import "./MyShelves.css";
 import { users } from "./Data.jsx";
 import { Link } from "react-router-dom";
 
-import emptyShelf from "../assets/shelves/empty.svg";
 
 const MyShelves = () => {
     const handleShelfClick = (id) => {
@@ -19,6 +18,7 @@ const MyShelves = () => {
             <h1 className="shelves-heading">My Shelves</h1>
             <div className="shelves-container">
                 {userShelves.map((shelf) => (
+                    <div className="shelf-indv-container">
                     <Link
                         key={shelf.id}
                         className="shelf"
@@ -27,6 +27,7 @@ const MyShelves = () => {
                     >
                         <h3 className="shelf-name">{shelf.name}</h3>
                     </Link>
+                    </div>
                 ))}
             </div>
         </div>

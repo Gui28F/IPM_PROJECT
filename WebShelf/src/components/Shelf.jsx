@@ -111,9 +111,6 @@ export default function MonthlySuggestions() {
 
     const handleSearchSubmit = (event) => {
         setBookName("");
-
-        
-
         // Filter the original list, not the previously filtered list
         setShelfBooks(
             originalShelfBooks.filter((book) =>

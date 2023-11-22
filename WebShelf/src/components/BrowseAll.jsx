@@ -18,11 +18,12 @@ const BrowseAll = (props) => {
     };
     useEffect(() => {
         // Show all books initially
-        setFilterValues({genres: [genre], rating: []})
-        if(genre != null)
-        setFilteredBooks(books.filter((book)=>book.genres.includes(genre)));
-        else
+        if(genre != null) {
+            setFilterValues({genres: [genre], rating: []})
+            setFilteredBooks(books.filter((book) => book.genres.includes(genre)));
+        }else
             setFilteredBooks(books)
+        console.log(filterValues)
     }, []); // Empty dependency array ensures this effect runs only once on mount
 
     const handleFilterChange = (values) => {
@@ -34,6 +35,7 @@ const BrowseAll = (props) => {
     };
     const filterBooks = (values,query) => {
         const { genres, rating } = values;
+
         // Filter books based on selected genres and rating
         const filtered = books.filter(book => {
             const matchGenres = genres.length === 0 || genres.some(genre => book.genres.includes(genre));

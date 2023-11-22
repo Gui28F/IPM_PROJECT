@@ -6,7 +6,7 @@ const Filter = (props) => {
     const { data, onFilterChange, genre } = props;
     const sortedGenres = [...new Set(data.flatMap(book => book.genres))].sort();
     const [selectedRating, setSelectedRating] = useState([]);
-    const [selectedGenres, setSelectedGenres] = useState([genre]);
+    const [selectedGenres, setSelectedGenres] = useState(genre == null? []:[genre]);
     const handleGenreChange = (genre) => {
         // Check if the genre is already selected, if yes, remove it, else add it
         let new_genres =[]

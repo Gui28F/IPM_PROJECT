@@ -5,13 +5,14 @@ import "./BookDetails.css";
 import bookMark from "../assets/book_mark_white.svg";
 import bookMarkTicked from "../assets/book_mark_ticked.svg";
 import favorite from "../assets/favorite_white.svg";
-import add from "../assets/add_icon.svg";
+import AddIcon from '@mui/icons-material/Add';
 import favoriteTicked from "../assets/favorite_ticked.svg";
 import { Box, Checkbox, Modal, Rating, Typography, Popover, Button } from "@mui/material";
 import StarBorderIcon from "@mui/icons-material/StarBorder";
 import { users, books } from "./Data.jsx";
 import CloseIcon from '@mui/icons-material/Close';
 import StarRateIcon from "@mui/icons-material/StarRate.js";
+import { createTheme } from '@mui/material/styles';
 
 
 
@@ -39,6 +40,19 @@ const BookDetails = (props) => {
 
     const openPopupFav = Boolean(anchorFav);
     const openPopupBMark = Boolean(anchorBMark);
+
+    
+
+    const theme = createTheme({
+    palette: {
+        purple: {
+        main: '#2F334B',
+        light: '#AFA2FF',
+        dark: '#101119',
+        contrastText: '#ffffff',
+        },
+    },
+    });
 
     // const [show, setShow] = useState(true);
     const location = useLocation();
@@ -448,11 +462,11 @@ const BookDetails = (props) => {
                         </div>
                         </div>
                     </div>
-                    <div className="indv_add_to_shelf" onClick={handleOpen}>
-                        <img src={add}></img>
-                        Add To Shelf
-                    </div>
-
+                    <div className="indv_add_to_shelf">
+                        <Button  theme={theme} onClick={handleOpen} variant="contained" color="purple"  size="large" startIcon={<AddIcon/>}>
+                            Add to Shelf
+                        </Button>
+                    </div>    
                     <Modal
                         open={open}
                         onClose={() => handleClose()}

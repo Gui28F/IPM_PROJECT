@@ -1,5 +1,5 @@
 .button-container {
-    position: fixed;
+    position: absolute;
     bottom: 40px;
     width: 100%;
     display: flex;
@@ -24,4 +24,22 @@
     overflow: hidden;
     text-overflow: ellipsis;
     text-wrap: nowrap;
+}
+
+.book-list-shelf-container {
+    margin-top: 550px;
+    margin-left:40px;
+
+}
+
+.shelf-separator {
+    margin-top: 10px;
+    margin-bottom: 50px;
+    border-top: solid 2px lightgrey;
+    width: 97%;
+}
+
+.shelf-book-list-h3 {
+    margin-bottom: 30px;
+    margin-left:15px;
 }

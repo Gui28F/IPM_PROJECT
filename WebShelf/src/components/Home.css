@@ -13,9 +13,47 @@
     
 }
 
+.home__scroll {
+    margin-left: 5vw;
+    margin-top: 60vh;
+}
+
+@keyframes scroll {
+    0% {
+        transform : translateY(0);
+    }
+
+    30% {
+        transform: translateY(3.75rem);
+    }
+}
+
+.wheel {
+    animation : scroll 2s ease infinite;
+}
+
+
+
+.home__scroll-name {
+    color: var(--title-color);
+    font-weight: var(--font-medium);
+    margin-right: var(--mb-0-25);
+    margin-left: 2px;
+}
+
+.home__scroll-arrow{
+    font-size: 1.25rem;
+    color: var(--title-color)
+}
+
 .rounded-search-bar {
     border-radius: 50px;
     border:solid 2px #888888;
+}
+
+.button--flex {
+    align-items: center;
+    display: inline-flex;
 }
 
 .navbar-search-container{
@@ -67,7 +105,7 @@
 
 .navbar-placeholder-text {
     margin-left: 10px;
-    outline: 2px solid transparent;
+    outline: none;
     outline-offset: 2px;
     flex-grow: 1;
     max-width: 100%;

@@ -14,6 +14,14 @@
     margin-top: 1em;
 }
 
+.shelf-search-bar-container {
+    margin-top: 2rem;
+    margin-right: 10rem;
+    position: absolute;
+    right: 0vw;
+    top: 100vh;
+}
+
 .image-filter {
     filter: brightness(1.0);
 }
@@ -27,7 +35,7 @@
 }
 
 .book-list-shelf-container {
-    margin-top: 550px;
+    margin-top: 90px;
     margin-left:40px;
 
 }

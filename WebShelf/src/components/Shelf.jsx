@@ -7,6 +7,7 @@ import { useParams, useLocation } from "react-router-dom";
 import "./Shelf.css";
 import BooksList from "./BooksList.jsx";
 import "./BrowseAll.css";
+import ScrollDown from "./scrollDown.jsx";
 
 const listContainerStyles = {
     margin: "auto",
@@ -144,16 +145,16 @@ export default function MonthlySuggestions() {
             </svg>
 
             <h1 className="shelf__title">{currentShelf.name}</h1>
-            <div className="search-bar-container">
+            <ScrollDown />
+            <div className="shelf-search-bar-container">
             <div className="search-bar">
-            <div className="search-bar">
+            
                         <i className="fas fa-search" aria-hidden="true"></i>
                         <input className="search-bar-input" type="text" placeholder="Search"
                                aria-label="Search"
                                value={searchQuery}
                                onChange={handleSearchChange}/>
                     </div>
-            </div>
             </div>
             <div
                 role="list"

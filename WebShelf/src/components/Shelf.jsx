@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { books, users } from "./Data"; // Adjust the import statement based on the actual structure of your project
 import { useParams, useLocation } from "react-router-dom";
 import "./Shelf.css";
+import BooksList from "./BooksList.jsx";
 import "./BrowseAll.css";
 
 const listContainerStyles = {
@@ -45,16 +46,17 @@ export default function MonthlySuggestions() {
     const currentShelfIndex = shelves.findIndex(
         (shelf) => shelf.id === parseInt(id)
     );
-    console.log(currentShelfIndex);
     const currentShelf = shelves[currentShelfIndex];
 
     const [shelfBooks, setShelfBooks] = useState([]);
+    const [filteredBooks, setFilteredBooks] = useState([]);
 
     useEffect(() => {
         const filteredBooks = books.filter((book) =>
             currentShelf.booksIDs.includes(book.id)
         );
-        setShelfBooks(filteredBooks);
+        setShelfBooks(books);
+        setFilteredBooks(filteredBooks)
     }, []);
 
     const startIndex = currentPage * booksPerPage;
@@ -75,7 +77,23 @@ export default function MonthlySuggestions() {
         setFocusedIndex(-1);
     };
 
-    const [bookName, setBookName] = useState("");
+    const [searchQuery, setSearchQuery] = useState('');
+    const handleSearchChange = (event) => {
+        const query = event.target.value;
+        setSearchQuery(query);
+        filterBooks(query);
+    };
+
+    const filterBooks = (query) => {
+        // Filter books based on selected genres and rating
+        console.log(query)
+        const filtered = shelfBooks.filter(book => {
+            const matchSearchQuery = !query || book.title.toLowerCase().includes(query.toLowerCase());
+            return matchSearchQuery;
+        });
+
+        setFilteredBooks(filtered);
+    };
 
     const [originalShelfBooks, setOriginalShelfBooks] = useState([]);
 
@@ -93,9 +111,6 @@ export default function MonthlySuggestions() {
 
     const handleSearchSubmit = (event) => {
         setBookName("");
-
-        console.log("bookname: " + bookName);
-
         // Filter the original list, not the previously filtered list
         setShelfBooks(
             originalShelfBooks.filter((book) =>
@@ -112,8 +127,8 @@ export default function MonthlySuggestions() {
                     <filter id="paper" x="0%" y="0%" width="100%" height="100%">
                         <feTurbulence
                             type="fractalNoise"
-                            baseFrequency="0.9"
-                            numOctaves="8"
+                            baseFrequency="1"
+                            numOctaves="1"
                             result="noise"
                         />
                         <feDiffuseLighting
@@ -131,23 +146,13 @@ export default function MonthlySuggestions() {
             <h1 className="shelf__title">{currentShelf.name}</h1>
             <div className="search-bar-container">
             <div className="search-bar">
-                <form
-                    onSubmit={(e) => {
-                        e.preventDefault();
-                        handleSearchSubmit();
-                    }}
-                >
-                    <i className="fas fa-search" aria-hidden="true"></i>
-                    <input
-                        className="search-bar-input"
-                        type="text"
-                        placeholder="Search"
-                        aria-label="Search"
-                        name="bookName"
-                        value={bookName}
-                        onChange={handleBookNameChange}
-                    />
-                </form>
+            <div className="search-bar">
+                        <i className="fas fa-search" aria-hidden="true"></i>
+                        <input className="search-bar-input" type="text" placeholder="Search"
+                               aria-label="Search"
+                               value={searchQuery}
+                               onChange={handleSearchChange}/>
+                    </div>
             </div>
             </div>
             <div
@@ -155,7 +160,7 @@ export default function MonthlySuggestions() {
                 style={listContainerStyles}
                 className="flex flex-row justify-center space-x-4"
             >
-                {displayedBooks.map((book, index) => (
+                {filteredBooks.map((book, index) => (
                     <button
                         role="listitem"
                         key={book.title}
@@ -275,6 +280,12 @@ export default function MonthlySuggestions() {
                 <ChevronRightIcon className="h-6 w-6" />{" "}
                 {/* Right Arrow Icon */}
             </button>
+            </div>
+
+            <div className="book-list-shelf-container">
+                <hr className="shelf-separator" /> 
+                <h3 className="shelf-book-list-h3">Book List:</h3>
+                    <BooksList data ={filteredBooks}></BooksList>
             </div>
                 
         </>

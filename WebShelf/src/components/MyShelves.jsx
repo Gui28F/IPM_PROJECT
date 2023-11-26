@@ -35,14 +35,16 @@ const MyShelves = () => {
     const [success, setSuccess] = useState(false);
 
     const handleSubmit = () => {
+        let added = false;
         selectedShelves.forEach((selectedShelf) => {
                 
+            console.log(selectedShelf);
             const existingShelf = currentUser.shelves.find(
                 (shelf) => shelf.name === selectedShelf
             );
 
             if (existingShelf) {
-                alert(`Shelf '${selectedShelf}' already exists!`);
+                //alert(`Shelf '${selectedShelf}' already exists!`);
             } 
 
             else {
@@ -56,15 +58,16 @@ const MyShelves = () => {
                     booksIDs: [],
                 };
                 users[0].shelves = [...users[0].shelves, newShelf];
+                added = true;
             }
             
         });
 
+        if(!added) {
+            alert(`Shelf already exists!`);
+        }
+
         setSuccess(true);
-        if (selectedShelves.includes("To Read") && !bookmarkTicked)
-            setBookmarkTicked(true);
-        if (selectedShelves.includes("Favourites") && !favTicked)
-            setFavTicked(true);
     
         setTimeout(() => {
             handleClose();

@@ -36,7 +36,16 @@ const MyShelves = () => {
 
     const handleSubmit = () => {
         selectedShelves.forEach((selectedShelf) => {
-            
+                
+            const existingShelf = currentUser.shelves.find(
+                (shelf) => shelf.name === selectedShelf
+            );
+
+            if (existingShelf) {
+                alert(`Shelf '${selectedShelf}' already exists!`);
+            } 
+
+            else {
                 console.log("entrei aquii")
                 // Shelf does not exist, create a new one and add the book
                 const newShelfID = users[0].shelves.reduce((maxID, shelf) => Math.max(shelf.id, maxID), 0) + 1;
@@ -47,6 +56,7 @@ const MyShelves = () => {
                     booksIDs: [],
                 };
                 users[0].shelves = [...users[0].shelves, newShelf];
+            }
             
         });
 
@@ -61,6 +71,8 @@ const MyShelves = () => {
             setSuccess(false);
             setNewShelfName(""); // Clear the old shelf name
         }, 1000); // 1000 milliseconds = 1 second
+        setNewShelfName("");
+        
     };
 
     const handleShelfNameChange = (newName) => {
@@ -143,37 +155,7 @@ const MyShelves = () => {
 
                             </Typography>
 
-                            {currentUser.shelves.map((shelf) => (
-                                <div key={shelf.name} className="indv_shelf_row">
-                                    <Checkbox
-                                        checked={selectedShelves.includes(
-                                            shelf.name
-                                        )}
-                                        onChange={() =>
-                                            handleShelfToggle(shelf.name)
-                                        }
-                                        color="primary"
-                                    />
-                                    <span className="indv_shelf_name">
-                                        {shelf.name}
-                                    </span>
-                                </div>
-                            ))}
                             <div className="indv_add_shelf_container">
-                                <Checkbox
-                                    checked={selectedShelves.includes(newShelfName) || customTicked}
-                                    onChange={() => {
-                                        setSelectedShelves((prevSelected) =>
-                                            prevSelected.includes(newShelfName)
-                                                ? prevSelected.filter(
-                                                    (selected) =>
-                                                        selected !== newShelfName
-                                                )
-                                                : [...prevSelected, newShelfName]
-                                        );
-                                    }}
-                                    color="primary"
-                                />
                                 <input
                                     className="indv_new_shelf_input"
                                     type="text"

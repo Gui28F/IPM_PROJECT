@@ -119,7 +119,12 @@ export default function MonthlySuggestions() {
             )
         );
     };
-
+    const deleteBook = (bookId) => {
+        let shelfBooksF = shelfBooks.filter((book)=>book.id !== bookId);
+        setFilteredBooks(shelfBooksF)
+        currentShelf.books = shelfBooksF
+        currentShelf.booksIDs = shelfBooksF.map((book)=>book.id)
+    }
     return (
         <>
             <svg className="invisible absolute inset-0">
@@ -286,7 +291,7 @@ export default function MonthlySuggestions() {
             <div className="book-list-shelf-container">
                 <hr className="shelf-separator" /> 
                 <h3 className="shelf-book-list-h3">Book List:</h3>
-                    <BooksList data ={filteredBooks}></BooksList>
+                    <BooksList onDelete={(bookId)=>deleteBook(bookId)} deleteBtn={true} data ={filteredBooks}></BooksList>
             </div>
                 
         </>

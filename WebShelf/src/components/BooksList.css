@@ -54,7 +54,21 @@
     visibility: hidden;
     transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
 }
-
+.delete_book_shelf_container{
+    position: absolute;
+    top: 10%;
+    left: 85%;
+    transform: translate(-50%, -50%);
+    visibility: hidden;
+}
+.book-container:hover .delete_book_shelf_container{
+    visibility: visible;
+    color: #ffffff;
+}
+.book-container:hover .delete_book_shelf_container:hover{
+    visibility: visible;
+    color: #d5d5d5;
+}
 .book-container:hover .image-container img  {
     filter: brightness(0.5);
     transform: scale(1.05);

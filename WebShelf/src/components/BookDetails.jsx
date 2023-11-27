@@ -523,6 +523,12 @@ const BookDetails = (props) => {
                                     onChange={(e) =>
                                         handleShelfNameChange(e.target.value)
                                     }
+                                    onKeyDown={(e) => {
+                                        // Submit when Enter key is pressed
+                                        if (e.key === "Enter") {
+                                            handleSubmit()
+                                        }
+                                    }}
                                 />
                             </div>
                             <button

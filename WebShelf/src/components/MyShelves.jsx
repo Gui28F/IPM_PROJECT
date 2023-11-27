@@ -201,6 +201,12 @@ const MyShelves = () => {
                                             onChange={(e) =>
                                                 handleEditInput(e.target.value)
                                             }
+                                            onKeyDown={(e) => {
+                                                // Submit when Enter key is pressed
+                                                if (e.key === "Enter") {
+                                                    handleEditSubmit(shelf.name);
+                                                }
+                                            }}
                                         />
                                     </div>
                                     <button
@@ -229,7 +235,7 @@ const MyShelves = () => {
                         aria-labelledby="modal-modal-title"
                         aria-describedby="modal-modal-description"
                     >
-                        <Box closeButton className={"modal-box"}>
+                        <Box className={"modal-box"}>
                             <Typography
                                 className="modal-modal-title"
                                 variant="h6"
@@ -249,6 +255,12 @@ const MyShelves = () => {
                                     onChange={(e) =>
                                         handleShelfNameChange(e.target.value)
                                     }
+                                    onKeyDown={(e) => {
+                                        // Submit when Enter key is pressed
+                                        if (e.key === "Enter") {
+                                            handleSubmit();
+                                        }
+                                    }}
                                 />
                             </div>
                             <button

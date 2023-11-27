@@ -47,6 +47,7 @@
     margin-top: 10px;
     display: flex;
     background-color: #404354;
+    flex-direction: column;
   }
 
   .shelf-indv-container:hover {
@@ -58,3 +59,19 @@
   /* MyShelves.css */
 
 
+.delete-icon{
+  color:transparent;
+}
+.edit-icon{
+  color:transparent;
+}
+.shelf-indv-container:hover .delete-icon{
+  color: #ff0000;
+  margin-top: 2rem;
+  margin-left: 30%;
+}
+.shelf-indv-container:hover .edit-icon{
+  color: white;
+  margin-top: 2rem;
+  margin-left: 1rem;
+}

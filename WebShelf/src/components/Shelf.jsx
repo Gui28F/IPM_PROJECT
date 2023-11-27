@@ -122,6 +122,7 @@ export default function MonthlySuggestions() {
     const deleteBook = (bookId) => {
         let shelfBooksF = shelfBooks.filter((book)=>book.id !== bookId);
         setFilteredBooks(shelfBooksF)
+        setShelfBooks(shelfBooksF)
         currentShelf.books = shelfBooksF
         currentShelf.booksIDs = shelfBooksF.map((book)=>book.id)
     }

@@ -173,8 +173,9 @@ const MyShelves = () => {
                         <h3 className="shelf-name">{shelf.name}</h3>
                     </Link>
                         <div>
-                            <DeleteIcon className={"delete-icon"} onClick={()=> handleDeleteShelf(shelf.name)}/>
-                            <EditIcon className={"edit-icon"} onClick={handleEditOpen}/>
+                            { shelf.name !== "Favourites"  && shelf.name !== "Bookmarked" &&
+                                (<><DeleteIcon className={"delete-icon"} onClick={()=> handleDeleteShelf(shelf.name)}/>
+                                <EditIcon className={"edit-icon"} onClick={handleEditOpen}/></>)}
                             <Modal
                                 open={editOpen}
                                 onClose={() => handleEditClose()}

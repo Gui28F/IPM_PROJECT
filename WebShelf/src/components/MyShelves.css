@@ -25,6 +25,7 @@
   .shelf {
     width: 100%;
     text-align: center;
+    height: 100%;
   }
   
   .shelf-name {
@@ -60,17 +61,19 @@
 
 
 .delete-icon{
-  color:transparent;
+  visibility: hidden;
 }
 .edit-icon{
-  color:transparent;
+  visibility: hidden;
 }
 .shelf-indv-container:hover .delete-icon{
+  visibility: visible;
   color: #ff0000;
   margin-top: 2rem;
   margin-left: 30%;
 }
 .shelf-indv-container:hover .edit-icon{
+  visibility: visible;
   color: white;
   margin-top: 2rem;
   margin-left: 1rem;

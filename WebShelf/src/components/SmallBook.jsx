@@ -44,7 +44,7 @@ const SmallBook = (props) => {
   const [bookmarkTicked, setBookmarkTicked] = useState(() => {
     // Check if the book is in "To Read" shelf
     const isBookInToRead = users[0].shelves.find(
-      (shelf) => shelf.name === "To Read" && shelf.books.includes(book.title)
+      (shelf) => shelf.name === "Bookmarked" && shelf.books.includes(book.title)
     );
 
     return !!isBookInToRead; // Set to true if the book is in "To Read" shelf, false otherwise
@@ -98,7 +98,7 @@ const toggleBookmark = (event) => {
 
   const isBookInToRead = users[0].shelves.find(
       (shelf) =>
-          shelf.name === "To Read" && shelf.books.includes(book.title)
+          shelf.name === "Bookmarked" && shelf.books.includes(book.title)
   );
 
   const bookID = book.id;
@@ -106,7 +106,7 @@ const toggleBookmark = (event) => {
   if (isBookInToRead) {
       // Book is in "To Read" shelf, remove it
       const updatedShelves = users[0].shelves.map((shelf) =>
-          shelf.name === "To Read"
+          shelf.name === "Bookmarked"
               ? {
                   ...shelf,
                   books: shelf.books.filter(
@@ -122,7 +122,7 @@ const toggleBookmark = (event) => {
   } else {
       // Book is not in "To Read" shelf, add it
       const updatedShelves = users[0].shelves.map((shelf) =>
-          shelf.name === "To Read"
+          shelf.name === "Bookmarked"
               ? {
                   ...shelf,
                   books: [...shelf.books, book.title],

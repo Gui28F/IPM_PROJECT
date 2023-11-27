@@ -80,7 +80,7 @@ const BookDetails = (props) => {
         // Check if the book is in "To Read" shelf
         const isBookInToRead = users[0].shelves.find(
             (shelf) =>
-                shelf.name === "To Read" && shelf.books.includes(book.title)
+                shelf.name === "Bookmarked" && shelf.books.includes(book.title)
         );
 
         return !!isBookInToRead; // Set to true if the book is in "To Read" shelf, false otherwise
@@ -136,7 +136,7 @@ const BookDetails = (props) => {
     const toggleBookmark = () => {
         const isBookInToRead = users[0].shelves.find(
             (shelf) =>
-                shelf.name === "To Read" && shelf.books.includes(book.title)
+                shelf.name === "Bookmarked" && shelf.books.includes(book.title)
         );
     
         const bookID = book.id;
@@ -144,7 +144,7 @@ const BookDetails = (props) => {
         if (isBookInToRead) {
             // Book is in "To Read" shelf, remove it
             users[0].shelves = users[0].shelves.map((shelf) =>
-                shelf.name === "To Read"
+                shelf.name === "Bookmarked"
                     ? {
                         ...shelf,
                         books: shelf.books.filter(
@@ -159,7 +159,7 @@ const BookDetails = (props) => {
         } else {
             // Book is not in "To Read" shelf, add it
             users[0].shelves = users[0].shelves.map((shelf) =>
-                shelf.name === "To Read"
+                shelf.name === "Bookmarked"
                     ? {
                         ...shelf,
                         books: [...shelf.books, book.title],
@@ -224,7 +224,7 @@ const BookDetails = (props) => {
         // This depends on your project setup (e.g., using a backend API, localStorage, etc.)
     
         setSuccess(true);
-        if (selectedShelves.includes("To Read") && !bookmarkTicked)
+        if (selectedShelves.includes("Bookmarked") && !bookmarkTicked)
             setBookmarkTicked(true);
         if (selectedShelves.includes("Favourites") && !favTicked)
             setFavTicked(true);

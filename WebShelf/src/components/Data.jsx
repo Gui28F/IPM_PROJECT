@@ -130,7 +130,7 @@ export const books = [
     },  {
         id: 11,
         title: "Lord of the Flies",
-        genres: ["Dystiopia","Fiction"],
+        genres: ["Dystopia","Fiction"],
         rating: 4,
         author: "William Golding",
         imageUrl: book11,

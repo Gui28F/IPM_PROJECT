@@ -33,7 +33,7 @@ const MyShelves = () => {
     const [deleteOpen, setDeleteOpen] = React.useState(false);
     const [editedName, setEditedName] = useState("");
 
-    const handleOpen = () => setOpen(true);
+    const handleOpen = () => {setOpen(true);setEmptyError("");}
     const handleClose = () => setOpen(false);
 
     const handleEditOpen = () => setEditOpen(true);
@@ -87,6 +87,7 @@ const MyShelves = () => {
                 setEmptyError("Shelf already exists")
             } else {
                 // Shelf does not exist, create a new one and add the book
+                setEmptyError("")
                 const newShelfID = users[0].shelves.reduce((maxID, shelf) => Math.max(shelf.id, maxID), 0) + 1;
                 const newShelf = {
                     id: newShelfID,
@@ -105,7 +106,7 @@ const MyShelves = () => {
         });
         if(added) {
             setSuccess(true);
-        
+            setEmptyError("")
             setTimeout(() => {
                 handleClose();
                 setSuccess(false);

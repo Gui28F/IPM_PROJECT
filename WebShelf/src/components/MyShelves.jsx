@@ -3,7 +3,7 @@ import React, {useState} from "react";
 import "./MyShelves.css";
 import {users} from "./Data.jsx";
 import {Link} from "react-router-dom";
-import {Box, Button, Modal, Typography} from "@mui/material";
+import {Box, Button, Modal, Typography,Popover} from "@mui/material";
 import {createTheme} from '@mui/material/styles';
 import AddIcon from '@mui/icons-material/Add';
 import CloseIcon from '@mui/icons-material/Close';
@@ -28,43 +28,75 @@ const MyShelves = () => {
 
     const [userShelves, setUserShelves] = useState(users[0].shelves);
     const currentUser = users[0];
-    const [selectedShelves, setSelectedShelves] = useState([]);
     const [open, setOpen] = React.useState(false);
     const [editOpen, setEditOpen] = React.useState(false);
+    const [deleteOpen, setDeleteOpen] = React.useState(false);
     const [editedName, setEditedName] = useState("");
+
     const handleOpen = () => setOpen(true);
-    const handleEditOpen = () => setEditOpen(true);
     const handleClose = () => setOpen(false);
+
+    const handleEditOpen = () => setEditOpen(true);
     const handleEditClose = () => {
         setEditOpen(false);
     }
+
+    const handleDeleteOpen = () => setDeleteOpen(true);
+    const handleDeleteClose = () => {
+        console.log(successDel)
+        setDeleteOpen(false);
+    }
+
     const [newShelfName, setNewShelfName] = useState("");
     const [updatedShelfName, updateShelfName] = useState("");
-    const [customTicked, setCustomTicked] = useState(false);
     const [success, setSuccess] = useState(false);
+    const [successDel, setSuccessDel] = useState(false);
+
+    const [anchorDelete, setAnchorDel] = React.useState(null);
+    const [anchorEdit, setAnchorEdit] = React.useState(null);
+    const handlePopoverOpenDel= (event) => {
+        setAnchorDel(event.currentTarget);
+    };
+
+    const handlePopoverCloseDel = () => {
+        setAnchorDel(null);
+    };
+
+    const handlePopoverOpenEdit = (event) => {
+        setAnchorEdit(event.currentTarget);
+    };
+
+    const handlePopoverCloseEdit = () => {
+        setAnchorEdit(null);
+    };
+
+    const openPopupDel = Boolean(anchorDelete);
+    const openPopupEdit = Boolean(anchorEdit);
 
     const handleSubmit = () => {
         let added = false;
-        selectedShelves.forEach((selectedShelf) => {
+        userShelves.forEach(() => {
 
+            //Check if our shelf exists
             const existingShelf = currentUser.shelves.find(
-                (shelf) => shelf.name === selectedShelf
+                (shelf) => shelf.name === newShelfName
             );
 
             if (existingShelf) {
                 //alert(`Shelf '${selectedShelf}' already exists!`);
-            } 
-
-            else {
+            } else {
                 // Shelf does not exist, create a new one and add the book
                 const newShelfID = users[0].shelves.reduce((maxID, shelf) => Math.max(shelf.id, maxID), 0) + 1;
                 const newShelf = {
                     id: newShelfID,
-                    name: selectedShelf,
+                    name: newShelfName,
                     books: [],
                     booksIDs: [],
                 };
+                console.log(users[0].shelves)
                 users[0].shelves = [...users[0].shelves, newShelf];
+                console.log("After")
+                console.log(users[0].shelves)
                 setUserShelves(users[0].shelves)
                 added = true;
             }
@@ -87,29 +119,6 @@ const MyShelves = () => {
     };
 
     const handleShelfNameChange = (newName) => {
-        // Update the customTicked state based on whether the shelf name is not empty
-        setCustomTicked(newName !== "");
-
-        // Update the selectedShelves state with only the latest value
-        setSelectedShelves((prevSelected) => {
-            // Check if the new name already exists in the selected shelves
-            if (prevSelected.includes(newName)) {
-                // If it does, return the array unchanged
-                return prevSelected;
-            }
-
-            // Filter out only the exact match of the new name
-            const filteredShelves = prevSelected.filter((shelf) => shelf !== newShelfName);
-
-            // Add the new name to the filtered shelves only if it does not already exist
-            if (!filteredShelves.includes(newName)) {
-                return [...filteredShelves, newName];
-            }
-
-            // If the new name already exists, return the filtered shelves unchanged
-            return filteredShelves;
-        });
-
         // Update the new shelf name
         console.log(newName);
         setNewShelfName(newName);
@@ -118,21 +127,19 @@ const MyShelves = () => {
         setEditedName(e)
 
     }
-    const handleShelfToggle = (shelf) => {
-        setSelectedShelves((prevSelected) => {
-            if (prevSelected.includes(shelf)) {
-                return prevSelected.filter((selected) => selected !== shelf);
-            } else {
-                return [...prevSelected, shelf];
-            }
-        });
-    };
+
     const handleDeleteShelf = (shelfName) => {
         // Implement logic to delete the shelf with the given ID
         users[0].shelves = currentUser.shelves.filter((shelf) => shelf.name !== shelfName);
         setUserShelves(users[0].shelves)
+        
+        setSuccessDel(true)
+        setTimeout(() => {
+            handleDeleteClose()
+            setSuccessDel(false)
+        }, 1000); //
     };
-    const handleEditSubmit = (oldShelfName) => {
+    const handleEditSubmit = (newShelfName) => {
         // Implement logic to edit the name of the shelf with the given ID
         const updatedShelves = userShelves.map((shelf, index) => {
             if (shelf.name === oldShelfName) {
@@ -172,10 +179,73 @@ const MyShelves = () => {
                     >
                         <h3 className="shelf-name">{shelf.name}</h3>
                     </Link>
-                        <div>
+                        <div className="shelf-icon-container">
                             { shelf.name !== "Favourites"  && shelf.name !== "Bookmarked" &&
-                                (<><DeleteIcon className={"delete-icon"} onClick={()=> handleDeleteShelf(shelf.name)}/>
-                                <EditIcon className={"edit-icon"} onClick={handleEditOpen}/></>)}
+                                (
+                                <>
+                                <Typography
+                                  aria-owns={openPopupDel ? 'mouse-over-popover' : undefined}
+                                  aria-haspopup="true"
+                                  className={"delete-icon"}
+                                  onMouseEnter={handlePopoverOpenDel}
+                                  onMouseLeave={handlePopoverCloseDel}
+                                  onClick={()=> handleDeleteOpen()}
+                                >
+                                  <DeleteIcon/>
+                                </Typography>
+                                <Popover
+                                  id="mouse-over-popover"
+                                  sx={{
+                                    pointerEvents: 'none',
+                                  }}
+                                  open={openPopupDel}
+                                  anchorEl={anchorDelete}
+                                  anchorOrigin={{
+                                    vertical: 'top',
+                                    horizontal: 'left',
+                                  }}
+                                  transformOrigin={{
+                                    vertical: 'bottom',
+                                    horizontal: 'left',
+                                  }}
+                                  onClose={handlePopoverCloseDel}
+                                  disableRestoreFocus
+                                >
+                                  <Typography sx={{ p: 1 }}>Delete</Typography>
+                                </Popover>
+                                <Typography
+                                  aria-owns={openPopupDel ? 'mouse-over-popover' : undefined}
+                                  aria-haspopup="true"
+                                  className={"edit-icon"}
+                                  onMouseEnter={handlePopoverOpenEdit}
+                                  onMouseLeave={handlePopoverCloseEdit}
+                                  onClick={()=> handleEditOpen()}
+                                >
+                                  <EditIcon />
+                                </Typography>
+                                <Popover
+                                  id="mouse-over-popover"
+                                  sx={{
+                                    pointerEvents: 'none',
+                                  }}
+                                  open={openPopupEdit}
+                                  anchorEl={anchorEdit}
+                                  anchorOrigin={{
+                                    vertical: 'top',
+                                    horizontal: 'left',
+                                  }}
+                                  transformOrigin={{
+                                    vertical: 'bottom',
+                                    horizontal: 'left',
+                                  }}
+                                  onClose={handlePopoverCloseEdit}
+                                  disableRestoreFocus
+                                >
+                                  <Typography sx={{ p: 1 }}>Edit</Typography>
+                                </Popover>
+                                </>
+                                
+                                )}
                             <Modal
                                 open={editOpen}
                                 onClose={() => handleEditClose()}
@@ -217,6 +287,44 @@ const MyShelves = () => {
                                     >
                                         {success ? "Saved" : "Save"}
                                     </button>
+                                </Box>
+                            </Modal>
+                            <Modal
+                                open={deleteOpen}
+                                onClose={() => handleDeleteClose()}
+                                aria-labelledby="modal-modal-title"
+                                aria-describedby="modal-modal-description"
+                            >
+                                <Box className={"modal-box"}>
+                                    <Typography
+                                        className="modal-modal-title"
+                                        variant="h6"
+                                        component="h2"
+                                    >
+                                        Confirm Shelf Deletion
+                                        <CloseIcon className="close-icon-details" onClick={handleDeleteClose}></CloseIcon>
+                                    </Typography>
+                                    <div>
+                                        Are you sure you want to delete this shelf?
+                                    </div>
+                                    <div className="modal-delete-shelf-subtitle">This action is irreversible</div>
+                                    <div className="delete-modal-buttons-container">
+                                        <Button variant="outlined"
+                                        onClick={handleDeleteClose}
+                                        >Cancel</Button>
+                                        {!successDel && (
+                                            <Button variant="outlined" color="error"
+                                            onClick={()=>handleDeleteShelf(shelf.name)}
+                                            >
+                                                Delete
+                                            </Button>
+                                        )}
+                                        {successDel && (
+                                            <Button variant="contained" color="error">
+                                            Deleted
+                                            </Button>
+                                        )}
+                                    </div>
                                 </Box>
                             </Modal>
                         </div>

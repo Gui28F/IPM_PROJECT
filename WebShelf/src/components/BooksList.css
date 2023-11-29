@@ -56,22 +56,28 @@
 }
 .delete_book_shelf_container{
     position: absolute;
-    top: 10%;
-    left: 85%;
+    top: 6%;
+    left: 75%;
     color: red !important;
-    transform: translate(-50%, -50%);
+    transform: scale(1.2);
     visibility: hidden;
 }
 .book-container:hover .delete_book_shelf_container{
     visibility: visible;
+    
     color: #ffffff;
+}
+
+.delete_book_shelf_container:hover {
+    transform: scale(1.45);
+    transition: transform .2s ease-in-out;
 }
 .book-container:hover .delete_book_shelf_container:hover{
     visibility: visible;
     color: #d5d5d5;
 }
 .book-container:hover .image-container img  {
-    filter: brightness(0.5);
+    filter: brightness(0.28);
     transform: scale(1.05);
 }
 

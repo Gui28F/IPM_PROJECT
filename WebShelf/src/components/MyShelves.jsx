@@ -48,7 +48,7 @@ const MyShelves = () => {
     }
 
     const [newShelfName, setNewShelfName] = useState("");
-    const [updatedShelfName, updateShelfName] = useState("");
+    const [emptyError, setEmptyError] = useState("")
     const [success, setSuccess] = useState(false);
     const [successDel, setSuccessDel] = useState(false);
 
@@ -76,14 +76,15 @@ const MyShelves = () => {
     const handleSubmit = () => {
         let added = false;
         userShelves.forEach(() => {
-
             //Check if our shelf exists
             const existingShelf = currentUser.shelves.find(
                 (shelf) => shelf.name === newShelfName
             );
 
-            if (existingShelf) {
-                //alert(`Shelf '${selectedShelf}' already exists!`);
+            if(newShelfName == "") {
+                setEmptyError("Please insert a name for your shelf")
+            } else if (existingShelf) {
+                setEmptyError("Shelf already exists")
             } else {
                 // Shelf does not exist, create a new one and add the book
                 const newShelfID = users[0].shelves.reduce((maxID, shelf) => Math.max(shelf.id, maxID), 0) + 1;
@@ -102,19 +103,16 @@ const MyShelves = () => {
             }
             
         });
-
-        if(!added) {
-            alert(`Shelf already exists!`);
+        if(added) {
+            setSuccess(true);
+        
+            setTimeout(() => {
+                handleClose();
+                setSuccess(false);
+                setNewShelfName(""); // Clear the old shelf name
+            }, 1000); // 1000 milliseconds = 1 second
+            setNewShelfName("");
         }
-
-        setSuccess(true);
-    
-        setTimeout(() => {
-            handleClose();
-            setSuccess(false);
-            setNewShelfName(""); // Clear the old shelf name
-        }, 1000); // 1000 milliseconds = 1 second
-        setNewShelfName("");
         
     };
 
@@ -139,7 +137,7 @@ const MyShelves = () => {
             setSuccessDel(false)
         }, 1000); //
     };
-    const handleEditSubmit = (newShelfName) => {
+    const handleEditSubmit = (oldShelfName) => {
         // Implement logic to edit the name of the shelf with the given ID
         const updatedShelves = userShelves.map((shelf, index) => {
             if (shelf.name === oldShelfName) {
@@ -160,6 +158,7 @@ const MyShelves = () => {
             handleEditClose();
             setSuccess(false);
             setEditedName("");
+            setEmptyError("");
         }, 1000); //
         // Optionally, you can also update the state or trigger a re-render
     };
@@ -280,13 +279,16 @@ const MyShelves = () => {
                                             }}
                                         />
                                     </div>
-                                    <button
-                                        className={`indv_submit_button${success ? "_success" : ""
-                                        }`}
-                                        onClick={()=>handleEditSubmit(shelf.name)}
-                                    >
-                                        {success ? "Saved" : "Save"}
-                                    </button>
+                                    <div className="confirm-edit-button-container">
+                                    {!success && <Button variant="contained" color="success" size="large"
+                                    onClick={()=>handleEditSubmit(shelf.name)}>
+                                        Save
+                                    </Button>}
+                                    {success && <Button variant="contained" color="success" size="large">
+                                        Saved
+                                    </Button>}
+                                    </div>
+                                    
                                 </Box>
                             </Modal>
                             <Modal
@@ -309,11 +311,11 @@ const MyShelves = () => {
                                     </div>
                                     <div className="modal-delete-shelf-subtitle">This action is irreversible</div>
                                     <div className="delete-modal-buttons-container">
-                                        <Button variant="outlined"
+                                        <Button variant="contained"
                                         onClick={handleDeleteClose}
                                         >Cancel</Button>
                                         {!successDel && (
-                                            <Button variant="outlined" color="error"
+                                            <Button variant="contained" color="error"
                                             onClick={()=>handleDeleteShelf(shelf.name)}
                                             >
                                                 Delete
@@ -371,14 +373,18 @@ const MyShelves = () => {
                                         }
                                     }}
                                 />
-                            </div>
-                            <button
-                                className={`indv_submit_button${success ? "_success" : ""
-                                    }`}
-                                onClick={handleSubmit}
-                            >
-                                {success ? "Saved" : "Save"}
-                            </button>
+                            </div>  
+                            <div className="error-msg-shelves">{emptyError}</div>
+                            <div className="confirm-edit-button-container">        
+                            {!success && <Button variant="contained" color="success" size="large"
+                                    onClick={handleSubmit}>
+                                        Save
+                                    </Button>}
+                                    {success && <Button variant="contained" color="success" size="large">
+                                        Saved
+                                    </Button>}
+
+                                    </div>
                         </Box>
                     </Modal>
         </div>

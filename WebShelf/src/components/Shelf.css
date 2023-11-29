@@ -51,3 +51,12 @@
     margin-bottom: 30px;
     margin-left:15px;
 }
+
+.modal-shelf-title {
+    margin-bottom: 1.5rem !important;
+    display: flex !important;
+    justify-content: center;
+    position: relative;
+    left: 30px;
+    top: 10px;
+}

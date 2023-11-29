@@ -100,3 +100,14 @@
   flex-direction: row;
   justify-content: space-between;
 }
+
+.confirm-edit-button-container {
+  margin-top: 20px;
+  margin-bottom: 15px;
+
+}
+
+.error-msg-shelves {
+  color:red;
+  margin-top:3px;
+}

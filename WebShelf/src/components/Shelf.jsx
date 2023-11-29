@@ -1,3 +1,9 @@
+import React from "react";
+import {Box, Button, Modal, Typography,Popover} from "@mui/material";
+import AddIcon from '@mui/icons-material/Add';
+import CloseIcon from '@mui/icons-material/Close';
+import DeleteIcon from '@mui/icons-material/Delete';
+import EditIcon from '@mui/icons-material/Edit';
 import clsx from "clsx";
 import { useEffect, useState } from "react";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/solid";
@@ -48,9 +54,23 @@ export default function MonthlySuggestions() {
         (shelf) => shelf.id === parseInt(id)
     );
     const currentShelf = shelves[currentShelfIndex];
-
+    const [deleteOpen, setDeleteOpen] = React.useState(false);
+    const [bookId,setBookId] = React.useState("")
     const [shelfBooks, setShelfBooks] = useState([]);
     const [filteredBooks, setFilteredBooks] = useState([]);
+    
+    const [successDel, setSuccessDel] = useState(false);
+
+    
+
+    const handleDeleteOpen = (book_id) => {
+        setDeleteOpen(true);
+        setBookId(book_id);
+    } 
+
+    const handleDeleteClose = () => {
+        setDeleteOpen(false);
+    }
 
     useEffect(() => {
         const filteredBooks = books.filter((book) =>
@@ -119,12 +139,18 @@ export default function MonthlySuggestions() {
             )
         );
     };
-    const deleteBook = (bookId) => {
+    const deleteBook = () => {
         let shelfBooksF = shelfBooks.filter((book)=>book.id !== bookId);
         setFilteredBooks(shelfBooksF)
         setShelfBooks(shelfBooksF)
         currentShelf.books = shelfBooksF
         currentShelf.booksIDs = shelfBooksF.map((book)=>book.id)
+
+        setSuccessDel(true)
+        setTimeout(() => {
+            handleDeleteClose()
+            setSuccessDel(false)
+        }, 1000); //
     }
     return (
         <>
@@ -292,9 +318,47 @@ export default function MonthlySuggestions() {
             <div className="book-list-shelf-container">
                 <hr className="shelf-separator" /> 
                 <h3 className="shelf-book-list-h3">Book List:</h3>
-                    <BooksList onDelete={(bookId)=>deleteBook(bookId)} deleteBtn={true} data ={filteredBooks}></BooksList>
-            </div>
-                
+                    <BooksList onDelete={(book_id) => handleDeleteOpen(book_id)} deleteBtn={true} data ={filteredBooks}></BooksList>
+            </div> 
+            <Modal
+                                open={deleteOpen}
+                                onClose={() => handleDeleteClose()}
+                                aria-labelledby="modal-modal-title"
+                                aria-describedby="modal-modal-description"
+                            >
+                                <Box className={"modal-box"}>
+                                    <Typography
+                                        className="modal-shelf-title"
+                                        variant="h6"
+                                        component="h2"
+                                    >
+                                        Confirm Book Removal
+                                        <CloseIcon className="close-icon-details" onClick={handleDeleteClose}></CloseIcon>
+                                    </Typography>
+                                    <div>
+                                        Are you sure you want to remove this book?
+                                    </div>
+                                    <div className="modal-delete-shelf-subtitle">This action is irreversible</div>
+                                    <div className="delete-modal-buttons-container">
+                                        <Button variant="contained"
+                                        onClick={handleDeleteClose}
+                                        >Cancel</Button>
+                                        {!successDel && (
+                                            <Button variant="contained" color="error"
+                                            onClick={()=>deleteBook(bookId)}
+                                            >
+                                                Delete
+                                            </Button>
+                                        )}
+                                        {successDel && (
+                                            <Button variant="contained" color="error">
+                                            Deleted
+                                            </Button>
+                                        )}
+                                    </div>
+                                </Box>
+                            </Modal>
+                            {/* (bookId)=>  */}
         </>
     );
 }

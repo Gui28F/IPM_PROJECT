@@ -16,7 +16,6 @@ const BooksList = (props) => {
         setAnchorDel(null);
     };
 
-    console.log(props)
     const handleDeleteBook = (e, bookId) =>{
         e.preventDefault();
         console.log(props)
@@ -24,6 +23,7 @@ const BooksList = (props) => {
             props.onDelete(bookId);
         }
     }
+    console.log(props.deleteBtn)
     return (
         <div className="books_container">
             {props.data.map((book, index) => (
@@ -37,15 +37,15 @@ const BooksList = (props) => {
                             <img className="browse-all-image" src={book.imageUrl} alt="book"></img>
                             <div className={"delete_book_shelf_container"}>
                                 {props.deleteBtn &&
-                                <div><Typography
+                                    (<div><Typography
                                   aria-owns={openPopupDel ? 'mouse-over-popover' : undefined}
                                   aria-haspopup="true"
-                                  className={"delete-icon"}
+                                  className={"delete-icon-bookList"}
                                   onMouseEnter={handlePopoverOpenDel}
                                   onMouseLeave={handlePopoverCloseDel}
                                   onClick={(e)=>handleDeleteBook(e,book.id)}
                                 >
-                                  <DeleteIcon/>
+                                        <DeleteIcon/>
                                 </Typography>
                                 <Popover
                                   id="mouse-over-popover"
@@ -67,7 +67,7 @@ const BooksList = (props) => {
                                 >
                                   <Typography sx={{ p: 1 }}>Delete</Typography>
                                 </Popover>
-                                </div>}
+                                </div>)}
                             </div>
                             <div className="rating">
                                 {book.rating}

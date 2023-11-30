@@ -1,7 +1,7 @@
 // Monthly
 
 import clsx from "clsx";
-import { useState } from "react";
+import React, { useState } from "react";
 import "./MonthlySuggestions.css";
 import book11 from '../assets/book_covers/flies_cover.jpg';
 import book12 from '../assets/book_covers/seuss_cover.jpg';
@@ -20,18 +20,18 @@ import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/solid';
 import {Link} from "react-router-dom"; // Import the icons
 import {monthlySuggestions} from "./Data.jsx";
 const listContainerStyles = {
-    margin: 'auto',
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -35%)',
-    width: 'calc((44px + 24px) * 10)',
+    margin: "auto",
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -35%)",
+    width: "calc((44px + 24px) * 10)",
 };
 
 const buttonsContainerStyles = {
-    marginTop: '40.5rem', // Adjust the margin as needed
-    textAlign: 'center',
-  };
+    marginTop: "40.5rem", // Adjust the margin as needed
+    textAlign: "center",
+};
 
 let books = monthlySuggestions;
 
@@ -85,8 +85,18 @@ const buttonsContainerStyles = {
       <svg className="invisible absolute inset-0">
         <defs>
           <filter id="paper" x="0%" y="0%" width="100%" height="100%">
-            <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="8" result="noise" />
-            <feDiffuseLighting in="noise" lightingColor="white" surfaceScale="1" result="diffLight">
+              <feTurbulence
+                  type="fractalNoise"
+                  baseFrequency="1"
+                  numOctaves="1"
+                  result="noise"
+              />
+              <feDiffuseLighting
+                  in="noise"
+                  lightingColor="white"
+                  surfaceScale="1"
+                  result="diffLight"
+              >
               <feDistantLight azimuth="45" elevation="35" />
             </feDiffuseLighting>
           </filter>
@@ -98,12 +108,18 @@ const buttonsContainerStyles = {
           <button
             role="listitem"
             key={book.title}
+            onMouseEnter={() => {
+                setFocusedIndex(index)
+            }}
+            onMouseLeave={() => {
+                setFocusedIndex(-1)
+            }}
             onClick={() => {
-              if (index === focusedIndex) {
-                setFocusedIndex(-1);
-              } else {
-                setFocusedIndex(index);
-              }
+                if (index === focusedIndex) {
+                    setFocusedIndex(-1);
+                } else {
+                    setFocusedIndex(index);
+                }
             }}
             className={clsx(
               "flex shrink-0 flex-row items-center outline-none",
@@ -119,13 +135,13 @@ const buttonsContainerStyles = {
                 animationStyle
               )}
               style={{
-                backgroundColor: book.spineBackgroundColor,
-                color: book.spineForegroundColor,
-                transformStyle: "preserve-3d",
-                height : "18rem", // this is to change the size of the side of the book
-                transform: `translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(${
-                  focusedIndex === index ? "-60deg" : "0deg"
-                }) rotateZ(0deg) skew(0deg, 0deg)`,
+                  backgroundColor: book.spineBackgroundColor,
+                  color: book.spineForegroundColor,
+                  transformStyle: "preserve-3d",
+                  height: "18rem", // this is to change the size of the side of the book
+                  transform: `translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(${
+                      focusedIndex === index ? "-60deg" : "-22deg"
+                  }) rotateZ(0deg) skew(0deg, 0deg)`,
               }}
             >
               <span
@@ -142,10 +158,10 @@ const buttonsContainerStyles = {
                 animationStyle
               )}
               style={{
-                transformStyle: "preserve-3d",
-                transform: `translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(${
-                  focusedIndex === index ? "30deg" : "90deg"
-                }) rotateZ(0deg) skew(0deg, 0deg)`,
+                  transformStyle: "preserve-3d",
+                  transform: `translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(${
+                      focusedIndex === index ? "30deg" : "68deg"
+                  }) rotateZ(0deg) skew(0deg, 0deg)`,
               }}
             >
               {/* Media query styles for h2 - The book sidebar names */}
@@ -166,7 +182,7 @@ const buttonsContainerStyles = {
                 aria-hidden
                 className="pointer-events-none absolute top-0 left-0 z-50 h-full w-full"
                 style={{
-                  background: `linear-gradient(to right, rgba(255, 255, 255, 0) 2px, rgba(255, 255, 255, 0.5) 3px, rgba(255, 255, 255, 0.25) 4px, rgba(255, 255, 255, 0.25) 6px, transparent 7px, transparent 9px, rgba(255, 255, 255, 0.25) 9px, transparent 12px)`,
+                    background: `linear-gradient(to right, rgba(255, 255, 255, 0) 2px, rgba(255, 255, 255, 0.5) 3px, rgba(255, 255, 255, 0.25) 4px, rgba(255, 255, 255, 0.25) 6px, transparent 7px, transparent 9px, rgba(255, 255, 255, 0.25) 9px, transparent 12px)`,
                 }}
               />
               {/* eslint-disable-next-line @next/next/no-img-element */}
